@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dl2yn1tsbrk53"]
+
+[ext_resource type="Script" uid="uid://d3svm8m2a7brn" path="res://ui/buttons/load_game.gd" id="1_hcg0e"]
+
+[sub_resource type="Theme" id="Theme_fqh3t"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_p151s"]
+default_font_size = 100
+
+[node name="Load Game" type="MarginContainer" unique_id=1172880367]
+script = ExtResource("1_hcg0e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=658207361]
+layout_mode = 2
+
+[node name="Load Game Button" type="Button" parent="HBoxContainer" unique_id=785394886]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_fqh3t")
+text = "Carregar jogo"
+
+[node name="Download Button" type="Button" parent="HBoxContainer" unique_id=1919246403]
+layout_mode = 2
+theme = SubResource("Theme_p151s")
+text = "Deletar"
+
+[connection signal="pressed" from="HBoxContainer/Load Game Button" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Download Button" to="." method="_on_download_button_pressed"]

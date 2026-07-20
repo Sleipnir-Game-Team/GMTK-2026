@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cj2fderj85812"]
+
+[ext_resource type="Script" uid="uid://cl2nenhmfxo3p" path="res://ui/menu/credits_menu.gd" id="1_h4uwf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4flhf"]
+font_size = 100
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="CreditsMenu" type="Control" unique_id=475717578]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4uwf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=207799611]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1384162720]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1765449188]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=453739286]
+layout_mode = 2
+text = "CRÉDITOS"
+label_settings = SubResource("LabelSettings_4flhf")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1699121148]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Grade" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1281472150]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="back" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=872706060]
+layout_mode = 2
+alignment = 2
+
+[node name="back_button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/back" unique_id=2032214629]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "Voltar"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/back/back_button" to="." method="_on_back_button_pressed"]

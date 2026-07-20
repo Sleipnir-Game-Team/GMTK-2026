@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dh0poej5hqisr"]
+
+[ext_resource type="Script" uid="uid://c8t48uie1ktkv" path="res://ui/menu/save_menu.gd" id="1_xesl8"]
+[ext_resource type="PackedScene" uid="uid://wxltr1ycuuh4" path="res://ui/buttons/new_game.tscn" id="2_ccgy3"]
+[ext_resource type="PackedScene" uid="uid://dl2yn1tsbrk53" path="res://ui/buttons/load_game.tscn" id="3_4t1iu"]
+
+[node name="SaveMenu" type="Control" unique_id=217900500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xesl8")
+new_game_model = ExtResource("2_ccgy3")
+load_game_model = ExtResource("3_4t1iu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=722278018]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=399776586]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=265550759]
+layout_mode = 2
+
+[node name="Saves" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1350892397]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="back" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1339377545]
+layout_mode = 2
+alignment = 2
+
+[node name="back_button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/back" unique_id=1344285142]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "Voltar"

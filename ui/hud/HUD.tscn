@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbi5oq1h8iiaf"]
+
+[node name="Hud" type="Control" unique_id=1483487290]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1369537904]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1430097684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="left_container" type="MarginContainer" parent="HBoxContainer" unique_id=1888168554]
+custom_minimum_size = Vector2(555, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="gameplay_space" type="Control" parent="HBoxContainer" unique_id=370061358]
+custom_minimum_size = Vector2(810, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="right_container" type="MarginContainer" parent="HBoxContainer" unique_id=1260442957]
+custom_minimum_size = Vector2(555, 0)
+layout_mode = 2
+mouse_filter = 2

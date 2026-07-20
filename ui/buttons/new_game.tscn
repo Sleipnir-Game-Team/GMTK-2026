@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://wxltr1ycuuh4"]
+
+[ext_resource type="Script" uid="uid://burprw76fyi8c" path="res://ui/buttons/new_game.gd" id="1_uv8kt"]
+
+[sub_resource type="Theme" id="Theme_fqh3t"]
+default_font_size = 100
+
+[node name="New Game" type="MarginContainer" unique_id=1482912652]
+script = ExtResource("1_uv8kt")
+
+[node name="New Game Button" type="Button" parent="." unique_id=57757453]
+layout_mode = 2
+theme = SubResource("Theme_fqh3t")
+text = "Novo jogo"
+
+[connection signal="pressed" from="New Game Button" to="." method="_on_new_game_button_pressed"]
