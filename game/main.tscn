@@ -24,3 +24,4 @@ layout_mode = 2
 
 [node name="Jogo" type="Node" parent="." unique_id=333981997 groups=["Jogo"]]
 script = ExtResource("3_emt18")
+time_limit = 10.0
