@@ -14,8 +14,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Base 4.6.3"
-config/tags=PackedStringArray("base")
+config/name="GMTK 2026"
+config/tags=PackedStringArray("jam_game", "on_going")
 run/main_scene="res://ui/menu/main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
