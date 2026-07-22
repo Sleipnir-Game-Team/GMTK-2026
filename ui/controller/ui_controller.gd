@@ -2,6 +2,7 @@ extends Node
 
 var stack: ScreenStack = ScreenStack.new()
 var pause_menu_on: bool = false
+var ui_node_dict:Dictionary[StringName, Node] = {}
 
 class ScreenStack:
 	var screens: Array[Node]  = []

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dbi5oq1h8iiaf"]
 
+[ext_resource type="Script" uid="uid://da7rifxflsrrg" path="res://ui/hud/hud.gd" id="1_wbxbo"]
+
 [node name="Hud" type="Control" unique_id=1483487290]
 process_mode = 3
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_wbxbo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1369537904]
 
@@ -31,6 +34,9 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
+
+[node name="teste_label" type="Label" parent="HBoxContainer/left_container" unique_id=121294784]
+layout_mode = 2
 
 [node name="gameplay_space" type="Control" parent="HBoxContainer" unique_id=370061358]
 custom_minimum_size = Vector2(810, 0)
