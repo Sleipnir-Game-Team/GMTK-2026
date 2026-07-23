@@ -17,20 +17,20 @@ script = ExtResource("1_yt6j6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486740632]
 shape = SubResource("RectangleShape2D_fs2xi")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=100201166]
+position = Vector2(-1, 1)
+rotation = -0.7853982
+scale = Vector2(0.025606235, 0.025606235)
+texture = ExtResource("4_fs2xi")
+flip_h = true
+
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_kxfas")]
 
 [node name="use_unlock" parent="." unique_id=1133804510 instance=ExtResource("2_yt6j6")]
 unique_name_in_owner = true
 group = &"use_unlock"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=100201166]
-position = Vector2(-1, 1)
-rotation = -0.7853982
-scale = Vector2(0.025606237, 0.025606237)
-texture = ExtResource("4_fs2xi")
-flip_h = true
-
-[node name="Storable" parent="." unique_id=126649513 instance=ExtResource("5_dfg08")]
+[node name="use_store" parent="." unique_id=126649513 instance=ExtResource("5_dfg08")]
+group = &"use_store"
 
 [connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]
-[connection signal="drop_on_use_area" from="use_draggable" to="Storable" method="be_stored"]

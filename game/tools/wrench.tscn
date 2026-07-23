@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://bn77ryrhpigs4"]
 
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
+[ext_resource type="Script" uid="uid://d1hna2a0u2t2v" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
-
-[sub_resource type="GDScript" id="GDScript_hf3ms"]
-script/source = "extends Area2D
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iquho"]
 size = Vector2(20, 59)
@@ -21,7 +18,7 @@ gradient = SubResource("Gradient_iquho")
 scale = Vector2(7.4729996, 8.733971)
 collision_layer = 2048
 collision_mask = 32768
-script = SubResource("GDScript_hf3ms")
+script = ExtResource("1_fatje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830623734]
 scale = Vector2(1.1955376, 1.2868329)
@@ -33,6 +30,7 @@ texture = SubResource("GradientTexture2D_4glyt")
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_4glyt")]
 
-[node name="use_storable" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
+[node name="use_store" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
+group = &"use_store"
 
-[connection signal="drop_on_use_area" from="use_draggable" to="use_storable" method="be_stored"]
+[connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]

@@ -75,7 +75,7 @@ func drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> 
 			drag_start.emit()
 		elif _mouse_in_use_area:
 			drag_end.emit()
-			drop_on_use_area.emit(_intersecting_use_area)
+			drop_on_use_area.emit(_intersecting_use_area, _intersecting_use_group)
 			_mouse_in_use_area = false
 		else:
 			drag_end.emit()
@@ -92,6 +92,7 @@ func use_area_entered(use: Area2D) -> void:
 func use_area_exited(use: Area2D) -> void:
 	if _intersecting_use_area == use:
 		_intersecting_use_area = null
+		_intersecting_use_group = &""
 
 
 func _connect_signals() -> void:
