@@ -1,5 +1,5 @@
 extends BaseBehaviour
 
 
-func store() -> void:
+func store(use: Area2D) -> void:
 	pass

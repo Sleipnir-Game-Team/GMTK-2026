@@ -3,7 +3,7 @@ extends BaseBehaviour
 
 signal drag_start() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
 signal drag_end() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
-signal drop_on_use_area() # COM CERTEZA ADICIONAR UNS PARAMETROS AQUI
+signal drop_on_use_area(use: Area2D, tool: ) # COM CERTEZA ADICIONAR UNS PARAMETROS AQUI
 
 ## Whether or not the parent Area2D is currently being dragged.
 var _dragging: bool = false
@@ -74,7 +74,7 @@ func drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> 
 			drag_start.emit()
 		elif _mouse_in_use_area:
 			drag_end.emit()
-			drop_on_use_area.emit()
+			drop_on_use_area.emit(_intersecting_use_area)
 			_mouse_in_use_area = false
 		else:
 			drag_end.emit()

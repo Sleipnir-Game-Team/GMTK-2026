@@ -3,7 +3,7 @@ extends Area2D
 
 signal trigger(this: Area2D, args: Array[Variant])
 
-@export var extra_args: Array[Variant]
+@export var extra_args: Dictionary[String, Variant] = {}
 
 var _groups: Dictionary[String, bool] = {}
 var _tools_in_area: Array[Area2D] = []

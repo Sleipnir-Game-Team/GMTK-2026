@@ -4,4 +4,5 @@
 
 [node name="Unlock" type="Node" unique_id=1133804510]
 script = ExtResource("1_oorlq")
+passkey = null
 group = "use_unlock"
