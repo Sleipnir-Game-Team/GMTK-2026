@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://du2ailw7a70vy"]
+
+[ext_resource type="Script" uid="uid://boela7o6ud4pb" path="res://game/uses/scripts/base_use.gd" id="1_gsbcs"]
+
+[node name="BaseUse" type="Area2D" unique_id=2004418641]
+collision_layer = 32768
+collision_mask = 2048
+script = ExtResource("1_gsbcs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bmtmm72pm5nsm"]
+
+[ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/uses/base_use.tscn" id="1_7w86a"]
+[ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/behaviours/draggable.tscn" id="1_o02vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2wow"]
+size = Vector2(300.3905, 359.76044)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o02vu"]
+radius = 152.83978
+
+[node name="Teste" type="Node" unique_id=2142931688]
+
+[node name="BaseUse" parent="." unique_id=2004418641 instance=ExtResource("1_7w86a")]
+position = Vector2(1441, 521)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseUse" unique_id=61200615]
+shape = SubResource("RectangleShape2D_s2wow")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1455274131]
+position = Vector2(165, 157)
+collision_layer = 2048
+collision_mask = 32768
+
+[node name="use_draggable" parent="Area2D" unique_id=1990951435 instance=ExtResource("1_o02vu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=394396369]
+shape = SubResource("CircleShape2D_o02vu")

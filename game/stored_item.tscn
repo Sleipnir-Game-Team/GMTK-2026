@@ -10,15 +10,14 @@ script = ExtResource("1_l556t")
 textura = NodePath("TextureRect")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304822310]
-position = Vector2(156, 93)
 scale = Vector2(1.1019708, 1.0743603)
 shape = SubResource("RectangleShape2D_fxsc8")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=178810317]
-offset_left = 87.0
-offset_top = 15.000001
-offset_right = 127.0
-offset_bottom = 55.0
+offset_left = -69.0
+offset_top = -78.0
+offset_right = -29.0
+offset_bottom = -38.0
 scale = Vector2(3.480202, 3.8384979)
 stretch_mode = 2
 

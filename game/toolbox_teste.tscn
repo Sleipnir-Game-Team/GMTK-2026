@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce6nt44ivx8d3" path="res://game/toolbox_teste.gd" id="1_fxsc8"]
 [ext_resource type="PackedScene" uid="uid://1n2c8xxqa4o4" path="res://game/stored_item.tscn" id="2_18286"]
-[ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/composables/tool_usage_area.tscn" id="4_lstkq"]
+[ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/uses/base_use.tscn" id="4_lstkq"]
 
 [sub_resource type="Gradient" id="Gradient_vop5m"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)

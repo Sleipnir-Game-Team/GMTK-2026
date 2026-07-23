@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cqeg5ece2xy0r"]
+
+[ext_resource type="Script" uid="uid://rh15rsvotm75" path="res://game/behaviours/scripts/unlock.gd" id="1_oorlq"]
+
+[node name="Unlock" type="Node" unique_id=1133804510]
+script = ExtResource("1_oorlq")
+group = "use_unlock"

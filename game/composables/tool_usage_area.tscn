@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://du2ailw7a70vy"]
-
-[ext_resource type="Script" uid="uid://boela7o6ud4pb" path="res://game/composables/scripts/tool_usage_area.gd" id="1_gsbcs"]
-
-[node name="ToolUsageArea" type="Area2D" unique_id=2004418641]
-script = ExtResource("1_gsbcs")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

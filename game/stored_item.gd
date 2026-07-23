@@ -6,11 +6,11 @@ extends Area2D
 func _ready():
 	add_item(item)
 
-func add_item(new_item):
+func add_item(new_item: Node2D):
 	item = new_item
 	add_child(item)
-	var sprite : Sprite2D = item.get_node("Sprite2D")
-	item.visible=false
+	var sprite: Sprite2D = item.get_node("Sprite2D")
+	item.visible = false
 	textura.texture = sprite.texture
 	
 

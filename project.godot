@@ -62,16 +62,17 @@ enabled=PackedStringArray("res://addons/sleipnir_audio/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://game/composables/": "yellow",
-"res://game/tools/": "green"
+"res://game/behaviours/": "yellow",
+"res://game/tools/": "green",
+"res://game/uses/": "red"
 }
 
 [global_group]
 
 Jogo=""
-tool_draggable="Click and hold to drag, release to drop!"
-tool_crankable="Drag to rotate it!"
-tool_key="Can be destroyed with a key!"
+use_draggable=""
+use_unlock=""
+use_store=""
 
 [input]
 
@@ -105,6 +106,8 @@ minus_life={
 2d_physics/layer_5="BOSS"
 2d_physics/layer_7="GOLD_LIGHT"
 2d_physics/layer_8="RED_LIGHT"
+2d_physics/layer_12="TOOLS"
+2d_physics/layer_16="USES"
 
 [rendering]
 

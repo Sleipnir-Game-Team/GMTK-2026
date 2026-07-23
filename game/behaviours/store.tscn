@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://l0n8c2mk7ytt"]
+
+[ext_resource type="Script" uid="uid://bri2crfg8rx1u" path="res://game/behaviours/scripts/store.gd" id="1_wrckh"]
+
+[node name="Store" type="Node" unique_id=126649513]
+script = ExtResource("1_wrckh")
+group = "use_store"
