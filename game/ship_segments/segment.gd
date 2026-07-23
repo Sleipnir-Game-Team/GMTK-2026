@@ -12,10 +12,10 @@ func _on_texture_button_toggled(toggled_on: bool, module_model: PackedScene, pan
 		modules[panel] = module_model.instantiate()
 		get_parent().add_child(modules[panel])
 	else:
-		modules[panel].queue_free()
+		if modules[panel]:
+			modules[panel].queue_free()
 
 func _exit_tree() -> void:
 	for module in modules:
 		if modules[module]:
 			modules[module].queue_free()
-	

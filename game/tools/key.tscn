@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://cew6hy2ndcd0h" path="res://game/tools/scripts/key.gd" id="1_yt6j6"]
 [ext_resource type="PackedScene" uid="uid://cqeg5ece2xy0r" path="res://game/behaviours/unlock.tscn" id="2_yt6j6"]
 [ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://assets/chave.png" id="4_fs2xi"]
+[ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="5_dfg08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs2xi"]
 size = Vector2(61, 22)
 
-[node name="Key" type="Area2D" unique_id=1552411005]
+[node name="Key" type="Area2D" unique_id=1552411005 groups=["use_store"]]
 collision_layer = 2048
 collision_mask = 32768
 script = ExtResource("1_yt6j6")
@@ -28,4 +29,7 @@ scale = Vector2(0.025606237, 0.025606237)
 texture = ExtResource("4_fs2xi")
 flip_h = true
 
+[node name="Storable" parent="." unique_id=126649513 instance=ExtResource("5_dfg08")]
+
 [connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]
+[connection signal="drop_on_use_area" from="use_draggable" to="Storable" method="be_stored"]

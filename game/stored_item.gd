@@ -5,7 +5,10 @@ var item : Node2D
 
 func add_item(new_item: Node2D):
 	item = new_item
-	item.reparent(self)
+	if item.get_parent():
+		item.reparent(self)
+	else:
+		add_child(item)
 	var sprite: Sprite2D = item.get_node("Sprite2D")
 	item.visible = false
 	textura.texture = sprite.texture
@@ -18,5 +21,4 @@ func _on_input_event(viewport, event, shape_idx):
 		draggable._drag_offset = Vector2.ZERO #item.get_local_mouse_position() * item.get_screen_transform().get_scale()
 		draggable._dragging = true
 		item.reparent(get_tree().get_first_node_in_group("Jogo"))
-		get_parent().last_slot -= 1
 		queue_free()
