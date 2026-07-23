@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dtk6nf8o5uud4"]
 
-[ext_resource type="Script" uid="uid://xb8251mamocn" path="res://game/tools/base_tool.gd" id="1_3xaty"]
 [ext_resource type="PackedScene" uid="uid://cmjj8bccs0gjq" path="res://game/composables/draggable.tscn" id="1_hmwix"]
 
 [node name="BaseTool" type="Area2D" unique_id=1563247194]
-script = ExtResource("1_3xaty")
 
 [node name="Draggable" parent="." unique_id=535768647 instance=ExtResource("1_hmwix")]

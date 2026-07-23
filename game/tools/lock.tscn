@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2641gyn1ag6l"]
+
+[ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/composables/tool_usage_area.tscn" id="1_x50ch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbkqb"]
+radius = 7.0
+height = 26.0
+
+[node name="Lock" type="Node2D" unique_id=55864133]
+
+[node name="ToolUsageArea" parent="." unique_id=2004418641 groups=["tool_key"] instance=ExtResource("1_x50ch")]
+args = ["aeiou"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToolUsageArea" unique_id=175136771]
+shape = SubResource("CapsuleShape2D_pbkqb")

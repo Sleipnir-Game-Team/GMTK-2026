@@ -10,8 +10,12 @@ var _cranking: bool = false
 ## Used to measure crankage.
 var _crank_start_angle: float = 0
 
-## The Node2D node to rotate during cranking.
-var _parent_node: Node2D
+var _parent_node: Node2D:
+	set(new_parent):
+		if _parent_node:
+			_parent_node.remove_from_group("tool_crankable")
+		_parent_node = new_parent
+		_parent_node.add_to_group("tool_crankable")
 
 ## Event Handler for [signal CollisionObject2D.input_event].
 ## Responsible for starting the crank event using the parent's area collision

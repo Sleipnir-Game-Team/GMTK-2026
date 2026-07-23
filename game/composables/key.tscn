@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8dbj8jr52fbv"]
+
+[ext_resource type="Script" uid="uid://cdch4rphkm12a" path="res://game/composables/scripts/key.gd" id="1_70lnb"]
+
+[node name="Key" type="Node2D" unique_id=396561804]
+script = ExtResource("1_70lnb")

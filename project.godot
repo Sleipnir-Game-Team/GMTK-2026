@@ -69,6 +69,9 @@ folder_colors={
 [global_group]
 
 Jogo=""
+tool_draggable="Click and hold to drag, release to drop!"
+tool_crankable="Drag to rotate it!"
+tool_key="Can be destroyed with a key!"
 
 [input]
 
