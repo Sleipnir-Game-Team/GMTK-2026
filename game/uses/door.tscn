@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://baq7s4mj72i3r"]
 
 [ext_resource type="Script" uid="uid://b7c086kdyuorh" path="res://game/uses/scripts/door.gd" id="1_luxem"]
-[ext_resource type="Texture2D" uid="uid://eawtu4pijah4" path="res://vault_door_1.png" id="2_7bwyi"]
+[ext_resource type="Texture2D" uid="uid://eawtu4pijah4" path="res://assets/vault_door_1.png" id="2_7bwyi"]
 
 [sub_resource type="Animation" id="Animation_xfrxi"]
 length = 0.001

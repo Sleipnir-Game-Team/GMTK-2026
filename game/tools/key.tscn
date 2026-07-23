@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/behaviours/draggable.tscn" id="1_kxfas"]
 [ext_resource type="Script" uid="uid://cew6hy2ndcd0h" path="res://game/tools/scripts/key.gd" id="1_yt6j6"]
 [ext_resource type="PackedScene" uid="uid://cqeg5ece2xy0r" path="res://game/behaviours/unlock.tscn" id="2_yt6j6"]
-[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://chave.png" id="4_fs2xi"]
+[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://assets/chave.png" id="4_fs2xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs2xi"]
 size = Vector2(61, 22)
