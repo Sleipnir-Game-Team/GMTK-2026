@@ -50,11 +50,12 @@ _data = {
 
 [node name="ToolboxTeste" type="Node2D" unique_id=490391838]
 
-[node name="Box" type="Node2D" parent="." unique_id=1428926048 node_paths=PackedStringArray("anim_player", "toggle_button") groups=["tool_draggable"]]
+[node name="Box" type="Node2D" parent="." unique_id=1428926048 node_paths=PackedStringArray("anim_player", "toggle_button", "slots") groups=["tool_draggable"]]
 script = ExtResource("1_fxsc8")
 anim_player = NodePath("AnimationPlayer")
 toggle_button = NodePath("TextureButton")
 stored_item_model = ExtResource("2_18286")
+slots = [NodePath("Slots/Marker2D"), NodePath("Slots/Marker2D2"), NodePath("Slots/Marker2D3"), NodePath("Slots/Marker2D4"), NodePath("Slots/Marker2D5")]
 
 [node name="TextureButton" type="TextureButton" parent="Box" unique_id=1246168984]
 offset_right = 64.0
@@ -65,10 +66,27 @@ texture_normal = SubResource("GradientTexture2D_5un7r")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Box" unique_id=470394649]
 libraries/ = SubResource("AnimationLibrary_18286")
 
-[node name="ToolBoxArea" parent="Box" unique_id=2004418641 instance=ExtResource("4_lstkq")]
+[node name="ToolBoxArea" parent="Box" unique_id=2004418641 groups=["use_store"] instance=ExtResource("4_lstkq")]
 position = Vector2(546, 246.00003)
 scale = Vector2(11.259012, 15.40478)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box/ToolBoxArea" unique_id=1040343872]
 scale = Vector2(4.262541, 1.5883822)
 shape = SubResource("RectangleShape2D_h5y8b")
+
+[node name="Slots" type="Node" parent="Box" unique_id=1992341123]
+
+[node name="Marker2D" type="Marker2D" parent="Box/Slots" unique_id=43480237]
+position = Vector2(189, 97)
+
+[node name="Marker2D2" type="Marker2D" parent="Box/Slots" unique_id=1682403295]
+position = Vector2(420, 103)
+
+[node name="Marker2D3" type="Marker2D" parent="Box/Slots" unique_id=1286396314]
+position = Vector2(653, 112)
+
+[node name="Marker2D4" type="Marker2D" parent="Box/Slots" unique_id=1052403219]
+position = Vector2(316, 308)
+
+[node name="Marker2D5" type="Marker2D" parent="Box/Slots" unique_id=1823094929]
+position = Vector2(543, 317)

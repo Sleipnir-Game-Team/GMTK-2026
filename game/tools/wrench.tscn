@@ -28,6 +28,6 @@ texture = SubResource("GradientTexture2D_4glyt")
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_4glyt")]
 
-[node name="Storable" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
+[node name="use_storable" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
 
-[connection signal="drop_on_use_area" from="use_draggable" to="Storable" method="be_stored"]
+[connection signal="drop_on_use_area" from="use_draggable" to="use_storable" method="be_stored"]
