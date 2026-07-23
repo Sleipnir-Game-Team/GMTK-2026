@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mp6bcxumg70u"]
 
-[ext_resource type="Script" uid="uid://cfnmmh74pec6l" path="res://ship_modules/flip.gd" id="1_2mhmk"]
+[ext_resource type="Script" uid="uid://cfnmmh74pec6l" path="res://game/ship_modules/flip.gd" id="1_2mhmk"]
 
 [node name="Flip" type="Node2D" unique_id=1764171961]
 script = ExtResource("1_2mhmk")
