@@ -3,10 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/behaviours/draggable.tscn" id="1_kxfas"]
 [ext_resource type="Script" uid="uid://cew6hy2ndcd0h" path="res://game/tools/scripts/key.gd" id="1_yt6j6"]
 [ext_resource type="PackedScene" uid="uid://cqeg5ece2xy0r" path="res://game/behaviours/unlock.tscn" id="2_yt6j6"]
+[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://chave.png" id="4_fs2xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fs2xi"]
+size = Vector2(61, 22)
 
 [node name="Key" type="Area2D" unique_id=1552411005]
+collision_layer = 2048
+collision_mask = 32768
 script = ExtResource("1_yt6j6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486740632]
@@ -16,3 +20,12 @@ shape = SubResource("RectangleShape2D_fs2xi")
 
 [node name="use_unlock" parent="." unique_id=1133804510 instance=ExtResource("2_yt6j6")]
 unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=100201166]
+position = Vector2(-1, 1)
+rotation = -0.7853982
+scale = Vector2(0.025606237, 0.025606237)
+texture = ExtResource("4_fs2xi")
+flip_h = true
+
+[connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]

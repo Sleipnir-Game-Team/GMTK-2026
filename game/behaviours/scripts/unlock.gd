@@ -1,7 +1,7 @@
 @tool
 extends BaseBehaviour
 
-@export var password: String = ""
+@export var password: StringName = ""
 
-func unlock(door: Area2D) -> bool:
-	return not door.extra_args.password or password == door.extra_args.password
+func can_unlock(door: Area2D) -> bool:
+	return not door.password or password == door.password
