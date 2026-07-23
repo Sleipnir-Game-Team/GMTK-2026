@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3h4yjcjhnvxg"]
+
+[ext_resource type="PackedScene" uid="uid://bk5vv1pds2833" path="res://game/composables/tool_key.tscn" id="2_kxfas"]
+[ext_resource type="PackedScene" uid="uid://cmjj8bccs0gjq" path="res://game/composables/draggable.tscn" id="2_yt6j6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0tgt"]
+size = Vector2(192, 64)
+
+[node name="Key" type="Area2D" unique_id=2111912419]
+
+[node name="Draggable" parent="." unique_id=539079227 instance=ExtResource("2_yt6j6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=295080231]
+shape = SubResource("RectangleShape2D_a0tgt")
+
+[node name="tool_key" parent="." unique_id=1278127569 instance=ExtResource("2_kxfas")]
