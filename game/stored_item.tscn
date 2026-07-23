@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://1n2c8xxqa4o4"]
+
+[ext_resource type="Script" uid="uid://byxniyqrg4ps0" path="res://game/stored_item.gd" id="1_l556t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxsc8"]
+size = Vector2(136, 156)
+
+[node name="StoredItem" type="Area2D" unique_id=2106525060 node_paths=PackedStringArray("textura")]
+script = ExtResource("1_l556t")
+textura = NodePath("TextureRect")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304822310]
+position = Vector2(156, 93)
+scale = Vector2(1.1019708, 1.0743603)
+shape = SubResource("RectangleShape2D_fxsc8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=178810317]
+offset_left = 87.0
+offset_top = 15.000001
+offset_right = 127.0
+offset_bottom = 55.0
+scale = Vector2(3.480202, 3.8384979)
+stretch_mode = 2
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

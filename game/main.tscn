@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://game/ship_segments/test_segment.tscn" id="4_vop5m"]
 [ext_resource type="PackedScene" uid="uid://bic4u7fmhl5u6" path="res://game/toolbox_teste.tscn" id="5_5un7r"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
+[ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="6_dgpao"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vop5m"]
 
@@ -47,7 +48,7 @@ stretch_mode = 0
 [node name="ToolboxTeste" parent="Workspace" unique_id=490391838 instance=ExtResource("5_5un7r")]
 position = Vector2(1856, 711)
 
-[node name="ToolboxTeste2" parent="Workspace" unique_id=220732672 instance=ExtResource("5_5un7r")]
-position = Vector2(1857, 300)
+[node name="Wrench" parent="." unique_id=305978293 instance=ExtResource("6_dgpao")]
+position = Vector2(965, 868)
 
 [connection signal="pressed" from="Ship/Panel" to="Jogo" method="_on_ship_panel_pressed" binds= [&"test"]]

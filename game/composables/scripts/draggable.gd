@@ -21,6 +21,9 @@ var _parent_node: Area2D:
 		_parent_node.input_event.connect(drag_input_handler)
 		_parent_node.add_to_group("tool_draggable")
 
+func tool_draggable(this):
+	return true
+
 ## Event Handler for [signal CollisionObject2D.input_event].
 ## Responsible for starting the drag event using the parent's area collision
 func drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

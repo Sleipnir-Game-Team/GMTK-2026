@@ -15,6 +15,7 @@ func _on_area_entered(tool: Area2D) -> void:
 		args.append_array(extra_args)
 		var FODASE = tool.get_node(str(group))
 		if FODASE.callv(group, args):
+			extra_args.append(tool)
 			trigger.emit(_parent_node, extra_args)
 
 func _notification(what: int) -> void:

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bn77ryrhpigs4"]
+
+[ext_resource type="PackedScene" uid="uid://cmjj8bccs0gjq" path="res://game/composables/draggable.tscn" id="1_4glyt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iquho"]
+size = Vector2(20, 59)
+
+[sub_resource type="Gradient" id="Gradient_iquho"]
+offsets = PackedFloat32Array(0.011029412, 1)
+colors = PackedColorArray(0, 0, 1, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4glyt"]
+gradient = SubResource("Gradient_iquho")
+
+[node name="Wrench" type="Area2D" unique_id=305978293]
+scale = Vector2(7.4729996, 8.733971)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830623734]
+scale = Vector2(1.1955376, 1.2868329)
+shape = SubResource("RectangleShape2D_iquho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496410401]
+scale = Vector2(0.36, 1.1600006)
+texture = SubResource("GradientTexture2D_4glyt")
+
+[node name="tool_draggable" parent="." unique_id=539079227 instance=ExtResource("1_4glyt")]
