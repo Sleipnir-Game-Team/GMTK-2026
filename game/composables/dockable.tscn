@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3hxb8j1wmx5"]
+
+[ext_resource type="Script" uid="uid://csbv3qx0ym4wv" path="res://game/composables/scripts/dockable.gd" id="1_qv2b2"]
+
+[node name="Dockable" type="Area2D" unique_id=939220793]
+script = ExtResource("1_qv2b2")

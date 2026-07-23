@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bh3231u71mgk0"]
+
+[ext_resource type="Script" uid="uid://diyyycn7w4crh" path="res://game/composables/scripts/crankable.gd" id="1_hw754"]
+
+[node name="Crankable" type="Area2D" unique_id=441504750]
+script = ExtResource("1_hw754")
+
+[connection signal="input_event" from="." to="." method="drag_input_handler"]

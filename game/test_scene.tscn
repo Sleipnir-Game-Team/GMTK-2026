@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bh05v5cypyc8q"]
+
+[ext_resource type="PackedScene" uid="uid://dtk6nf8o5uud4" path="res://game/tools/base_tool.tscn" id="1_duoxe"]
+[ext_resource type="PackedScene" uid="uid://bh3231u71mgk0" path="res://game/composables/crankable.tscn" id="2_p6i20"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6i20"]
+radius = 175.02571
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6i20"]
+size = Vector2(412, 142)
+
+[node name="TestScene" type="Node" unique_id=1371337709]
+
+[node name="BaseTool" parent="." unique_id=1563247194 instance=ExtResource("1_duoxe")]
+position = Vector2(959, 542)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseTool" unique_id=1745649395]
+shape = SubResource("CircleShape2D_p6i20")
+
+[node name="Crankable" parent="BaseTool" unique_id=441504750 instance=ExtResource("2_p6i20")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseTool/Crankable" unique_id=2048863928]
+position = Vector2(-216, -7)
+shape = SubResource("RectangleShape2D_p6i20")
+debug_color = Color(0.9577566, 2.8878452e-07, 0.5334733, 0.41960785)

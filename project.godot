@@ -59,6 +59,13 @@ project/assembly_name="Game Jam Plus 24 25"
 
 enabled=PackedStringArray("res://addons/sleipnir_audio/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://game/composables/": "yellow",
+"res://game/tools/": "green"
+}
+
 [global_group]
 
 Jogo=""
