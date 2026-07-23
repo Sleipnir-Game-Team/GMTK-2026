@@ -3,7 +3,7 @@ extends Area2D
 var item : Node2D
 @export var textura : TextureRect
 
-func add_item(new_item: Node2D):
+func add_item(new_item: Node2D) -> void:
 	item = new_item
 	item.reparent(self)
 	var sprite: Sprite2D = item.get_node("Sprite2D")
@@ -11,7 +11,7 @@ func add_item(new_item: Node2D):
 	textura.texture = sprite.texture
 	
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		item.visible = true
 		var draggable = item.get_node("use_draggable")

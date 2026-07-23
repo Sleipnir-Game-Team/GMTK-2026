@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4sg0b8dl5soe"]
+
+[ext_resource type="Script" uid="uid://c0bj3eoed4o21" path="res://game/tools/components/draggable.gd" id="1_w8hjj"]
+
+[node name="use_draggable" type="Node" unique_id=1990951435]
+script = ExtResource("1_w8hjj")

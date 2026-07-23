@@ -1,15 +1,18 @@
 @tool
-extends BaseBehaviour
+extends Node
 
 signal drag_start() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
 signal drag_end() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
-signal drop_on_use_area(use: Area2D) # COM CERTEZA ADICIONAR UNS PARAMETROS AQUI
+signal drop_on_use_area(use: Area2D, group: StringName)
 
 ## Whether or not the parent Area2D is currently being dragged.
 var _dragging: bool = false
 
 ## Use area the tool is inside of (or null)
 var _intersecting_use_area: Area2D
+
+## Use group of the area (or null)
+var _intersecting_use_group: StringName
 
 ## Whether the mouse cursor is ALSO inside the _intersecting_use_area
 var _mouse_in_use_area: bool = false
@@ -18,12 +21,10 @@ var _mouse_in_use_area: bool = false
 ## Used to avoid "jumps" when starting a drag from the parent's edge.
 var _drag_offset: Vector2 = Vector2.ZERO
 
-var _parent_node: Area2D:
+var _parent_node: BaseTool:
 	set(new_parent):
 		if _parent_node:
-			_parent_node.remove_from_group(group) # Necessário chamar aqui
 			_disconnect_signals()
-		
 		_parent_node = new_parent
 		_connect_signals()
 
@@ -41,8 +42,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return []
 	
 	var parent := get_parent()
-	if not parent or not parent is Area2D:
-		return ['The parent Node must be an Area2D.']
+	if not parent or not parent is BaseTool:
+		return ['The parent Node must be a BaseTool.']
 	
 	return []
 
@@ -81,17 +82,16 @@ func drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> 
 
 
 func use_area_entered(use: Area2D) -> void:
-	if use.get_groups().any(_matching_group):
-		_intersecting_use_area = use
+	for group in use.get_groups():
+		if _parent_node.group_matches(group):
+			_intersecting_use_area = use
+			_intersecting_use_group = group
+			return 
 
 
 func use_area_exited(use: Area2D) -> void:
 	if _intersecting_use_area == use:
 		_intersecting_use_area = null
-
-
-func _matching_group(use_group: StringName) -> bool:
-	return use_group in _parent_node.get_groups()
 
 
 func _connect_signals() -> void:

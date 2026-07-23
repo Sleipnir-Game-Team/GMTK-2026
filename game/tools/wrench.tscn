@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn77ryrhpigs4"]
 
-[ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/behaviours/draggable.tscn" id="1_4glyt"]
+[ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iquho"]
