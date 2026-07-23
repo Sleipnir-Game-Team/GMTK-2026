@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtykqg5pafuvw"]
 
-[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://ship_segments/segment.gd" id="1_hbfp2"]
-[ext_resource type="PackedScene" uid="uid://mp6bcxumg70u" path="res://ship_modules/flip.tscn" id="2_uakjb"]
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_hbfp2"]
+[ext_resource type="PackedScene" uid="uid://mp6bcxumg70u" path="res://game/ship_modules/flip.tscn" id="2_uakjb"]
 
 [sub_resource type="Gradient" id="Gradient_vxurl"]
 
