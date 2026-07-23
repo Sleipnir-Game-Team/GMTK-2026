@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ceunm6ik2o4y4" path="res://game/main.gd" id="1_cxumw"]
 [ext_resource type="Script" uid="uid://d0pk83r7k4mge" path="res://game/game_logic.gd" id="3_emt18"]
+[ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://ship_segments/test_segment.tscn" id="4_vop5m"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vop5m"]
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -24,4 +27,18 @@ layout_mode = 2
 
 [node name="Jogo" type="Node" parent="." unique_id=333981997 groups=["Jogo"]]
 script = ExtResource("3_emt18")
-time_limit = 10.0
+time_limit = 20.0
+panel_dict = Dictionary[StringName, PackedScene]({
+&"test": ExtResource("4_vop5m")
+})
+
+[node name="Ship" type="Node2D" parent="." unique_id=328625406]
+position = Vector2(270, 394)
+
+[node name="Panel" type="TextureButton" parent="Ship" unique_id=1165334968]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("PlaceholderTexture2D_vop5m")
+stretch_mode = 0
+
+[connection signal="pressed" from="Ship/Panel" to="Jogo" method="_on_ship_panel_pressed" binds= [&"test"]]

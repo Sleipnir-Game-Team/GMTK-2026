@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://mp6bcxumg70u"]
+
+[ext_resource type="Script" uid="uid://cfnmmh74pec6l" path="res://ship_modules/flip.gd" id="1_2mhmk"]
+
+[node name="Flip" type="Node2D" unique_id=1764171961]
+script = ExtResource("1_2mhmk")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1441529664]
+offset_left = 834.0
+offset_top = 28.000004
+offset_right = 878.0
+offset_bottom = 52.000004
+scale = Vector2(23.695715, 21.804771)
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

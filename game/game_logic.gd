@@ -1,6 +1,7 @@
 extends Node
 
 @export var time_limit := 0.0
+@export var panel_dict : Dictionary[StringName, PackedScene] = {}
 
 var ship_attributes := {
 	'light_color': 'red'
@@ -9,6 +10,8 @@ var ship_attributes := {
 var ship_conditions := {
 	'light_color': 'green'
 }
+
+var current_segments: Dictionary[StringName, Node2D]
 
 func setup(save_data: Dictionary) -> void:
 	start_timer()
@@ -43,3 +46,12 @@ func _input(event: InputEvent) -> void:
 		ship_attributes['light_color'] = 'green'
 	if event.is_action_pressed("test_turn_red"):
 		ship_attributes['light_color'] = 'red'
+
+
+func _on_ship_panel_pressed(panel: StringName) -> void:
+	if current_segments.has(panel):
+		current_segments[panel].queue_free()
+		current_segments.erase(panel)
+	else:
+		current_segments[panel] = panel_dict[panel].instantiate()
+		add_child(current_segments[panel])
