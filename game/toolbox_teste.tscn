@@ -72,5 +72,3 @@ scale = Vector2(11.259012, 15.40478)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box/ToolBoxArea" unique_id=1040343872]
 scale = Vector2(4.262541, 1.5883822)
 shape = SubResource("RectangleShape2D_h5y8b")
-
-[connection signal="trigger" from="Box/ToolBoxArea" to="Box" method="_on_tool_box_area_trigger"]

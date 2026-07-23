@@ -14,8 +14,8 @@ func on_toggle(value):
 		anim_player.play_backwards("open")
 
 
-func _on_tool_box_area_trigger(this, args):
-	print("entrou")
+func store(item):
+	print("bingo")
 	var stored_item = stored_item_model.instantiate()
-	stored_item.add_item(args[0])
+	stored_item.add_item(item)
 	add_child(stored_item)

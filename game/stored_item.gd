@@ -1,10 +1,7 @@
 extends Area2D
 
-@export var item : Node2D
+var item : Node2D
 @export var textura : TextureRect
-
-func _ready():
-	add_item(item)
 
 func add_item(new_item: Node2D):
 	item = new_item

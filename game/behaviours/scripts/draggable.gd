@@ -3,7 +3,7 @@ extends BaseBehaviour
 
 signal drag_start() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
 signal drag_end() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
-signal drop_on_use_area(use: Area2D, tool: ) # COM CERTEZA ADICIONAR UNS PARAMETROS AQUI
+signal drop_on_use_area(use: Area2D) # COM CERTEZA ADICIONAR UNS PARAMETROS AQUI
 
 ## Whether or not the parent Area2D is currently being dragged.
 var _dragging: bool = false
