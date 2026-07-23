@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bic4u7fmhl5u6" path="res://game/toolbox_teste.tscn" id="5_5un7r"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
 [ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="6_dgpao"]
+[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key.tscn" id="7_wjctj"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vop5m"]
 
@@ -48,7 +49,9 @@ stretch_mode = 0
 [node name="ToolboxTeste" parent="Workspace" unique_id=490391838 instance=ExtResource("5_5un7r")]
 position = Vector2(1856, 711)
 
-[node name="Wrench" parent="." unique_id=305978293 instance=ExtResource("6_dgpao")]
-position = Vector2(965, 868)
+[node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
+pre_store = Array[PackedScene]([ExtResource("6_dgpao"), ExtResource("7_wjctj")])
 
 [connection signal="pressed" from="Ship/Panel" to="Jogo" method="_on_ship_panel_pressed" binds= [&"test"]]
+
+[editable path="Workspace/ToolboxTeste"]

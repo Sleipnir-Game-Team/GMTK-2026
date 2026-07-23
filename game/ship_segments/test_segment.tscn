@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_hbfp2"]
 [ext_resource type="PackedScene" uid="uid://mp6bcxumg70u" path="res://game/ship_modules/flip.tscn" id="2_uakjb"]
+[ext_resource type="PackedScene" uid="uid://baq7s4mj72i3r" path="res://game/uses/door.tscn" id="3_yovnm"]
 
 [sub_resource type="Gradient" id="Gradient_vxurl"]
 
@@ -11,7 +12,8 @@ gradient = SubResource("Gradient_vxurl")
 [node name="TestSegment" type="Node2D" unique_id=1366412851 node_paths=PackedStringArray("module_models")]
 script = ExtResource("1_hbfp2")
 module_models = {
-NodePath("TextureButton"): ExtResource("2_uakjb")
+NodePath("TextureButton"): ExtResource("2_uakjb"),
+NodePath("TextureButton2"): ExtResource("3_yovnm")
 }
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=792379349]
@@ -19,6 +21,16 @@ offset_left = 211.0
 offset_top = 39.0
 offset_right = 519.0
 offset_bottom = 219.0
+toggle_mode = true
+texture_normal = SubResource("GradientTexture2D_hbfp2")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1497453580]
+offset_left = 664.0
+offset_top = 39.0
+offset_right = 972.0
+offset_bottom = 219.0
+scale = Vector2(0.19999999, 1)
 toggle_mode = true
 texture_normal = SubResource("GradientTexture2D_hbfp2")
 stretch_mode = 0

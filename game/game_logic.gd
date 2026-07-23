@@ -4,11 +4,13 @@ extends Node
 @export var panel_dict : Dictionary[StringName, PackedScene] = {}
 
 var ship_attributes := {
-	'light_color': 'red'
+	'light_color': 'red',
+	'door': 'closed'
 }
 
 var ship_conditions := {
-	'light_color': 'green'
+	'light_color': 'green',
+	'door': 'open'
 }
 
 var current_segments: Dictionary[StringName, Node2D]
