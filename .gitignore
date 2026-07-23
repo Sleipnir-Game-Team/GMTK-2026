@@ -27,6 +27,7 @@ mono_crash.*.json
 **.wav
 **.tpsheet
 **.asd
+**.webp
 
 **.tmp
 
