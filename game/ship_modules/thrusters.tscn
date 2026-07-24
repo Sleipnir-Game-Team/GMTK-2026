@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b04j8bi86js1w"]
+
+[ext_resource type="Script" uid="uid://b84fdumuihked" path="res://game/ship_modules/thrusters.gd" id="1_lbvuc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbvuc"]
+font_size = 40
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pfyau"]
+font_size = 40
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fsql"]
+font_size = 40
+font_color = Color(0, 1, 0, 1)
+
+[node name="Thrusters" type="Node2D" unique_id=1348608400 node_paths=PackedStringArray("label_1", "label_2", "label_3")]
+script = ExtResource("1_lbvuc")
+label_1 = NodePath("Label")
+label_2 = NodePath("Label2")
+label_3 = NodePath("Label3")
+
+[node name="Label" type="Label" parent="." unique_id=1612819112]
+offset_left = 1390.0
+offset_right = 1920.0
+offset_bottom = 228.0
+text = "Oxygen in the air is: x%"
+label_settings = SubResource("LabelSettings_lbvuc")
+
+[node name="Label2" type="Label" parent="." unique_id=1034232110]
+offset_left = 1390.0
+offset_top = 85.0
+offset_right = 1920.0
+offset_bottom = 313.0
+text = "Oxygen in the air is: x%"
+label_settings = SubResource("LabelSettings_pfyau")
+
+[node name="Label3" type="Label" parent="." unique_id=334239502]
+offset_left = 1393.0
+offset_top = 176.0
+offset_right = 1923.0
+offset_bottom = 404.0
+text = "Oxygen in the air is: x%"
+label_settings = SubResource("LabelSettings_4fsql")

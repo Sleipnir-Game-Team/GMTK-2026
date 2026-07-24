@@ -74,6 +74,7 @@ use_draggable=""
 use_unlock=""
 use_store=""
 use_plumbing=""
+Estabilizer=""
 
 [input]
 

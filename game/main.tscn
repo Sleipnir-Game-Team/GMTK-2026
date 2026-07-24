@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://ceunm6ik2o4y4" path="res://game/main.gd" id="1_cxumw"]
 [ext_resource type="Script" uid="uid://d0pk83r7k4mge" path="res://game/game_logic.gd" id="3_emt18"]
-[ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://game/ship_segments/test_segment.tscn" id="4_vop5m"]
+[ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://game/ship_segments/check.tscn" id="4_vop5m"]
 [ext_resource type="PackedScene" uid="uid://bic4u7fmhl5u6" path="res://game/toolbox_teste.tscn" id="5_5un7r"]
+[ext_resource type="PackedScene" uid="uid://3aok55b405ua" path="res://game/ship_modules/Segment 1.tscn" id="5_itumj"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
+[ext_resource type="Texture2D" uid="uid://chmme5b011d3f" path="res://assets/vecteezy_space-cockpit-illustration-design_34962106.png" id="5_xkbyp"]
 [ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="6_dgpao"]
+[ext_resource type="Script" uid="uid://bv1h4s5g74844" path="res://game/state_manager.gd" id="6_dp3pf"]
+[ext_resource type="Texture2D" uid="uid://croikrl37aywb" path="res://assets/mechionbridge2.png" id="6_lx3aj"]
 [ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key.tscn" id="7_wjctj"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vop5m"]
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -28,20 +30,103 @@ script = ExtResource("1_cxumw")
 [node name="Hud" parent="." unique_id=658315518 instance=ExtResource("5_u5r6x")]
 layout_mode = 2
 
-[node name="Jogo" type="Node" parent="." unique_id=333981997 groups=["Jogo"]]
+[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager") groups=["Jogo"]]
 script = ExtResource("3_emt18")
 time_limit = 20.0
-panel_dict = Dictionary[StringName, PackedScene]({
-&"test": ExtResource("4_vop5m")
-})
+panel_dict = {
+NodePath("../Ship/Cockpit"): ExtResource("4_vop5m"),
+NodePath("../Ship/Sessao 1"): ExtResource("5_itumj"),
+NodePath("../Ship/Sessao 2"): null,
+NodePath("../Ship/Sessao 3"): null,
+NodePath("../Ship/Sessao 4"): null,
+NodePath("../Ship/Sessao 5"): null,
+NodePath("../Ship/Sessao 6"): null,
+NodePath("../Ship/Sessao 7"): null
+}
+state_manager = NodePath("State Manager")
+
+[node name="State Manager" type="Node" parent="Jogo" unique_id=1308149373]
+script = ExtResource("6_dp3pf")
 
 [node name="Ship" type="Node2D" parent="." unique_id=328625406]
 position = Vector2(270, 394)
 
-[node name="Panel" type="TextureButton" parent="Ship" unique_id=1165334968]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = SubResource("PlaceholderTexture2D_vop5m")
+[node name="Cockpit" type="TextureButton" parent="Ship" unique_id=1165334968]
+offset_left = 46.0
+offset_top = -411.0
+offset_right = 4046.0
+offset_bottom = 3589.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("5_xkbyp")
+stretch_mode = 0
+
+[node name="Sessao 1" type="TextureButton" parent="Ship" unique_id=1964648531]
+offset_left = 42.0
+offset_top = -218.0
+offset_right = 4042.0
+offset_bottom = 3782.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 2" type="TextureButton" parent="Ship" unique_id=1568266538]
+visible = false
+offset_left = -208.0
+offset_top = 2.0
+offset_right = 3792.0
+offset_bottom = 4002.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 3" type="TextureButton" parent="Ship" unique_id=1475223341]
+visible = false
+offset_left = 292.0
+offset_top = 11.0
+offset_right = 4292.0
+offset_bottom = 4011.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 4" type="TextureButton" parent="Ship" unique_id=1788007668]
+visible = false
+offset_left = -213.0
+offset_top = 243.0
+offset_right = 3787.0
+offset_bottom = 4243.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 5" type="TextureButton" parent="Ship" unique_id=1850080607]
+visible = false
+offset_left = 43.0
+offset_top = 237.0
+offset_right = 4043.0
+offset_bottom = 4237.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 6" type="TextureButton" parent="Ship" unique_id=394416474]
+visible = false
+offset_left = 292.0
+offset_top = 238.0
+offset_right = 4292.0
+offset_bottom = 4238.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
+stretch_mode = 0
+
+[node name="Sessao 7" type="TextureButton" parent="Ship" unique_id=893996751]
+visible = false
+offset_left = 51.0
+offset_top = 466.0
+offset_right = 4051.0
+offset_bottom = 4466.0
+scale = Vector2(0.05252052, 0.05252052)
+texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Workspace" type="Node2D" parent="." unique_id=1625623387]
@@ -51,7 +136,5 @@ position = Vector2(1856, 711)
 
 [node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
 pre_store = Array[PackedScene]([ExtResource("6_dgpao"), ExtResource("7_wjctj")])
-
-[connection signal="pressed" from="Ship/Panel" to="Jogo" method="_on_ship_panel_pressed" binds= [&"test"]]
 
 [editable path="Workspace/ToolboxTeste"]

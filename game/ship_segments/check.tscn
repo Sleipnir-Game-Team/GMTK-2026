@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dtykqg5pafuvw"]
+
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_hbfp2"]
+[ext_resource type="PackedScene" uid="uid://bh07ejue0rifg" path="res://game/ship_modules/o2.tscn" id="2_eid4q"]
+[ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/_Pngtree_vector_metal_panel_material_2335501-removebg-preview.png" id="2_wwpo6"]
+[ext_resource type="Texture2D" uid="uid://dgorglqqcycp4" path="res://assets/10178160.png" id="3_brn1t"]
+[ext_resource type="PackedScene" uid="uid://b435fhok3tg3a" path="res://game/ship_modules/temp.tscn" id="3_dboxs"]
+[ext_resource type="PackedScene" uid="uid://b04j8bi86js1w" path="res://game/ship_modules/thrusters.tscn" id="4_5il7p"]
+[ext_resource type="Texture2D" uid="uid://cqi6acgi16l3s" path="res://assets/thermometer-icon-colorful-free-png.webp" id="4_683sn"]
+[ext_resource type="Texture2D" uid="uid://bgxgesstwrg0r" path="res://assets/thrust1-500x572.webp" id="5_3yunp"]
+
+[node name="Check" type="Node2D" unique_id=1366412851 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_hbfp2")
+module_models = {
+NodePath("O2"): ExtResource("2_eid4q"),
+NodePath("Temp"): ExtResource("3_dboxs"),
+NodePath("Thrusters"): ExtResource("4_5il7p")
+}
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=57330849]
+offset_left = 575.0
+offset_top = -87.0
+offset_right = 1075.0
+offset_bottom = 413.0
+scale = Vector2(1.6094726, 1.0158539)
+texture = ExtResource("2_wwpo6")
+
+[node name="O2" type="TextureButton" parent="." unique_id=1820458035]
+offset_left = 711.0
+offset_top = 99.0
+offset_right = 1223.0
+offset_bottom = 611.0
+scale = Vector2(0.25137848, 0.25137848)
+texture_normal = ExtResource("3_brn1t")
+
+[node name="Temp" type="TextureButton" parent="." unique_id=1444943775]
+offset_left = 912.0
+offset_top = 85.0
+offset_right = 1262.0
+offset_bottom = 435.0
+scale = Vector2(0.4529435, 0.4529435)
+texture_normal = ExtResource("4_683sn")
+
+[node name="Thrusters" type="TextureButton" parent="." unique_id=1969297291]
+offset_left = 1098.0
+offset_top = 80.0
+offset_right = 1598.0
+offset_bottom = 652.0
+scale = Vector2(0.33714092, 0.30616173)
+texture_normal = ExtResource("5_3yunp")
