@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cq0hwsu707qrj"]
+
+[ext_resource type="Script" uid="uid://c3kd5l5x3dyao" path="res://game/behaviours/scripts/tape.gd" id="1_ex66r"]
+
+[node name="use_tape" type="Node" unique_id=1934677521]
+script = ExtResource("1_ex66r")
+group = &"use_tape"

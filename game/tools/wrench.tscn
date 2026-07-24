@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn77ryrhpigs4"]
 
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
-[ext_resource type="Script" uid="uid://d1hna2a0u2t2v" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
+[ext_resource type="Script" uid="uid://v1ojop4t63ov" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
 [ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://assets/wrench_full.png" id="2_qs0f7"]
 [ext_resource type="PackedScene" uid="uid://c8s8jv2nmeevg" path="res://game/behaviours/plumbing.tscn" id="5_u2yid"]
@@ -23,11 +23,11 @@ shape = SubResource("RectangleShape2D_iquho")
 scale = Vector2(0.17795059, 0.12938994)
 texture = ExtResource("2_qs0f7")
 
-[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_4glyt")]
-
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
 group = &"use_store"
 
 [node name="use_plumbing" parent="." unique_id=1584343753 instance=ExtResource("5_u2yid")]
+
+[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_4glyt")]
 
 [connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]

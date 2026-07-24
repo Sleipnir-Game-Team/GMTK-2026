@@ -64,6 +64,7 @@ enabled=PackedStringArray("res://addons/sleipnir_audio/plugin.cfg")
 folder_colors={
 "res://game/behaviours/": "yellow",
 "res://game/ship_modules/": "blue",
+"res://game/ship_segments/": "purple",
 "res://game/tools/": "green",
 "res://game/uses/": "red"
 }
@@ -76,6 +77,7 @@ use_unlock=""
 use_store=""
 use_plumbing=""
 Estabilizer=""
+use_tape=""
 
 [input]
 
@@ -110,6 +112,7 @@ minus_life={
 2d_physics/layer_7="GOLD_LIGHT"
 2d_physics/layer_8="RED_LIGHT"
 2d_physics/layer_12="TOOLS"
+2d_physics/layer_14="TapeTarget"
 2d_physics/layer_15="PipeTarget"
 2d_physics/layer_16="USES"
 
