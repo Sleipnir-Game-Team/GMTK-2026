@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bhyeka2twm2ep"]
+
+[ext_resource type="Script" uid="uid://bkq81q480r1c2" path="res://game/ship_modules/screw.gd" id="1_a6ce5"]
+[ext_resource type="Texture2D" uid="uid://cbb8d6te1pa4o" path="res://assets/Scratch_BG_Metal_Plate_02.png" id="1_kyg0o"]
+[ext_resource type="PackedScene" uid="uid://cpnn18tt6b065" path="res://game/uses/screw_use.tscn" id="2_a6ce5"]
+
+[sub_resource type="Shader" id="Shader_gc44r"]
+code = "shader_type canvas_item;
+
+uniform bool loose = false;
+
+float rand(vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void vertex() {
+	if(loose){
+		VERTEX += vec2((rand(vec2(45,1) * TIME) * 2.0 - 1.0) * 10.0, (rand(vec2(1,45) * TIME) * 2.0 - 1.0) * 10.0);
+	}
+}"
+
+[node name="Screw1" type="Node2D" unique_id=1792564692 node_paths=PackedStringArray("screws")]
+script = ExtResource("1_a6ce5")
+screws = [NodePath("ScrewUse"), NodePath("ScrewUse2"), NodePath("ScrewUse3"), NodePath("ScrewUse4")]
+screen_name = &"screw_screen_1"
+
+[node name="Plate" type="TextureRect" parent="." unique_id=602430992]
+offset_left = 1353.0
+offset_top = 31.0
+offset_right = 1881.0
+offset_bottom = 404.0
+texture = ExtResource("1_kyg0o")
+
+[node name="ScrewUse" parent="." unique_id=926542711 instance=ExtResource("2_a6ce5")]
+position = Vector2(1374, 50)
+loose_shader = SubResource("Shader_gc44r")
+
+[node name="ScrewUse2" parent="." unique_id=1808352701 instance=ExtResource("2_a6ce5")]
+position = Vector2(1838, 46)
+
+[node name="ScrewUse3" parent="." unique_id=1216349073 instance=ExtResource("2_a6ce5")]
+position = Vector2(1366, 361)
+
+[node name="ScrewUse4" parent="." unique_id=1104235858 instance=ExtResource("2_a6ce5")]
+position = Vector2(1838, 362)

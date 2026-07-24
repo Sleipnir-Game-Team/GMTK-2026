@@ -11,4 +11,4 @@ func _ready() -> void:
 		label.label_settings.font_color = Color.RED
 	else:
 		label.label_settings.font_color = Color.GREEN
-	label.text = 'Temperature is: '+str(temp)+'°C'
+	label.text = 'Temperature is: '+str(snapped(temp,1))+'°C'

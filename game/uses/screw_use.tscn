@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cpnn18tt6b065"]
+
+[ext_resource type="Texture2D" uid="uid://o0l4qj6urj3k" path="res://assets/Screw-Transparent.png" id="1_1fcpd"]
+[ext_resource type="Shader" uid="uid://dwi0xj30ix5vv" path="res://shaders/screw_use.gdshader" id="1_fvm4a"]
+[ext_resource type="Script" uid="uid://cjk7bxwvr2wh" path="res://game/uses/scripts/screw_use.gd" id="1_vm1b6"]
+[ext_resource type="Texture2D" uid="uid://btaos1exyjks0" path="res://assets/Screw_Butt.png" id="4_u35e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm1b6"]
+size = Vector2(53, 52)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fvm4a"]
+resource_local_to_scene = true
+shader = ExtResource("1_fvm4a")
+shader_parameter/loose = false
+
+[sub_resource type="Animation" id="Animation_ebpvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.2193617]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:loose")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5q316"]
+resource_name = "tight"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.59999996, 0.8, 1, 1.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.60569394, 0.2007128639793479, 0.5445427266222306, 0.68537, 0.82619727, 0.46877763]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:loose")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3k85l"]
+_data = {
+&"RESET": SubResource("Animation_ebpvg"),
+&"tight": SubResource("Animation_5q316")
+}
+
+[node name="ScrewUse" type="Area2D" unique_id=926542711 node_paths=PackedStringArray("image", "animation_player") groups=["use_screwable"]]
+collision_layer = 32768
+collision_mask = 2048
+script = ExtResource("1_vm1b6")
+image = NodePath("Screw")
+loose_shader = ExtResource("1_fvm4a")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1025044071]
+position = Vector2(16, 17)
+shape = SubResource("RectangleShape2D_vm1b6")
+
+[node name="Screw" type="TextureRect" parent="." unique_id=791229542]
+material = SubResource("ShaderMaterial_fvm4a")
+offset_left = -20.0
+offset_top = -18.0
+offset_right = 380.0
+offset_bottom = 382.0
+scale = Vector2(0.17804624, 0.17184672)
+texture = ExtResource("1_1fcpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676476094]
+visible = false
+position = Vector2(16, 18)
+rotation = -1.2193617
+scale = Vector2(0.19856775, 0.19856775)
+texture = ExtResource("4_u35e3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=91618781]
+libraries/ = SubResource("AnimationLibrary_3k85l")
+speed_scale = 2.0

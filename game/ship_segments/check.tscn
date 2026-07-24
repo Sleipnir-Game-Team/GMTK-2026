@@ -18,33 +18,33 @@ NodePath("Thrusters"): ExtResource("4_5il7p")
 }
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=57330849]
-offset_left = 575.0
-offset_top = -87.0
-offset_right = 1075.0
-offset_bottom = 413.0
+offset_left = 418.0
+offset_top = -96.0
+offset_right = 918.0
+offset_bottom = 404.0
 scale = Vector2(1.6094726, 1.0158539)
 texture = ExtResource("2_wwpo6")
 
 [node name="O2" type="TextureButton" parent="." unique_id=1820458035]
-offset_left = 711.0
-offset_top = 99.0
-offset_right = 1223.0
-offset_bottom = 611.0
+offset_left = 554.0
+offset_top = 90.0
+offset_right = 1066.0
+offset_bottom = 602.0
 scale = Vector2(0.25137848, 0.25137848)
 texture_normal = ExtResource("3_brn1t")
 
 [node name="Temp" type="TextureButton" parent="." unique_id=1444943775]
-offset_left = 912.0
-offset_top = 85.0
-offset_right = 1262.0
-offset_bottom = 435.0
+offset_left = 755.0
+offset_top = 76.0
+offset_right = 1105.0
+offset_bottom = 426.0
 scale = Vector2(0.4529435, 0.4529435)
 texture_normal = ExtResource("4_683sn")
 
 [node name="Thrusters" type="TextureButton" parent="." unique_id=1969297291]
-offset_left = 1098.0
-offset_top = 80.0
-offset_right = 1598.0
-offset_bottom = 652.0
+offset_left = 941.0
+offset_top = 71.0
+offset_right = 1441.0
+offset_bottom = 643.0
 scale = Vector2(0.33714092, 0.30616173)
 texture_normal = ExtResource("5_3yunp")

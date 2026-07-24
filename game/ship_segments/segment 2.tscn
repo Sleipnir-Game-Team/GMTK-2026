@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dkxq52o405pg8"]
+
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_bvxae"]
+[ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/_Pngtree_vector_metal_panel_material_2335501-removebg-preview.png" id="1_rua3i"]
+[ext_resource type="PackedScene" uid="uid://bhyeka2twm2ep" path="res://game/ship_modules/screw 1.tscn" id="2_dwwdm"]
+[ext_resource type="Texture2D" uid="uid://c8rlji58j3t0m" path="res://assets/screw-plus-head-png.webp" id="2_wmm1i"]
+
+[node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_bvxae")
+module_models = {
+NodePath("Screw"): ExtResource("2_dwwdm")
+}
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=685861630]
+offset_left = 418.0
+offset_top = -96.0
+offset_right = 918.0
+offset_bottom = 404.0
+scale = Vector2(1.6094726, 1.0158539)
+texture = ExtResource("1_rua3i")
+
+[node name="Screw" type="TextureButton" parent="." unique_id=518412540]
+offset_left = 941.0
+offset_top = 71.0
+offset_right = 1441.0
+offset_bottom = 643.0
+scale = Vector2(0.33714092, 0.30616173)
+texture_normal = ExtResource("2_wmm1i")
+stretch_mode = 0

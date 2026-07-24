@@ -57,6 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		_drag_offset = _parent_node.get_local_mouse_position() * _parent_node.get_screen_transform().get_scale()
+		_drag_offset = _drag_offset.rotated(_parent_node.rotation)
 		_dragging = !_dragging
 		
 		if _dragging:

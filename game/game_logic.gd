@@ -10,10 +10,7 @@ var current_segment: Node
 
 var ship_attributes := {
 	'oxigen': 21.5,
-	'temp': 30,
-	'propulsor_1': true,
-	'propulsor_2': true,
-	'propulsor_3': true
+	'temp': 30
 }
 
 var oxigen: float:
@@ -30,24 +27,20 @@ var temp: float:
 
 var propulsor_1: float:
 	get:
-		return ship_attributes['propulsor_1']
-
+		var total_screws = 4
+		var okay = state_manager.get_thruster_1_screws() <= total_screws * 0.25
+		return okay
 var propulsor_2: float:
 	get:
-		return ship_attributes['propulsor_2']
-
-var propulsor_3: float:
-	get:
-		return ship_attributes['propulsor_3']
+		var total_screws = 4
+		var okay = state_manager.get_thruster_2_screws() <= total_screws * 0.25
+		return okay
 
 var ship_conditions := {
 	'min_oxigen': 19.5,
 	'max_oxigen': 23.5,
 	'min_temp': 10,
-	'max_temp': 50,
-	'propulsor_1': true,
-	'propulsor_2': true,
-	'propulsor_3': true
+	'max_temp': 50
 }
 
 
@@ -80,8 +73,7 @@ func check_conditions() -> bool:
 	if (oxigen > ship_conditions['max_oxigen'] or oxigen < ship_conditions['min_oxigen']
 		or temp > ship_conditions['max_temp'] or temp < ship_conditions['min_temp']
 		or !propulsor_1
-		or !propulsor_2
-		or !propulsor_3):
+		or !propulsor_2):
 		passable = false
 	#for condition:String in ship_conditions.keys():
 		#if(
