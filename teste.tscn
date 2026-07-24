@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://bmtmm72pm5nsm"]
 
-[ext_resource type="PackedScene" uid="uid://baq7s4mj72i3r" path="res://game/uses/door.tscn" id="2_7w86a"]
-[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key.tscn" id="2_s2wow"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="1_o02vu"]
+[ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="2_7w86a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o02vu"]
+size = Vector2(439, 675)
 
 [node name="Teste" type="Node" unique_id=2142931688]
 
-[node name="Door" parent="." unique_id=264562592 instance=ExtResource("2_7w86a")]
-position = Vector2(1716.9999, 744.99994)
-scale = Vector2(5.275, 5.275)
+[node name="Pipe" parent="." unique_id=245482926 instance=ExtResource("1_o02vu")]
+position = Vector2(1585, 578)
+rotation = 1.5707964
+scale = Vector2(0.52518034, 0.52518034)
 
-[node name="Key" parent="." unique_id=1552411005 instance=ExtResource("2_s2wow")]
-position = Vector2(269, 520)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe" unique_id=1685559992]
+position = Vector2(13.328857, 0)
+rotation = -1.5707964
+scale = Vector2(1.9041079, 1.9041079)
+shape = SubResource("RectangleShape2D_o02vu")
+
+[node name="Wrench" parent="." unique_id=305978293 instance=ExtResource("2_7w86a")]
+position = Vector2(1265, 486.00003)
+scale = Vector2(2.2317176, 2.6082907)

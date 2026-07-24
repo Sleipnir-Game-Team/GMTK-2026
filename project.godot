@@ -73,6 +73,7 @@ Jogo=""
 use_draggable=""
 use_unlock=""
 use_store=""
+use_plumbing=""
 
 [input]
 
@@ -107,6 +108,7 @@ minus_life={
 2d_physics/layer_7="GOLD_LIGHT"
 2d_physics/layer_8="RED_LIGHT"
 2d_physics/layer_12="TOOLS"
+2d_physics/layer_15="PipeTarget"
 2d_physics/layer_16="USES"
 
 [rendering]

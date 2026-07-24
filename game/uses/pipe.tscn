@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bxokrabkatrvy"]
+
+[ext_resource type="Script" uid="uid://c87wfjnbmu4ix" path="res://game/uses/scripts/pipe.gd" id="1_8hv7q"]
+[ext_resource type="Texture2D" uid="uid://bn1f6ljkhhfre" path="res://register_big.png" id="2_iec6w"]
+[ext_resource type="Script" uid="uid://b1dhqvy3v3cgi" path="res://game/uses/pipes/plumbing_target.gd" id="2_qd8nk"]
+[ext_resource type="Texture2D" uid="uid://cic4bb2t1wrfx" path="res://straight_small.png" id="3_qd8nk"]
+[ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://wrench_full.png" id="3_vkw0w"]
+[ext_resource type="Texture2D" uid="uid://fdqsxbum3emh" path="res://cross_small.png" id="4_vkw0w"]
+[ext_resource type="Texture2D" uid="uid://55x1inf3v41k" path="res://straight_long.png" id="5_1e30i"]
+[ext_resource type="Texture2D" uid="uid://ovyclbtmb8ud" path="res://uturn_small.png" id="6_q6enw"]
+[ext_resource type="Texture2D" uid="uid://bbcu4pd1g2yvn" path="res://elbow.png" id="7_1acx5"]
+[ext_resource type="Texture2D" uid="uid://bg4qww0dxkpir" path="res://curve.png" id="8_tmyky"]
+[ext_resource type="Texture2D" uid="uid://cus5ey10mhfij" path="res://tpiece.png" id="9_p74k3"]
+[ext_resource type="Texture2D" uid="uid://bwlfm6yasnnvj" path="res://register_small.png" id="10_yoklb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iec6w"]
+radius = 31.06445
+
+[node name="Pipe" type="Area2D" unique_id=245482926 groups=["use_plumbing"]]
+collision_layer = 32768
+collision_mask = 2048
+script = ExtResource("1_8hv7q")
+
+[node name="TargetA" type="Area2D" parent="." unique_id=1314867208]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-333, -213)
+collision_layer = 16384
+collision_mask = 0
+input_pickable = false
+script = ExtResource("2_qd8nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetA" unique_id=340348277]
+z_index = 1
+shape = SubResource("CircleShape2D_iec6w")
+debug_color = Color(6.738305e-07, 0.6450337, 0.2751431, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="TargetA" unique_id=1664852593]
+visible = false
+rotation = 1.0471976
+scale = Vector2(0.3278018, 0.3278018)
+texture = ExtResource("3_vkw0w")
+centered = false
+offset = Vector2(-93.59, -62.17)
+flip_h = true
+
+[node name="TargetB" type="Area2D" parent="." unique_id=248190354]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(211, 271)
+collision_layer = 16384
+collision_mask = 0
+input_pickable = false
+script = ExtResource("2_qd8nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetB" unique_id=1769952238]
+z_index = 1
+shape = SubResource("CircleShape2D_iec6w")
+debug_color = Color(6.738305e-07, 0.6450337, 0.2751431, 0.41960785)
+
+[node name="TargetC" type="Area2D" parent="." unique_id=1875363573]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-38, 40)
+collision_layer = 16384
+collision_mask = 0
+input_pickable = false
+script = ExtResource("2_qd8nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetC" unique_id=553754889]
+z_index = 1
+shape = SubResource("CircleShape2D_iec6w")
+debug_color = Color(6.738305e-07, 0.6450337, 0.2751431, 0.41960785)
+
+[node name="TargetD" type="Area2D" parent="." unique_id=1016707801]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(347, -226)
+collision_layer = 16384
+collision_mask = 0
+input_pickable = false
+script = ExtResource("2_qd8nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetD" unique_id=522364372]
+z_index = 1
+shape = SubResource("CircleShape2D_iec6w")
+debug_color = Color(6.738305e-07, 0.6450337, 0.2751431, 0.41960785)
+
+[node name="RegisterBig" type="Sprite2D" parent="." unique_id=121561216]
+position = Vector2(371, 210.24487)
+scale = Vector2(1.2984633, 1.2984633)
+texture = ExtResource("2_iec6w")
+
+[node name="StraightSmall" type="Sprite2D" parent="." unique_id=607246356]
+position = Vector2(422, -223.75513)
+texture = ExtResource("3_qd8nk")
+
+[node name="CrossSmall" type="Sprite2D" parent="." unique_id=223068907]
+position = Vector2(-530.9693, 107.74487)
+scale = Vector2(1.2034687, 1.2034687)
+texture = ExtResource("4_vkw0w")
+
+[node name="StraightLong" type="Sprite2D" parent="." unique_id=1757143429]
+position = Vector2(37, -57.755127)
+texture = ExtResource("5_1e30i")
+
+[node name="UturnSmall" type="Sprite2D" parent="." unique_id=2112799684]
+position = Vector2(-262.96933, 311.74487)
+texture = ExtResource("6_q6enw")
+
+[node name="Elbow" type="Sprite2D" parent="." unique_id=2056309783]
+position = Vector2(-383.96933, 150.74487)
+rotation = 1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Curve2" type="Sprite2D" parent="." unique_id=1003138050]
+position = Vector2(216, -148.75513)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="Curve" type="Sprite2D" parent="." unique_id=692645368]
+position = Vector2(-103.96933, 121.74487)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="Tpiece" type="Sprite2D" parent="." unique_id=397885635]
+position = Vector2(88.03064, 52.744873)
+texture = ExtResource("9_p74k3")
+
+[node name="Elbow2" type="Sprite2D" parent="." unique_id=499729277]
+position = Vector2(177, 230.24487)
+rotation = -1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Elbow4" type="Sprite2D" parent="." unique_id=345661729]
+position = Vector2(393, -94.75513)
+rotation = 3.1415925
+texture = ExtResource("7_1acx5")
+
+[node name="Elbow3" type="Sprite2D" parent="." unique_id=1634008526]
+position = Vector2(-297, -102.75513)
+rotation = -1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Curve3" type="Sprite2D" parent="." unique_id=1401813820]
+position = Vector2(509, -271.75513)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="RegisterSmall" type="Sprite2D" parent="." unique_id=1848797819]
+position = Vector2(-362.99997, -308.75513)
+rotation = -1.5707964
+scale = Vector2(1.1200426, 1.1200426)
+texture = ExtResource("10_yoklb")

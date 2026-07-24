@@ -3,16 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
 [ext_resource type="Script" uid="uid://d1hna2a0u2t2v" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
+[ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://wrench_full.png" id="2_qs0f7"]
+[ext_resource type="PackedScene" uid="uid://c8s8jv2nmeevg" path="res://game/behaviours/plumbing.tscn" id="5_u2yid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iquho"]
 size = Vector2(20, 59)
-
-[sub_resource type="Gradient" id="Gradient_iquho"]
-offsets = PackedFloat32Array(0.011029412, 1)
-colors = PackedColorArray(0, 0, 1, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4glyt"]
-gradient = SubResource("Gradient_iquho")
 
 [node name="Wrench" type="Area2D" unique_id=305978293]
 scale = Vector2(7.4729996, 8.733971)
@@ -25,12 +20,14 @@ scale = Vector2(1.1955376, 1.2868329)
 shape = SubResource("RectangleShape2D_iquho")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496410401]
-scale = Vector2(0.36, 1.1600006)
-texture = SubResource("GradientTexture2D_4glyt")
+scale = Vector2(0.17795059, 0.12938994)
+texture = ExtResource("2_qs0f7")
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("1_4glyt")]
 
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
 group = &"use_store"
+
+[node name="use_plumbing" parent="." unique_id=1584343753 instance=ExtResource("5_u2yid")]
 
 [connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]

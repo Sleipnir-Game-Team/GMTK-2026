@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c8s8jv2nmeevg"]
+
+[ext_resource type="Script" uid="uid://dujhkk3y0xxt5" path="res://game/behaviours/scripts/plumbing.gd" id="1_cwqy3"]
+
+[node name="use_plumbing" type="Node" unique_id=1584343753]
+script = ExtResource("1_cwqy3")
+group = &"use_plumbing"
