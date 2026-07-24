@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b435fhok3tg3a"]
+
+[ext_resource type="Script" uid="uid://dlcjhthqyv6jo" path="res://game/ship_modules/temp.gd" id="1_801qe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_801qe"]
+font_size = 40
+font_color = Color(0, 1, 0, 1)
+
+[node name="Temp" type="Node2D" unique_id=1765592894 node_paths=PackedStringArray("label")]
+script = ExtResource("1_801qe")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1495180767]
+offset_left = 1390.0
+offset_right = 1920.0
+offset_bottom = 228.0
+text = "Oxygen in the air is: x%"
+label_settings = SubResource("LabelSettings_801qe")
