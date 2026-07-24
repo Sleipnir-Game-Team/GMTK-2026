@@ -8,5 +8,7 @@ func act(pipe: Area2D) -> void:
 	tool.process_mode = Node.PROCESS_MODE_DISABLED
 	tool.visible = false
 	await pipe.start_plumbing()
-	tool.visible = true
 	tool.process_mode = Node.PROCESS_MODE_INHERIT
+	tool.visible = true
+	tool.grab()
+	

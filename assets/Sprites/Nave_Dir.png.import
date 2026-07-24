@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://le1qle2c5e7i"
-path="res://.godot/imported/wrench_body.png-d19ea41d0df401239649dc77cf4e4b1e.ctex"
+uid="uid://cjymdmecrpxdq"
+path="res://.godot/imported/Nave_Dir.png-8763b827b119e28486dec6a221138ee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wrench_body.png"
-dest_files=["res://.godot/imported/wrench_body.png-d19ea41d0df401239649dc77cf4e4b1e.ctex"]
+source_file="res://assets/Sprites/Nave_Dir.png"
+dest_files=["res://.godot/imported/Nave_Dir.png-8763b827b119e28486dec6a221138ee0.ctex"]
 
 [params]
 

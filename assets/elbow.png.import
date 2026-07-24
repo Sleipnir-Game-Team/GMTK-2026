@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu8txquit42iv"
-path="res://.godot/imported/wrench_wheel.png-89a049b9bb75e370f15cea77f108fb89.ctex"
+uid="uid://bbcu4pd1g2yvn"
+path="res://.godot/imported/elbow.png-66b15d6085ce4d298e259cb97118626d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wrench_wheel.png"
-dest_files=["res://.godot/imported/wrench_wheel.png-89a049b9bb75e370f15cea77f108fb89.ctex"]
+source_file="res://assets/elbow.png"
+dest_files=["res://.godot/imported/elbow.png-66b15d6085ce4d298e259cb97118626d.ctex"]
 
 [params]
 

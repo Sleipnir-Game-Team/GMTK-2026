@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ovyclbtmb8ud"
-path="res://.godot/imported/uturn_small.png-64c0f8023bb1698b779cbd0c3d47305b.ctex"
+uid="uid://b3df4lt3m3rxd"
+path="res://.godot/imported/Nave_Esq.png-25612068e8c3d545c08041905a0c1e56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://uturn_small.png"
-dest_files=["res://.godot/imported/uturn_small.png-64c0f8023bb1698b779cbd0c3d47305b.ctex"]
+source_file="res://assets/Sprites/Nave_Esq.png"
+dest_files=["res://.godot/imported/Nave_Esq.png-25612068e8c3d545c08041905a0c1e56.ctex"]
 
 [params]
 

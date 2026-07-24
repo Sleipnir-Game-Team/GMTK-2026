@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8j4kebc6g25v"
-path="res://.godot/imported/uturn_long.png-8cd9558a6b4669d642405d7182d8598d.ctex"
+uid="uid://cus5ey10mhfij"
+path="res://.godot/imported/tpiece.png-b70c4adda53993044e1bf5f3fa944e4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://uturn_long.png"
-dest_files=["res://.godot/imported/uturn_long.png-8cd9558a6b4669d642405d7182d8598d.ctex"]
+source_file="res://assets/tpiece.png"
+dest_files=["res://.godot/imported/tpiece.png-b70c4adda53993044e1bf5f3fa944e4f.ctex"]
 
 [params]
 

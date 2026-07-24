@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cus5ey10mhfij"
-path="res://.godot/imported/tpiece.png-28fa325b79b9c596e529d0d98a7afeaf.ctex"
+uid="uid://o0l4qj6urj3k"
+path="res://.godot/imported/Screw-Transparent.png-d997141b30a06ef3042dc93298391419.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tpiece.png"
-dest_files=["res://.godot/imported/tpiece.png-28fa325b79b9c596e529d0d98a7afeaf.ctex"]
+source_file="res://assets/Screw-Transparent.png"
+dest_files=["res://.godot/imported/Screw-Transparent.png-d997141b30a06ef3042dc93298391419.ctex"]
 
 [params]
 

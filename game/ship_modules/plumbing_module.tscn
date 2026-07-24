@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bxokrabkatrvy"]
+
+[ext_resource type="Texture2D" uid="uid://bn1f6ljkhhfre" path="res://assets/register_big.png" id="2_iec6w"]
+[ext_resource type="PackedScene" uid="uid://cwoqcfqkw1scl" path="res://game/uses/pipe.tscn" id="2_qd8nk"]
+[ext_resource type="Texture2D" uid="uid://cic4bb2t1wrfx" path="res://assets/straight_small.png" id="3_qd8nk"]
+[ext_resource type="Texture2D" uid="uid://fdqsxbum3emh" path="res://assets/cross_small.png" id="4_vkw0w"]
+[ext_resource type="Texture2D" uid="uid://55x1inf3v41k" path="res://assets/straight_long.png" id="5_1e30i"]
+[ext_resource type="Texture2D" uid="uid://ovyclbtmb8ud" path="res://assets/uturn_small.png" id="6_q6enw"]
+[ext_resource type="Texture2D" uid="uid://bbcu4pd1g2yvn" path="res://assets/elbow.png" id="7_1acx5"]
+[ext_resource type="Texture2D" uid="uid://bg4qww0dxkpir" path="res://assets/curve.png" id="8_tmyky"]
+[ext_resource type="Texture2D" uid="uid://cus5ey10mhfij" path="res://assets/tpiece.png" id="9_p74k3"]
+[ext_resource type="Texture2D" uid="uid://bwlfm6yasnnvj" path="res://assets/register_small.png" id="10_yoklb"]
+
+[node name="Plumbing" type="Area2D" unique_id=245482926]
+
+[node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(-330, -161)
+rotation = -1.5522739
+
+[node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(339, -221)
+
+[node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(234, 273)
+
+[node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(-444, 106)
+
+[node name="RegisterBig" type="Sprite2D" parent="." unique_id=121561216]
+position = Vector2(371, 210.24487)
+scale = Vector2(1.2984633, 1.2984633)
+texture = ExtResource("2_iec6w")
+
+[node name="StraightSmall" type="Sprite2D" parent="." unique_id=607246356]
+position = Vector2(422, -223.75513)
+texture = ExtResource("3_qd8nk")
+
+[node name="CrossSmall" type="Sprite2D" parent="." unique_id=223068907]
+position = Vector2(-530.9693, 107.74487)
+scale = Vector2(1.2034687, 1.2034687)
+texture = ExtResource("4_vkw0w")
+
+[node name="StraightLong" type="Sprite2D" parent="." unique_id=1757143429]
+position = Vector2(37, -57.755127)
+texture = ExtResource("5_1e30i")
+
+[node name="UturnSmall" type="Sprite2D" parent="." unique_id=2112799684]
+position = Vector2(-262.96933, 311.74487)
+texture = ExtResource("6_q6enw")
+
+[node name="Elbow" type="Sprite2D" parent="." unique_id=2056309783]
+position = Vector2(-383.96933, 150.74487)
+rotation = 1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Curve2" type="Sprite2D" parent="." unique_id=1003138050]
+position = Vector2(216, -148.75513)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="Curve" type="Sprite2D" parent="." unique_id=692645368]
+position = Vector2(-103.96933, 121.74487)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="Tpiece" type="Sprite2D" parent="." unique_id=397885635]
+position = Vector2(88.03064, 52.744873)
+texture = ExtResource("9_p74k3")
+
+[node name="Elbow2" type="Sprite2D" parent="." unique_id=499729277]
+position = Vector2(177, 230.24487)
+rotation = -1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Elbow4" type="Sprite2D" parent="." unique_id=345661729]
+position = Vector2(393, -94.75513)
+rotation = 3.1415925
+texture = ExtResource("7_1acx5")
+
+[node name="Elbow3" type="Sprite2D" parent="." unique_id=1634008526]
+position = Vector2(-297, -102.75513)
+rotation = -1.5707964
+texture = ExtResource("7_1acx5")
+
+[node name="Curve3" type="Sprite2D" parent="." unique_id=1401813820]
+position = Vector2(509, -271.75513)
+rotation = 1.5707964
+texture = ExtResource("8_tmyky")
+
+[node name="RegisterSmall" type="Sprite2D" parent="." unique_id=1848797819]
+position = Vector2(-362.99997, -308.75513)
+rotation = -1.5707964
+scale = Vector2(1.1200426, 1.1200426)
+texture = ExtResource("10_yoklb")

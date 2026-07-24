@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg4qww0dxkpir"
-path="res://.godot/imported/curve.png-d46eb8656dad997e20ab62764b77140a.ctex"
+uid="uid://55x1inf3v41k"
+path="res://.godot/imported/straight_long.png-f756163654bc474ac76977c57cd4e63e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://curve.png"
-dest_files=["res://.godot/imported/curve.png-d46eb8656dad997e20ab62764b77140a.ctex"]
+source_file="res://assets/straight_long.png"
+dest_files=["res://.godot/imported/straight_long.png-f756163654bc474ac76977c57cd4e63e.ctex"]
 
 [params]
 

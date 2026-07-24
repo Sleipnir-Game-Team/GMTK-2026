@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqo8x537x4s3c"
-path="res://.godot/imported/wrench_cursor.png-90d323a07085cfabe8cd3b7340a5efaa.ctex"
+uid="uid://ckwealxe43p34"
+path="res://.godot/imported/flute.png-a8894c0f5516d94289e963a648146e9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wrench_cursor.png"
-dest_files=["res://.godot/imported/wrench_cursor.png-90d323a07085cfabe8cd3b7340a5efaa.ctex"]
+source_file="res://assets/flute.png"
+dest_files=["res://.godot/imported/flute.png-a8894c0f5516d94289e963a648146e9a.ctex"]
 
 [params]
 

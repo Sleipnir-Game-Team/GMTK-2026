@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byv38kbj8oa3y"
-path="res://.godot/imported/wrench_head.png-eb35c8bceef01a4e9569026ea9cf0ae4.ctex"
+uid="uid://cbb8d6te1pa4o"
+path="res://.godot/imported/Scratch_BG_Metal_Plate_02.png-e1beaaa310d4f202ad49d8405e1c80af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wrench_head.png"
-dest_files=["res://.godot/imported/wrench_head.png-eb35c8bceef01a4e9569026ea9cf0ae4.ctex"]
+source_file="res://assets/Scratch_BG_Metal_Plate_02.png"
+dest_files=["res://.godot/imported/Scratch_BG_Metal_Plate_02.png-e1beaaa310d4f202ad49d8405e1c80af.ctex"]
 
 [params]
 

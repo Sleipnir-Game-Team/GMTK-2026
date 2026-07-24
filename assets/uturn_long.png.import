@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i6ojw7eea1uy"
-path="res://.godot/imported/junction.png-a23be440e460f0b93ca246387b447dc5.ctex"
+uid="uid://b8j4kebc6g25v"
+path="res://.godot/imported/uturn_long.png-37de421f3768485c091a63014163d2ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://junction.png"
-dest_files=["res://.godot/imported/junction.png-a23be440e460f0b93ca246387b447dc5.ctex"]
+source_file="res://assets/uturn_long.png"
+dest_files=["res://.godot/imported/uturn_long.png-37de421f3768485c091a63014163d2ac.ctex"]
 
 [params]
 

@@ -33,3 +33,9 @@ func _on_use(use: Area2D, group: StringName) -> void:
 
 func group_matches(group: StringName) -> bool:
 	return behaviours.has(group)
+
+## Automatically transport tool to player's cursor, and grabs it.
+func grab() -> void:
+	assert($use_draggable != null, "Por que caralhos tua tool não tem um use_draggable??")
+	$use_draggable._dragging = true
+	$use_draggable.drag()

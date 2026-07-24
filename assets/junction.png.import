@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckwealxe43p34"
-path="res://.godot/imported/flute.png-10e19deefd732b9452186bda1c2462fe.ctex"
+uid="uid://i6ojw7eea1uy"
+path="res://.godot/imported/junction.png-905011ae860c8f685c33fc0c29783190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://flute.png"
-dest_files=["res://.godot/imported/flute.png-10e19deefd732b9452186bda1c2462fe.ctex"]
+source_file="res://assets/junction.png"
+dest_files=["res://.godot/imported/junction.png-905011ae860c8f685c33fc0c29783190.ctex"]
 
 [params]
 
