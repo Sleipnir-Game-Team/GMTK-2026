@@ -94,6 +94,7 @@ func drag() -> void:
 	query.collide_with_bodies = false
 	query.collision_mask = 1 << 16 - 1 # Camada 16 é onde tem os Uses
 	query.position = mouse_position
+	# Deixa essa porra aqui sem tipo se não dá erro.
 	var res = _parent_node.get_world_2d().direct_space_state.intersect_point(query, 1).pop_back()
 	_mouse_in_use_area = res != null and res.collider == _intersecting_use_area
 

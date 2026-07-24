@@ -1,26 +1,26 @@
 extends Node2D
 
-@export var slider_1 : VSlider 
-@export var slider_2 : VSlider 
-@export var slider_3 : VSlider 
-@export var label_oxi : Label 
-@export var label_temp : Label 
+@export var slider_1: VSlider 
+@export var slider_2: VSlider 
+@export var slider_3: VSlider 
+@export var label_oxi: Label 
+@export var label_temp: Label 
 
-var low_oxi_slider : VSlider
-var mid_oxi_slider : VSlider
-var high_oxi_slider : VSlider
+var low_oxi_slider: VSlider
+var mid_oxi_slider: VSlider
+var high_oxi_slider: VSlider
 
-var low_temp_slider : VSlider
-var mid_temp_slider : VSlider
-var high_temp_slider : VSlider
+var low_temp_slider: VSlider
+var mid_temp_slider: VSlider
+var high_temp_slider: VSlider
 
-var state_manager : Node
+@onready var jogo: Node = get_tree().get_first_node_in_group("Jogo")
+@onready var state_manager: Node = jogo.state_manager
 
-func _ready():
-	state_manager = get_tree().get_first_node_in_group("Jogo").state_manager
-	var state = state_manager.equalizer_state
+func _ready() -> void:
+	var state: Dictionary = state_manager.equalizer_state
 	
-	var sliders = [slider_1, slider_2, slider_3]
+	var sliders: Array[VSlider] = [slider_1, slider_2, slider_3]
 	
 	low_oxi_slider = sliders[state['low_oxi_slider']]
 	mid_oxi_slider = sliders[state['mid_oxi_slider']]
@@ -47,7 +47,7 @@ func _ready():
 	
 	change_labels()
 
-func update_values():
+func update_values() -> void:
 	state_manager.equalizer_state.low_oxi_value = low_oxi_slider.value
 	state_manager.equalizer_state.mid_oxi_value = mid_oxi_slider.value
 	state_manager.equalizer_state.high_oxi_value = high_oxi_slider.value
@@ -58,7 +58,6 @@ func update_values():
 	change_labels()
 
 
-func change_labels():
-	var jogo = get_tree().get_first_node_in_group("Jogo")
+func change_labels() -> void:
 	label_oxi.text = "Oxigenio: "+str(jogo.oxigen)+"%"
 	label_temp.text = "Temperatura: "+str(jogo.temp)+"°C"

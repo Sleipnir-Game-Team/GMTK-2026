@@ -18,20 +18,24 @@ var ship_attributes := {
 
 var oxigen: float:
 	get:
-		var oxigen_final = ship_attributes['oxigen']
+		var oxigen_final: float = ship_attributes['oxigen']
 		oxigen_final += state_manager.get_equalizer_oxi_value()
-		return clamp(oxigen_final, 0, 100)
+		return clampf(oxigen_final, 0, 100)
+
 var temp: float:
 	get:
-		var temp_final = ship_attributes['temp']
+		var temp_final: float = ship_attributes['temp']
 		temp_final += state_manager.get_equalizer_temp_value()
 		return temp_final
+
 var propulsor_1: float:
 	get:
 		return ship_attributes['propulsor_1']
+
 var propulsor_2: float:
 	get:
 		return ship_attributes['propulsor_2']
+
 var propulsor_3: float:
 	get:
 		return ship_attributes['propulsor_3']
@@ -51,7 +55,7 @@ func _ready() -> void:
 	for panel in panel_dict:
 		panel.pressed.connect(_on_ship_panel_pressed.bind(panel))
 
-func setup(save_data: Dictionary) -> void:
+func setup(_save_data: Dictionary) -> void:
 	start_timer()
 
 func save() -> Dictionary:

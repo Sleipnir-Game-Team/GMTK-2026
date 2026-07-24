@@ -4,7 +4,7 @@ extends Node2D
 @export var label_2 :Label
 @export var label_3 :Label
 
-func _ready():
+func _ready() -> void:
 	var jogo := get_tree().get_first_node_in_group("Jogo")
 	var thruster_1 :bool =  jogo.propulsor_1
 	var thruster_2 :bool =  jogo.propulsor_2

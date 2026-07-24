@@ -63,6 +63,7 @@ enabled=PackedStringArray("res://addons/sleipnir_audio/plugin.cfg")
 
 folder_colors={
 "res://game/behaviours/": "yellow",
+"res://game/ship_modules/": "blue",
 "res://game/tools/": "green",
 "res://game/uses/": "red"
 }

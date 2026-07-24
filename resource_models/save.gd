@@ -3,7 +3,7 @@ class_name Save extends Resource
 # Variaveis salvas exportadas
 # @export exemplo
 
-func save(data: Dictionary) -> void:
+func save(_data: Dictionary) -> void:
 	# Valores passados de data para as variaveis salvas
 	# exemplo = data.exemplo
 	pass  

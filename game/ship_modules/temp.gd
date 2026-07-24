@@ -2,7 +2,7 @@ extends Node2D
 
 @export var label :Label
 
-func _ready():
+func _ready() -> void:
 	var jogo := get_tree().get_first_node_in_group("Jogo")
 	var temp :float =  jogo.temp
 	var max_temp :float =  jogo.ship_conditions['max_temp']
