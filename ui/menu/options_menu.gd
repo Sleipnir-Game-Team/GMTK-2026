@@ -5,7 +5,7 @@ extends Control
 @onready var volume_master_slider: = %volume_master_slider
 @onready var volume_music_slider: = %volume_music_slider
 @onready var volume_sfx_slider: = %volume_sfx_slider
-@onready var mute_checkbox: = %mute_checkbox
+@onready var mute_checkbox:CheckBox = %mute_checkbox
 @onready var keybinding_list: = get_node("%keybinding_list")
 
 
@@ -18,6 +18,7 @@ func _ready() -> void:
 	volume_master_slider.value = min(Config_Handler.get_setting("audio", "master_volume"), 1.0) * 100
 	volume_music_slider.value = min(Config_Handler.get_setting("audio", "music_volume"), 1.0) * 100
 	volume_sfx_slider.value = min(Config_Handler.get_setting("audio", "sfx_volume"), 1.0) * 100
+	mute_checkbox.button_pressed = Config_Handler.get_setting("audio", "mute")
 	
 
 func _on_window_mode_changed(value: int) -> void:
@@ -64,8 +65,8 @@ func _on_volume_sfx_slider_drag_ended(value_changed: bool) -> void:
 
 func _on_mute_checkbox_toggled(toggled_on: bool) -> void:
 	AudioManager.play_global("ui.button.click")
-	Config_Handler.save_audio_settings("muted", toggled_on)
-	Config_Handler.mute_master_volume(toggled_on)
+	Config_Handler.save_audio_settings("mute", toggled_on)
+	Config_Handler.toggle_mute(toggled_on)
 	
 
 func _on_button_pressed() -> void:

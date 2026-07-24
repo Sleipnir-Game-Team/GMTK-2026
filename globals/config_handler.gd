@@ -12,24 +12,56 @@ signal window_resolution_changed
 func _ready() -> void:
 	verify_configfile()
 
+#TODO fazer com que resetar as configs também resete na hora as keys
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("reset_configs"):
+		create_settings()
+
 ######################################### Init Handler #########################################
+#region Init Handler
 func verify_configfile() -> void:
 	if !FileAccess.file_exists(SETTINGS_FILE_PATH):
-		config.set_value("keybinding", "example_input", "A")
-		
-		config.set_value("video", "window_mode", 4)
-		config.set_value("video", "width", pc_width)
-		config.set_value("video", "height", pc_height)
-		
-		config.set_value("audio", "master_volume", 1.0)
-		config.set_value("audio", "music_volume", 1.0)
-		config.set_value("audio", "sfx_volume", 1.0)
-		
-		config.save(SETTINGS_FILE_PATH)
+		create_settings()
 	else:
 		config.load(SETTINGS_FILE_PATH)
 		verify_all_settings()
 		run_all_settings()
+
+func create_settings() -> void:
+	var esc:InputEventKey = InputEventKey.new()
+	var win:InputEventKey = InputEventKey.new()
+	var lose:InputEventKey = InputEventKey.new()
+	var reset:InputEventKey = InputEventKey.new()
+	
+	#TODO verificar como pegar as keys diretamente do project
+	esc.keycode = KEY_ESCAPE
+	win.keycode = KEY_W
+	lose.keycode = KEY_L
+	reset.keycode = KEY_R
+	
+	config.set_value("keybinding", "pause", esc)
+	config.set_value("keybinding", "win", win)
+	config.set_value("keybinding", "lose", lose)
+	config.set_value("keybinding", "reset_configs", reset)
+	
+	config.set_value("video", "window_mode", 4)
+	config.set_value("video", "width", pc_width)
+	config.set_value("video", "height", pc_height)
+	
+	config.set_value("audio", "master_volume", 1.0)
+	config.set_value("audio", "music_volume", 1.0)
+	config.set_value("audio", "sfx_volume", 1.0)
+	config.set_value("audio", "mute", false)
+	
+	config.save(SETTINGS_FILE_PATH)
+
+
+func verify_all_settings() -> void:
+	if get_setting("audio", "mute") == null:
+		save_audio_settings("mute", false)
+	if config.has_section_key("keybinding", "example_input"):
+		save_keybinding_settings("example_input", null)
+
 
 func run_all_settings() -> void:
 	var video_settings := load_all_video_settings()
@@ -39,25 +71,12 @@ func run_all_settings() -> void:
 	change_master_volume(min(audio_settings.master_volume, 1.0) * 100)
 	change_music_volume(min(audio_settings.music_volume, 1.0) * 100)
 	change_sfx_volume(min(audio_settings.sfx_volume, 1.0) * 100)
-
-func verify_all_settings() -> void:
-	if config.has_section_key("video", "resolution"):
-		save_video_settings("resolution", null)
-	if get_setting("video", "width") == null:
-		save_video_settings("width", pc_width)
-	if get_setting("video", "height") == null:
-		save_video_settings("height", pc_height)
-	if type_string(typeof(get_setting("video", "window_mode"))) == "String":
-		save_video_settings("window_mode", 3)
-	if config.has_section_key("video", "supported_resolutions"):
-		save_video_settings("supported_resolutions", null)
-	if config.has_section_key("keybinding", "player_up"):
-		save_keybinding_settings("player_up", null)
-	if config.has_section_key("keybinding", "player_down"):
-		save_keybinding_settings("player_down", null)
+	toggle_mute(audio_settings.mute)
 
 
+#endregion
 ######################################### Window Handler #########################################
+#region Window Handler
 func change_window_mode(mode: int) -> void:
 	DisplayServer.window_set_mode(mode)
 	save_video_settings("window_mode", mode)
@@ -113,8 +132,9 @@ func change_window_settings(window_mode: Variant, window_resolution: Variant) ->
 func reset_window_settings() -> void:
 	change_window_settings(4, [1920, 1080])
 
-
+#endregion
 ######################################### Volume Handler #########################################
+#region Volume Handler
 func change_master_volume(value: float) -> void:
 	AudioManager.change_bus_volume(&"Master", value)
 
@@ -127,27 +147,11 @@ func change_sfx_volume(value: float) -> void:
 	AudioManager.change_bus_volume(&"sfx", value)
 
 
-func mute_master_volume(toggled_on: bool) -> void:
+func toggle_mute(toggled_on: bool) -> void:
 	if toggled_on:
 		AudioServer.set_bus_mute(0,true)
 	else:
 		AudioServer.set_bus_mute(0,false)
-
-
-######################################### Input Handler #########################################
-#func create_action_list():
-	#InputMap.load_from_project_settings()
-	#for item in keybinding_list:
-		#item.queue_free()
-		#
-	#var action_formatted_list = format_actions(InputMap.get_actions())
-	#for action in action_formatted_list:
-		##var button = input_button_scene.instantiate()
-		#pass
-#
-#
-#func format_actions(actions):
-	#pass
 
 #TODO finalizar essa função, conectar ela com os sliders e criar o botão de reset
 func reset_volume_settings() -> void:
@@ -157,9 +161,15 @@ func reset_volume_settings() -> void:
 	save_audio_settings("master_volume", 1.0)
 	save_audio_settings("music_volume", 1.0)
 	save_audio_settings("sfx_volume", 1.0)
+	save_audio_settings("mute", false)
 
+#endregion
+######################################### Keybinding Handler #########################################
+#region Keybinding Handler
 
+#endregion
 ######################################### Saving Handler #########################################
+#region Saving Handler
 func save_video_settings(key: String, value: Variant) -> void:
 	config.set_value("video", key, value)
 	config.save(SETTINGS_FILE_PATH)
@@ -174,8 +184,9 @@ func save_keybinding_settings(key: String, value: Variant) -> void:
 	config.set_value("keybinding", key, value)
 	config.save(SETTINGS_FILE_PATH)
 
-
+#endregion
 ######################################### Loading Handler #########################################
+#region Loading Handler
 func load_all_video_settings() -> Dictionary:
 	var video_settings: Dictionary = {}
 	for key in config.get_section_keys("video"):
@@ -199,3 +210,5 @@ func load_all_keybinding_settings() -> Dictionary:
 
 func get_setting(category: String, key: String) -> Variant:
 	return config.get_value(category, key)
+	
+#endregion
