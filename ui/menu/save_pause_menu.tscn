@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://oxr5u54qty0d"]
+
+[ext_resource type="Script" uid="uid://c8t48uie1ktkv" path="res://ui/menu/save_menu.gd" id="1_kc42o"]
+[ext_resource type="PackedScene" uid="uid://wxltr1ycuuh4" path="res://ui/buttons/new_game.tscn" id="2_j7m5s"]
+[ext_resource type="PackedScene" uid="uid://dl2yn1tsbrk53" path="res://ui/buttons/load_game.tscn" id="3_7ykoh"]
+[ext_resource type="Texture2D" uid="uid://7k2vvkfsqemq" path="res://assets/UI/Mainmenu/Mainmenu_Tablet.png" id="4_bwx3r"]
+[ext_resource type="Texture2D" uid="uid://dxuaypccnv0v4" path="res://assets/UI/Mainmenu/Buttons/Tablet_CloseButton_Normal.png" id="5_8pbm7"]
+[ext_resource type="Texture2D" uid="uid://67ikrg1hxo00" path="res://assets/UI/Mainmenu/Buttons/Tablet_CloseButton_Hover.png" id="6_pdxvy"]
+
+[node name="SaveMenu" type="Control" unique_id=217900500]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kc42o")
+new_game_model = ExtResource("2_j7m5s")
+load_game_model = ExtResource("3_7ykoh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=722278018]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=1159062896]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1135208165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bwx3r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect" unique_id=944417109]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 78.0
+offset_right = 1740.0
+offset_bottom = 1160.0
+scale = Vector2(1.0150096, 0.8606141)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect/VBoxContainer" unique_id=399776586]
+custom_minimum_size = Vector2(0, 950)
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer" unique_id=265550759]
+layout_mode = 2
+
+[node name="Saves" type="VBoxContainer" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1350892397]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer" unique_id=525401536]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="back" type="HBoxContainer" parent="CanvasLayer/TextureRect/VBoxContainer" unique_id=2073779733]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer/back" unique_id=25776019]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="back_button" type="TextureButton" parent="CanvasLayer/TextureRect/VBoxContainer/back" unique_id=476896347]
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("5_8pbm7")
+texture_hover = ExtResource("6_pdxvy")
+
+[connection signal="pressed" from="CanvasLayer/TextureRect/VBoxContainer/back/back_button" to="." method="_on_back_button_pressed"]

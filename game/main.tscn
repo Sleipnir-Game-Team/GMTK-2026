@@ -272,7 +272,7 @@ offset_bottom = 367.0
 texture = ExtResource("9_0etgu")
 stretch_mode = 2
 
-[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "screen_2") groups=["Jogo"]]
+[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "screen_2", "manual") groups=["Jogo"]]
 script = ExtResource("3_emt18")
 time_limit = 40.0
 panel_dict = {
@@ -284,6 +284,7 @@ NodePath("../Ship/Task6"): ExtResource("14_0etgu")
 state_manager = NodePath("State Manager")
 animation_player = NodePath("../AnimationPlayer")
 screen_2 = NodePath("../Screen 2")
+manual = NodePath("../Workspace/Manual")
 
 [node name="State Manager" type="Node" parent="Jogo" unique_id=1308149373]
 script = ExtResource("6_dp3pf")

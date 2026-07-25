@@ -5,6 +5,7 @@ extends Node
 @export var state_manager: Node
 @export var animation_player: AnimationPlayer
 @export var screen_2: Node2D
+@export var manual: BaseTool
 
 var current_panel: Node
 var current_segment: Node
@@ -64,9 +65,18 @@ func _ready() -> void:
 
 func setup(_save_data: Dictionary) -> void:
 	start_timer()
+	print(_save_data)
+	if _save_data:
+		manual.pages = _save_data.pages
 
 func save() -> Dictionary:
-	return {}
+	var data:Dictionary = {}
+	data["pages"] = manual.pages
+	print(manual.pages)
+	data["save_time"] = Time.get_datetime_dict_from_system()
+	data["perfect_run"] = false #TODO modificar para ser uma variável do sistema
+	
+	return data
 
 func start_timer() -> void:
 	var ship_timer := Timer.new()

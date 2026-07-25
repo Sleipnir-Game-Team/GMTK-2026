@@ -11,7 +11,7 @@ size = Vector2(96.30446, 147.7717)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo4a5"]
 size = Vector2(6.790697, 148)
 
-[node name="Manual" type="Area2D" unique_id=83848390]
+[node name="Manual" type="Area2D" unique_id=83848390 groups=["Manual"]]
 scale = Vector2(3.2397256, 3.2397256)
 script = ExtResource("1_in6qg")
 
