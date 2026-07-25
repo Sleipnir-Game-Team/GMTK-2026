@@ -12,7 +12,6 @@ size = Vector2(96.30446, 147.7717)
 size = Vector2(6.790697, 148)
 
 [node name="Manual" type="Area2D" unique_id=83848390]
-position = Vector2(721, 682)
 scale = Vector2(3.2397256, 3.2397256)
 script = ExtResource("1_in6qg")
 
