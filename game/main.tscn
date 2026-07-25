@@ -80,7 +80,6 @@ texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Sessao 3" type="TextureButton" parent="Ship" unique_id=1475223341]
-visible = false
 offset_left = 292.0
 offset_top = 11.0
 offset_right = 4292.0
@@ -90,7 +89,6 @@ texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Sessao 4" type="TextureButton" parent="Ship" unique_id=1788007668]
-visible = false
 offset_left = -213.0
 offset_top = 243.0
 offset_right = 3787.0
@@ -100,7 +98,6 @@ texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Sessao 5" type="TextureButton" parent="Ship" unique_id=1850080607]
-visible = false
 offset_left = 43.0
 offset_top = 237.0
 offset_right = 4043.0
@@ -110,7 +107,6 @@ texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Sessao 6" type="TextureButton" parent="Ship" unique_id=394416474]
-visible = false
 offset_left = 292.0
 offset_top = 238.0
 offset_right = 4292.0
@@ -120,7 +116,6 @@ texture_normal = ExtResource("6_lx3aj")
 stretch_mode = 0
 
 [node name="Sessao 7" type="TextureButton" parent="Ship" unique_id=893996751]
-visible = false
 offset_left = 51.0
 offset_top = 466.0
 offset_right = 4051.0

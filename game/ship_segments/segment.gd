@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var module_models : Dictionary[Node, PackedScene]
-var modules : Dictionary[Node, Node2D]
+@export var module_models: Dictionary[Node, PackedScene]
+var modules: Dictionary[Node, Node2D]
 
 var current_panel: Node
 
@@ -21,5 +21,5 @@ func _on_texture_button_toggled(module_model: PackedScene, panel: Node) -> void:
 
 func _exit_tree() -> void:
 	for module in modules:
-		if modules[module]:
+		if modules.has(module):
 			modules[module].queue_free()
