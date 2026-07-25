@@ -19,4 +19,5 @@ signal changed(new_value: bool)
 func screw() -> void:
 	animation_player.speed_scale = 2
 	animation_player.play("tight")
+	AudioManager.play_global("screw.tighten")
 	await changed

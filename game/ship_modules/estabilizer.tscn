@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buu85th53phf0"]
 
-[ext_resource type="Script" uid="uid://bc1rrefkjf6sn" path="res://game/ship_modules/estabilizer.gd" id="1_uith5"]
+[ext_resource type="Script" uid="uid://bc1rrefkjf6sn" path="res://game/ship_modules/scripts/estabilizer.gd" id="1_uith5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4j4dj"]
 font_size = 40
@@ -20,6 +20,9 @@ offset_right = 1192.0
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
+tick_count = 25
+ticks_on_borders = true
+ticks_position = 3
 
 [node name="VSlider2" type="VSlider" parent="." unique_id=329107700]
 offset_left = 1283.0001
@@ -28,6 +31,9 @@ offset_right = 1299.0001
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
+tick_count = 25
+ticks_on_borders = true
+ticks_position = 3
 
 [node name="VSlider3" type="VSlider" parent="." unique_id=122718010]
 offset_left = 1394.0
@@ -36,6 +42,9 @@ offset_right = 1410.0
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
+tick_count = 25
+ticks_on_borders = true
+ticks_position = 3
 
 [node name="Label" type="Label" parent="." unique_id=1261226294]
 offset_left = 1538.0

@@ -118,6 +118,7 @@ reset_configs={
 2d_physics/layer_5="BOSS"
 2d_physics/layer_7="GOLD_LIGHT"
 2d_physics/layer_8="RED_LIGHT"
+2d_physics/layer_9="BookPage"
 2d_physics/layer_12="TOOLS"
 2d_physics/layer_14="TapeTarget"
 2d_physics/layer_15="PipeTarget"

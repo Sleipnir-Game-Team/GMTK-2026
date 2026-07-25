@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b76ystf0pfruu"]
+
+[ext_resource type="Script" uid="uid://bfvnpg8x3ilvv" path="res://game/tools/scripts/manual.gd" id="1_in6qg"]
+[ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="2_d87f6"]
+[ext_resource type="Texture2D" uid="uid://h0v024jm446w" path="res://assets/manual.png" id="3_d87f6"]
+[ext_resource type="Texture2D" uid="uid://6orkrq5xgr33" path="res://assets/manual_aberto.png" id="4_eo4a5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d87f6"]
+size = Vector2(106, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo4a5"]
+size = Vector2(14, 148)
+
+[node name="Manual" type="Area2D" unique_id=83848390]
+script = ExtResource("1_in6qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1628671763]
+shape = SubResource("RectangleShape2D_d87f6")
+
+[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("2_d87f6")]
+
+[node name="closed" type="Sprite2D" parent="." unique_id=753333140]
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("3_d87f6")
+
+[node name="open" type="Sprite2D" parent="." unique_id=1163759142]
+position = Vector2(62.999996, -1.1920929e-07)
+scale = Vector2(0.113, 0.113)
+texture = ExtResource("4_eo4a5")
+
+[node name="next_page" type="Area2D" parent="." unique_id=275568119]
+position = Vector2(183, 0)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next_page" unique_id=774980562]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_eo4a5")
+debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
+
+[node name="open_book" type="Area2D" parent="." unique_id=1135560830]
+position = Vector2(60, 0)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="open_book" unique_id=972997087]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_eo4a5")
+debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
+
+[node name="previous_page" type="Area2D" parent="." unique_id=280645781]
+position = Vector2(-104, 0)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="previous_page" unique_id=1830474864]
+position = Vector2(52, 0)
+shape = SubResource("RectangleShape2D_eo4a5")
+debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
+
+[connection signal="input_event" from="next_page" to="." method="_on_next_input_event"]
+[connection signal="input_event" from="open_book" to="." method="_on_next_input_event"]
+[connection signal="input_event" from="previous_page" to="." method="_on_previous_page_input_event"]
