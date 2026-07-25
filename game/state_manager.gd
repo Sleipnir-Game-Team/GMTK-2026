@@ -1,8 +1,8 @@
-extends Node
+class_name StateManager extends Node
 
 var rng := RandomNumberGenerator.new()
 
-var equalizer_state := {
+var equalizer_state: Dictionary[String, Variant]= {
 	'low_position' = 0.0,
 	'mid_position' = 0.0,
 	'high_position' = 0.0,
@@ -20,7 +20,7 @@ var equalizer_state := {
 	'high_temp_value' = 50
 }
 
-var screw_states = {
+var screw_states: Dictionary[String, Array] = {
 	'screw_screen_1' = [
 		false,
 		false,
@@ -65,7 +65,7 @@ var screw_states = {
 	]
 }
 
-var fuel_states = {
+var fuel_states: Dictionary[String, Dictionary] = {
 	'fuel_1' = {
 		'color' : 'blue',
 		'open' : false,
@@ -78,7 +78,7 @@ var fuel_states = {
 	}
 }
 
-var pipe_states = {
+var pipe_states: Dictionary[String, Array] = {
 	'pipe_1' = [
 		false,
 		false,
@@ -117,7 +117,7 @@ var pipe_states = {
 	]
 }
 
-var tube_states = {
+var tube_states: Dictionary[String, Array]  = {
 	'tube_1' = [
 		false,
 		true,
@@ -154,9 +154,11 @@ var break_functions := [
 #	break_equalizer
 ]
 
+
 func _ready() -> void:
 	roll_equalizer()
 	break_things(1)
+
 
 func break_things(number: int) -> void:
 	while number > 0 and break_functions.size() > 0:
@@ -164,6 +166,7 @@ func break_things(number: int) -> void:
 		break_functions[selecionado].call()
 		break_functions.remove_at(selecionado)
 		number -= 1
+
 
 func roll_equalizer() -> void:
 	equalizer_state['low_position'] = rng.randf_range(0,100)
@@ -193,12 +196,14 @@ func roll_equalizer() -> void:
 	equalizer_state['mid_temp_value'] = equalizer_state['mid_position']
 	equalizer_state['high_temp_value'] = equalizer_state['high_position']
 
+
 func get_equalizer_oxi_value() -> float:
 	return (
 		(equalizer_state['low_oxi_value'] - equalizer_state['low_position']) * 0.1 + 
 		(equalizer_state['mid_oxi_value'] - equalizer_state['mid_position']) * 0.5 + 
 		(equalizer_state['high_oxi_value'] - equalizer_state['high_position']) * 1
 		)
+
 
 func get_equalizer_temp_value() -> float:
 	return (
@@ -207,11 +212,13 @@ func get_equalizer_temp_value() -> float:
 		(equalizer_state['high_temp_value'] - equalizer_state['high_position']) * 1
 		)
 
-func get_true_amount(list):
-	var amount := 0
+
+func get_true_amount(list: Array[bool]) -> int:
+	var amount: int = 0
 	for value in list:
-		if value: amount += 1
+		amount += int(value)
 	return amount
+
 
 func get_oxigen_screws() -> int:
 	return (
@@ -219,6 +226,7 @@ func get_oxigen_screws() -> int:
 		count_screws('screw_screen_2') * -2 +
 		count_screws('screw_screen_4') * -1
 	)
+
 
 func get_thruster_1_screws() -> int:
 	return (
@@ -230,6 +238,7 @@ func get_thruster_1_screws() -> int:
 		count_screws('screw_screen_6')
 	)
 
+
 func get_thruster_2_screws() -> int:
 	return (
 		count_screws('screw_screen_1') +
@@ -240,79 +249,90 @@ func get_thruster_2_screws() -> int:
 		count_screws('screw_screen_6')
 	)
 
+
 func get_thruster_1_fuel() -> bool:
 	return !fuel_states['fuel_1']['open'] and fuel_states['fuel_1']['full']
+
 
 func get_thruster_2_fuel() -> bool:
 	return !fuel_states['fuel_2']['open'] and fuel_states['fuel_2']['full']
 
-func get_oxigen_tube() -> int:
-	return (get_true_amount(tube_states['tube_1']) * -0.5 +
+
+func get_oxigen_tube() -> float:
+	return (
+			get_true_amount(tube_states['tube_1']) * -0.5 +
 			get_true_amount(tube_states['tube_2']) * -0.5 +
 			get_true_amount(tube_states['tube_3']) * -1.5 +
-			get_true_amount(tube_states['tube_4']) * -1 +
-			get_true_amount(tube_states['tube_5']) * -2 +
+			get_true_amount(tube_states['tube_4']) * -1.0 +
+			get_true_amount(tube_states['tube_5']) * -2.0 +
 			get_true_amount(tube_states['tube_6']) * -2.5
-			)
+	)
 
-func get_temp_pipe() -> int:
-	return (get_true_amount(pipe_states['pipe_1']) * 2.5 +
+
+func get_temp_pipe() -> float:
+	return (
+			get_true_amount(pipe_states['pipe_1']) * 2.5 +
 			get_true_amount(pipe_states['pipe_2']) * 2.5 +
 			get_true_amount(pipe_states['pipe_5']) * 3.5 +
 			get_true_amount(pipe_states['pipe_6']) * 3.5 +
 			get_true_amount(pipe_states['pipe_7']) * 5
-			)
-	
+	)
+
+
 func get_thruster_1_pipes() -> int:
-	return (get_true_amount(pipe_states['pipe_1']) +
+	return (
+			get_true_amount(pipe_states['pipe_1']) +
 			get_true_amount(pipe_states['pipe_2']) +
 			get_true_amount(pipe_states['pipe_3']) +
 			get_true_amount(pipe_states['pipe_4']) +
 			get_true_amount(pipe_states['pipe_5']) +
 			get_true_amount(pipe_states['pipe_6']) +
 			get_true_amount(pipe_states['pipe_7'])
-			)
-	
+	)
+
+
 func get_thruster_2_pipes() -> int:
-	return (get_true_amount(pipe_states['pipe_1']) +
+	return (
+			get_true_amount(pipe_states['pipe_1']) +
 			get_true_amount(pipe_states['pipe_2']) +
 			get_true_amount(pipe_states['pipe_3']) +
 			get_true_amount(pipe_states['pipe_4']) +
 			get_true_amount(pipe_states['pipe_5']) +
 			get_true_amount(pipe_states['pipe_6']) +
 			get_true_amount(pipe_states['pipe_7'])
-			)
+	)
+
 
 func get_screw_total() -> int:
 	var amount := 0
 	for screw_state in screw_states:
-		for screw in screw_states[screw_state]:
-			amount += 1
+		amount += screw_states[screw_state].size()
 	return amount
+
 
 func get_pipe_total() -> int:
 	var amount := 0
 	for pipe_state in pipe_states:
-		for pipe in pipe_states[pipe_state]:
-			amount += 1
+		amount += pipe_states[pipe_state].size()
 	return amount
+
 
 func get_tube_total() -> int:
 	var amount := 0
 	for tube_state in tube_states:
-		for tube in tube_states[tube_state]:
-			amount += 1
+		amount += tube_states[tube_state].size()
 	return amount
 
-func count_screws(screen_name) -> int:
+
+func count_screws(screen_name: String) -> int:
 	var loose_amount: int = 0
-	for screw in screw_states[screen_name]:
-		if screw:
-			loose_amount += 1
+	for screw: bool in screw_states[screen_name]:
+		loose_amount += int(screw)
 	return loose_amount 
 
+
 func break_equalizer() -> void:
-	var values = [rng.randf_range(0,100), rng.randf_range(0,100), rng.randf_range(0,100)]
+	var values: Array[float] = [rng.randf_range(0,100), rng.randf_range(0,100), rng.randf_range(0,100)]
 	equalizer_state['low_oxi_value'] = values[equalizer_state['low_oxi_slider']]
 	equalizer_state['mid_oxi_value'] = values[equalizer_state['mid_oxi_slider']]
 	equalizer_state['high_oxi_value'] = values[equalizer_state['high_oxi_slider']]
