@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmtmm72pm5nsm"]
 
-[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/ship_modules/plumbing_module.tscn" id="1_o02vu"]
+[ext_resource type="PackedScene" uid="uid://dnq7vaq8uqep5" path="res://game/ship_modules/plumbing_module.tscn" id="1_o02vu"]
 [ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="2_7w86a"]
 [ext_resource type="PackedScene" uid="uid://cnlr86qyl0grx" path="res://game/uses/crack.tscn" id="3_3iyrq"]
 [ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="4_4iivt"]
