@@ -444,6 +444,13 @@ mouse_filter = 2
 mouse_filter = 1
 stretch_mode = 0
 
+[node name="ToolBoxArea" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="3" unique_id=2004418641]
+monitoring = false
+monitorable = false
+
+[node name="Slots" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="4" unique_id=515828627]
+visible = false
+
 [node name="GavetaMeio" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=1691757581]
 z_index = -1
 offset_left = -174.0
@@ -466,6 +473,13 @@ mouse_filter = 2
 
 [node name="TextureButton" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="1" unique_id=1246168984]
 mouse_filter = 1
+
+[node name="ToolBoxArea" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="3" unique_id=2004418641]
+monitoring = false
+monitorable = false
+
+[node name="Slots" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="4" unique_id=515828627]
+visible = false
 
 [node name="GavetaFrente" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=2042995227]
 offset_left = -182.0

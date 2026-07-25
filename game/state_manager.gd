@@ -23,8 +23,8 @@ var equalizer_state: Dictionary[String, Variant]= {
 var screw_states: Dictionary[String, Array] = {
 	'screw_screen_1' = [
 		false,
-		false,
-		false,
+		true,
+		true,
 		false
 	], 
 	'screw_screen_2' = [
@@ -120,8 +120,8 @@ var pipe_states: Dictionary[String, Array] = {
 var tube_states: Dictionary[String, Array]  = {
 	'tube_1' = [
 		false,
-		true,
-		true
+		false,
+		false
 	],
 	'tube_2' = [
 		false,
