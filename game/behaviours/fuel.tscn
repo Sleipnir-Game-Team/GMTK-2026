@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://btoa0c2doqn8w"]
+
+[ext_resource type="Script" uid="uid://ph8rp5v3npci" path="res://game/behaviours/scripts/fuel.gd" id="1_cxq5w"]
+
+[node name="Fuel" type="Node" unique_id=728711127]
+script = ExtResource("1_cxq5w")
+group = &"use_fuel"

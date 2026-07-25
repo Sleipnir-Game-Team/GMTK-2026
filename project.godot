@@ -32,10 +32,10 @@ UI_Controller="*res://ui/controller/ui_controller.gd"
 Game_Manager="*res://globals/game_manager.gd"
 Config_Handler="*res://globals/config_handler.gd"
 JsonHandler="*res://globals/json_handler.gd"
-SfxGlobals="*uid://lg6kuv3fkktu"
 AudioManager="*uid://dy5jkn7prdgvx"
 SleipnirMaestro="*uid://cq7lvdpdewp3"
 SaveManager="*uid://cc000xggt14bs"
+SfxGlobals="*uid://dh70xcu1lubbi"
 
 [debug]
 

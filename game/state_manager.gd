@@ -23,17 +23,17 @@ var equalizer_state := {
 var screw_states = {
 	'screw_screen_1' = [
 		false,
-		true,
 		false,
-		true
+		false,
+		false
 	]
 }
 
 var fuel_states = {
 	'fuel_1' = {
 		'color' : 'blue',
-		'open' : false,
-		'full' : true
+		'open' : true,
+		'full' : false
 	},
 	'fuel_2' = {
 		'color' : 'red',
@@ -43,7 +43,7 @@ var fuel_states = {
 }
 
 var break_functions := [
-	break_equalizer
+#	break_equalizer
 ]
 
 func _ready() -> void:
@@ -51,7 +51,7 @@ func _ready() -> void:
 	break_things(1)
 
 func break_things(number: int) -> void:
-	while number > 0 or break_functions.size() > 0:
+	while number > 0 and break_functions.size() > 0:
 		var selecionado: int = rng.randi_range(0, break_functions.size() -1)
 		break_functions[selecionado].call()
 		break_functions.remove_at(selecionado)
@@ -107,6 +107,12 @@ func get_thruster_1_screws() -> int:
 
 func get_thruster_2_screws() -> int:
 	return 0
+
+func get_thruster_1_fuel() -> bool:
+	return !fuel_states['fuel_1']['open'] and fuel_states['fuel_1']['full']
+
+func get_thruster_2_fuel() -> bool:
+	return !fuel_states['fuel_2']['open'] and fuel_states['fuel_2']['full']
 
 func count_screws(screen_name) -> int:
 	var loose_amount: int = 0

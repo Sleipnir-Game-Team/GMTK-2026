@@ -13,6 +13,7 @@ func _on_texture_button_toggled(module_model: PackedScene, panel: Node) -> void:
 	var changing := current_panel != panel
 	if current_panel:
 		modules[current_panel].queue_free()
+		modules[current_panel] = null
 		current_panel = null
 	if changing:
 		modules[panel] = module_model.instantiate()
@@ -21,5 +22,5 @@ func _on_texture_button_toggled(module_model: PackedScene, panel: Node) -> void:
 
 func _exit_tree() -> void:
 	for module in modules:
-		if modules.has(module):
+		if modules.has(module) and modules[module]:
 			modules[module].queue_free()

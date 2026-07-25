@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dnq7vaq8uqep5"]
 
-[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/plumbing_module.gd" id="1_441ij"]
+[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/scripts/plumbing_module.gd" id="1_441ij"]
 [ext_resource type="Texture2D" uid="uid://bn1f6ljkhhfre" path="res://assets/register_big.png" id="2_iec6w"]
-[ext_resource type="PackedScene" uid="uid://cwoqcfqkw1scl" path="res://game/uses/pipe.tscn" id="2_qd8nk"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="2_qd8nk"]
 [ext_resource type="Texture2D" uid="uid://cic4bb2t1wrfx" path="res://assets/straight_small.png" id="3_qd8nk"]
 [ext_resource type="Texture2D" uid="uid://fdqsxbum3emh" path="res://assets/cross_small.png" id="4_vkw0w"]
 [ext_resource type="Texture2D" uid="uid://55x1inf3v41k" path="res://assets/straight_long.png" id="5_1e30i"]

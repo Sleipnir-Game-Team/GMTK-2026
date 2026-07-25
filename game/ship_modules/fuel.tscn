@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3blnhhfq5mwy"]
 
-[ext_resource type="Script" uid="uid://cybvm7dn2tcr1" path="res://game/ship_modules/fuel.gd" id="1_nori0"]
+[ext_resource type="Script" uid="uid://cybvm7dn2tcr1" path="res://game/ship_modules/scripts/fuel.gd" id="1_nori0"]
 [ext_resource type="Texture2D" uid="uid://dhx44mtlg4ugx" path="res://assets/pl_porta_az.png" id="2_j7wed"]
 [ext_resource type="Texture2D" uid="uid://c0yimbfbf84hp" path="res://assets/pl_porta_vm.png" id="3_qyb7x"]
 [ext_resource type="Texture2D" uid="uid://ub4ce6qbbkr2" path="res://assets/pl_porta_vaz.png" id="4_acyob"]
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyb7x"]
 size = Vector2(371, 345)
 
-[node name="Fuel" type="Area2D" unique_id=1300935115 groups=["use_unlock"]]
+[node name="Fuel" type="Area2D" unique_id=1300935115 node_paths=PackedStringArray("image") groups=["use_fuel", "use_unlock"]]
 collision_layer = 32768
 collision_mask = 2048
 script = ExtResource("1_nori0")
@@ -17,6 +17,7 @@ img_azul = ExtResource("2_j7wed")
 img_vermelha = ExtResource("3_qyb7x")
 img_vazia = ExtResource("4_acyob")
 img_cheia = ExtResource("5_n7fxv")
+image = NodePath("Door")
 screen_name = &"fuel_1"
 
 [node name="Door" type="TextureRect" parent="." unique_id=1035389226]

@@ -28,12 +28,14 @@ var propulsor_1: bool:
 	get:
 		var total_screws: int = 4
 		var okay: bool = state_manager.get_thruster_1_screws() <= total_screws * 0.25
+		okay = okay and state_manager.get_thruster_1_fuel()
 		return okay
 
 var propulsor_2: bool:
 	get:
 		var total_screws: int = 4
 		var okay: bool = state_manager.get_thruster_2_screws() <= total_screws * 0.25
+		okay = okay and state_manager.get_thruster_2_fuel()
 		return okay
 
 var ship_conditions := {
@@ -71,12 +73,12 @@ func evaluate_ship() -> void:
 	
 func check_conditions() -> bool:
 	var passable: bool = (
-			oxigen > ship_conditions['max_oxigen']
-			or oxigen < ship_conditions['min_oxigen']
-			or temp > ship_conditions['max_temp']
-			or temp < ship_conditions['min_temp']
-			or !propulsor_1
-			or !propulsor_2
+			oxigen < ship_conditions['max_oxigen'] 
+			and oxigen > ship_conditions['min_oxigen']
+			and temp < ship_conditions['max_temp'] 
+			and temp > ship_conditions['min_temp']
+			and propulsor_1
+			and propulsor_2
 	)
 	
 	#for condition:String in ship_conditions.keys():

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://r1c28x1o1aba"]
+
+[ext_resource type="Script" uid="uid://cew6hy2ndcd0h" path="res://game/tools/scripts/key.gd" id="1_mjex0"]
+[ext_resource type="Shader" uid="uid://bpovyuilxe5fy" path="res://shaders/color.gdshader" id="2_6suvi"]
+[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://assets/chave.png" id="2_lpmr7"]
+[ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="3_6suvi"]
+[ext_resource type="PackedScene" uid="uid://cqeg5ece2xy0r" path="res://game/behaviours/unlock.tscn" id="4_brkyu"]
+[ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="5_absq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs2xi"]
+size = Vector2(61, 22)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brkyu"]
+shader = ExtResource("2_6suvi")
+shader_parameter/r = 1.0
+shader_parameter/g = 0.2770000131575
+shader_parameter/b = 0.2000000095
+shader_parameter/a = 1.0
+
+[node name="Key" type="Area2D" unique_id=1552411005 node_paths=PackedStringArray("use_unlock") groups=["use_store"]]
+collision_layer = 2048
+collision_mask = 32768
+script = ExtResource("1_mjex0")
+use_unlock = NodePath("use_unlock")
+color = &"red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486740632]
+shape = SubResource("RectangleShape2D_fs2xi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=100201166]
+material = SubResource("ShaderMaterial_brkyu")
+position = Vector2(-1, 1)
+rotation = -0.7853982
+scale = Vector2(0.025606235, 0.025606235)
+texture = ExtResource("2_lpmr7")
+flip_h = true
+
+[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("3_6suvi")]
+
+[node name="use_unlock" parent="." unique_id=1133804510 instance=ExtResource("4_brkyu")]
+unique_name_in_owner = true
+group = &"use_unlock"
+
+[node name="use_store" parent="." unique_id=126649513 instance=ExtResource("5_absq1")]
+group = &"use_store"
+
+[connection signal="drop_on_use_area" from="use_draggable" to="." method="_on_use"]

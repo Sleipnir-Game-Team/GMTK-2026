@@ -7,3 +7,5 @@ extends BaseBehaviour
 func act(door: Area2D) -> void:
 	if color == door.cor:
 		door.aberta = !door.aberta
+		door.update_door()
+		

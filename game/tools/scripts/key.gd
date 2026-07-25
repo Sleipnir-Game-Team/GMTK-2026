@@ -5,4 +5,6 @@ extends BaseTool
 @export var color: StringName = "":
 	set(new_value):
 		color = new_value
-		use_unlock.color = new_value
+
+func _ready():
+	use_unlock.color = color
