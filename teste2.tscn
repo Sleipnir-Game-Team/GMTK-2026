@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dmbgfqmf8q1d6"]
+
+[ext_resource type="PackedScene" uid="uid://cnlr86qyl0grx" path="res://game/uses/crack.tscn" id="3_wlbsj"]
+[ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="4_jwejy"]
+
+[node name="Teste" type="Node" unique_id=2142931688]
+
+[node name="Crack" parent="." unique_id=597074376 instance=ExtResource("3_wlbsj")]
+position = Vector2(934, 523)
+
+[node name="DuctTape" parent="." unique_id=1574064096 instance=ExtResource("4_jwejy")]
+position = Vector2(207, 622)
+
+[connection signal="finished" from="Crack" to="Crack" method="queue_free" unbinds=1]

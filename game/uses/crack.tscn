@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cnlr86qyl0grx"]
 
 [ext_resource type="Script" uid="uid://cujyfmjv46gr0" path="res://game/uses/scripts/crack.gd" id="1_8u5gk"]
-[ext_resource type="Texture2D" uid="uid://diys7b7ssefdr" path="res://assets/crack.png" id="1_1552p"]
-[ext_resource type="Texture2D" uid="uid://b6njdnle5mndx" path="res://assets/duct_tape - Copia.png" id="3_0onxk"]
+[ext_resource type="Texture2D" uid="uid://dnu8sa7hdsqwa" path="res://assets/wall-cracks-with-broken-texture-ground-earthquake-effect-hole-lines-on-earth-and-ice-rock-destruction-scratch-png.webp" id="2_8u5gk"]
+
+[sub_resource type="Resource" id="Resource_0onxk"]
+metadata/__load_path__ = "res://assets/duct_tape - Copia.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qetbp"]
 size = Vector2(528, 472)
@@ -12,7 +14,7 @@ collision_layer = 32768
 collision_mask = 2048
 monitoring = false
 script = ExtResource("1_8u5gk")
-line_texture = ExtResource("3_0onxk")
+line_texture = SubResource("Resource_0onxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1464983058]
 shape = SubResource("RectangleShape2D_qetbp")
@@ -27,8 +29,9 @@ collision_mask = 0
 [node name="VisibleCrack" type="Sprite2D" parent="CrackedArea" unique_id=527946665]
 unique_name_in_owner = true
 clip_children = 2
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_1552p")
+position = Vector2(-63.999996, -63.999996)
+scale = Vector2(1.2800788, 1.3472419)
+texture = ExtResource("2_8u5gk")
 centered = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

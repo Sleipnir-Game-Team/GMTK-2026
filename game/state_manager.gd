@@ -68,8 +68,8 @@ var screw_states = {
 var fuel_states = {
 	'fuel_1' = {
 		'color' : 'blue',
-		'open' : true,
-		'full' : false
+		'open' : false,
+		'full' : true
 	},
 	'fuel_2' = {
 		'color' : 'red',
@@ -81,8 +81,8 @@ var fuel_states = {
 var pipe_states = {
 	'pipe_1' = [
 		false,
-		true,
-		true
+		false,
+		false
 	],
 	'pipe_2' = [
 		false,
@@ -120,8 +120,8 @@ var pipe_states = {
 var tube_states = {
 	'tube_1' = [
 		false,
-		false,
-		false
+		true,
+		true
 	],
 	'tube_2' = [
 		false,
@@ -229,7 +229,7 @@ func get_thruster_2_fuel() -> bool:
 	return !fuel_states['fuel_2']['open'] and fuel_states['fuel_2']['full']
 
 func get_oxigen_tube() -> int:
-	return 0
+	return get_true_amount(tube_states['tube_1']) * -5
 
 func get_temp_pipe() -> int:
 	return 0

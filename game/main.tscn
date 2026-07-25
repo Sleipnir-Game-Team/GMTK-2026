@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bv1h4s5g74844" path="res://game/state_manager.gd" id="6_dp3pf"]
 [ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/segment 2.tscn" id="6_ioaqv"]
 [ext_resource type="Texture2D" uid="uid://croikrl37aywb" path="res://assets/mechionbridge2.png" id="6_lx3aj"]
-[ext_resource type="PackedScene" uid="uid://cq0xomg3yjhjn" path="res://game/tools/screwdriver.tscn" id="11_dp3pf"]
+[ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="11_frwyw"]
 [ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="12_ioaqv"]
 [ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="13_li27q"]
 [ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="14_g6fv7"]
@@ -134,6 +134,6 @@ stretch_mode = 0
 position = Vector2(1856, 711)
 
 [node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("11_dp3pf"), ExtResource("12_ioaqv"), ExtResource("13_li27q"), ExtResource("14_g6fv7"), ExtResource("15_frwyw")])
+pre_store = Array[PackedScene]([ExtResource("11_frwyw"), ExtResource("12_ioaqv"), ExtResource("13_li27q"), ExtResource("14_g6fv7"), ExtResource("15_frwyw")])
 
 [editable path="Workspace/ToolboxTeste"]

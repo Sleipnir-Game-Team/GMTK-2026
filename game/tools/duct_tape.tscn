@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://70smgawpyhqw" path="res://game/tools/scripts/duct_tape.gd" id="1_2e1jp"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="2_scq0q"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="3_fyiom"]
-[ext_resource type="Texture2D" uid="uid://c8xqoxls1hyg4" path="res://assets/duct_tape_roll.png" id="4_fyiom"]
 [ext_resource type="PackedScene" uid="uid://cq0hwsu707qrj" path="res://game/behaviours/tape.tscn" id="5_jbv15"]
+[ext_resource type="Texture2D" uid="uid://dwaj1cfb7c67" path="res://assets/Transparent_duct_tape_roll.png" id="5_uwd2s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyiom"]
 radius = 51.801315
@@ -22,9 +22,9 @@ group = &"use_store"
 
 [node name="use_tape" parent="." unique_id=1934677521 instance=ExtResource("5_jbv15")]
 
-[node name="DuctTapeRoll" type="Sprite2D" parent="." unique_id=413403748]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=413403748]
 scale = Vector2(0.06358989, 0.06358989)
-texture = ExtResource("4_fyiom")
+texture = ExtResource("5_uwd2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219060545]
 position = Vector2(-17, -2.9999995)
