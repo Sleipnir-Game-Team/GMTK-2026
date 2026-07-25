@@ -12,23 +12,51 @@ size = Vector2(106, 148)
 size = Vector2(14, 148)
 
 [node name="Manual" type="Area2D" unique_id=83848390]
+scale = Vector2(3.2397256, 3.2397256)
 script = ExtResource("1_in6qg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1628671763]
 shape = SubResource("RectangleShape2D_d87f6")
 
-[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("2_d87f6")]
-
 [node name="closed" type="Sprite2D" parent="." unique_id=753333140]
+unique_name_in_owner = true
 scale = Vector2(0.085, 0.085)
 texture = ExtResource("3_d87f6")
 
 [node name="open" type="Sprite2D" parent="." unique_id=1163759142]
+unique_name_in_owner = true
+visible = false
 position = Vector2(62.999996, -1.1920929e-07)
 scale = Vector2(0.113, 0.113)
 texture = ExtResource("4_eo4a5")
 
+[node name="LeftPage" type="TextEdit" parent="open" unique_id=54626974]
+unique_name_in_owner = true
+offset_left = -946.9025
+offset_top = -610.61945
+offset_right = -53.09735
+offset_bottom = 584.07074
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="RightPage" type="TextEdit" parent="open" unique_id=1919705114]
+unique_name_in_owner = true
+offset_left = 35.39807
+offset_top = -601.7699
+offset_right = 929.20325
+offset_bottom = 592.9203
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+
 [node name="next_page" type="Area2D" parent="." unique_id=275568119]
+unique_name_in_owner = true
+process_mode = 4
 position = Vector2(183, 0)
 collision_layer = 256
 collision_mask = 256
@@ -39,6 +67,7 @@ shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
 [node name="open_book" type="Area2D" parent="." unique_id=1135560830]
+unique_name_in_owner = true
 position = Vector2(60, 0)
 collision_layer = 256
 collision_mask = 256
@@ -49,6 +78,8 @@ shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
 [node name="previous_page" type="Area2D" parent="." unique_id=280645781]
+unique_name_in_owner = true
+process_mode = 4
 position = Vector2(-104, 0)
 collision_layer = 256
 collision_mask = 256
@@ -58,6 +89,10 @@ position = Vector2(52, 0)
 shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
-[connection signal="input_event" from="next_page" to="." method="_on_next_input_event"]
-[connection signal="input_event" from="open_book" to="." method="_on_next_input_event"]
+[node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("2_d87f6")]
+
+[connection signal="text_changed" from="open/LeftPage" to="." method="_on_left_page_text_changed"]
+[connection signal="text_changed" from="open/RightPage" to="." method="_on_right_page_text_changed"]
+[connection signal="input_event" from="next_page" to="." method="_on_next_page_input_event"]
+[connection signal="input_event" from="open_book" to="." method="_on_open_book_input_event"]
 [connection signal="input_event" from="previous_page" to="." method="_on_previous_page_input_event"]
