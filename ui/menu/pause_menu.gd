@@ -16,15 +16,15 @@ func _on_reload_button_pressed() -> void:
 	SaveManager.load_slot()
 
 func _on_load_button_pressed() -> void:
+	print('carregando saves...')
 	AudioManager.play_global("ui.button.click")
-	localPause()
-	UI_Controller.changeScreen("res://ui/menu/save_menu.tscn", get_tree().root)
+	UI_Controller.openScreen("res://ui/menu/save_menu.tscn", get_tree().root)
 
 ## OnClick do botão "Menu Principal"
 func _on_main_menu_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
 	localPause()
-	UI_Controller.changeScreen("res://ui/menu/main_menu.tscn", get_tree().root) 
+	UI_Controller.changeScreen("res://ui/menu/main_menu.tscn", get_tree().root)
 
 
 ## OnClick do botão "Opções"

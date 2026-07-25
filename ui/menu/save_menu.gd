@@ -18,3 +18,7 @@ func _ready() -> void:
 		slot_container.slot = slots_done
 		saves_list.add_child(slot_container)
 		slots_done += 1
+
+
+func _on_back_button_pressed():
+	UI_Controller.freeScreen()

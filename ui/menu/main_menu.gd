@@ -1,13 +1,17 @@
 extends Control
 
+@onready var anim_player = $AnimationPlayer
+@export var pivot_dict:Dictionary[StringName, Vector2] = {}
+
 func _ready() -> void:
 	UI_Controller.stack.screens.append(self)
+	anim_player.play("fade_in")
 
 
 ## Função que roda quando você aperta o botão de "jogar"
 func _on_play_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
-	UI_Controller.changeScreen("res://ui/menu/save_menu.tscn", get_tree().root)
+	UI_Controller.openScreen("res://ui/menu/save_menu.tscn", get_tree().root)
 
 
 ## Função que roda quando você aperta o botão de "opções"

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dl2yn1tsbrk53" path="res://ui/buttons/load_game.tscn" id="3_4t1iu"]
 
 [node name="SaveMenu" type="Control" unique_id=217900500]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,3 +47,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 40
 text = "Voltar"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/back/back_button" to="." method="_on_back_button_pressed"]
