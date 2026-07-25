@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwoqcfqkw1scl"]
+[gd_scene format=3 uid="uid://bxokrabkatrvy"]
 
 [ext_resource type="Script" uid="uid://b1dhqvy3v3cgi" path="res://game/uses/scripts/pipe.gd" id="1_8qqf2"]
 [ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://assets/wrench_full.png" id="2_pxm4n"]

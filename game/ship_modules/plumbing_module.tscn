@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bwlfm6yasnnvj" path="res://assets/register_small.png" id="10_yoklb"]
 
 [node name="Plumbing" type="Area2D" unique_id=245482926]
+position = Vector2(1567.0001, 278)
+scale = Vector2(0.5491614, 0.62404066)
 script = ExtResource("1_441ij")
+screen_name = &"pipe_1"
 
 [node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
@@ -23,14 +26,17 @@ rotation = -1.5522739
 [node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
 position = Vector2(339, -221)
+necessary = true
 
 [node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
 position = Vector2(234, 273)
+necessary = true
 
 [node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
 position = Vector2(-444, 106)
+necessary = true
 
 [node name="RegisterBig" type="Sprite2D" parent="." unique_id=121561216]
 position = Vector2(371, 210.24487)

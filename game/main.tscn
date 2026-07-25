@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="12_ioaqv"]
 [ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="13_li27q"]
 [ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="14_g6fv7"]
+[ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="15_frwyw"]
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -35,7 +36,7 @@ layout_mode = 2
 
 [node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager") groups=["Jogo"]]
 script = ExtResource("3_emt18")
-time_limit = 20.0
+time_limit = 40.0
 panel_dict = {
 NodePath("../Ship/Cockpit"): ExtResource("4_vop5m"),
 NodePath("../Ship/Sessao 1"): ExtResource("5_itumj"),
@@ -133,6 +134,6 @@ stretch_mode = 0
 position = Vector2(1856, 711)
 
 [node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("11_dp3pf"), ExtResource("12_ioaqv"), ExtResource("13_li27q"), ExtResource("14_g6fv7")])
+pre_store = Array[PackedScene]([ExtResource("11_dp3pf"), ExtResource("12_ioaqv"), ExtResource("13_li27q"), ExtResource("14_g6fv7"), ExtResource("15_frwyw")])
 
 [editable path="Workspace/ToolboxTeste"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn77ryrhpigs4"]
 
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
-[ext_resource type="Script" uid="uid://v1ojop4t63ov" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
+[ext_resource type="Script" uid="uid://d1hna2a0u2t2v" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
 [ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://assets/wrench_full.png" id="2_qs0f7"]
 [ext_resource type="PackedScene" uid="uid://c8s8jv2nmeevg" path="res://game/behaviours/plumbing.tscn" id="5_u2yid"]
@@ -10,7 +10,7 @@
 size = Vector2(20, 59)
 
 [node name="Wrench" type="Area2D" unique_id=305978293]
-scale = Vector2(7.4729996, 8.733971)
+scale = Vector2(3.449178, 4.031182)
 collision_layer = 2048
 collision_mask = 32768
 script = ExtResource("1_fatje")

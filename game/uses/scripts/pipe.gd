@@ -6,6 +6,7 @@ const MIN_ROTATION: float = deg_to_rad(75)
 const MAX_ROTATION: float = PI
 
 @export var necessary: bool = false
+@export var leaky: bool = false
 @export_range(0.1, 5, 0.1) var min_duration: float = 1
 
 var _pushing: bool = false
@@ -33,10 +34,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if !_wrench_in_position: return
 	if is_equal_approx(wrench.rotation, MIN_ROTATION):
 		# FINISHED
 		_pushing = false
 		_wrench_in_position = false
+		leaky = false
 		plumbing_finished.emit()
 	
 	elif _pushing:
@@ -57,8 +60,10 @@ func _physics_process(delta: float) -> void:
 
 
 func start_plumbing() -> void:
+	if !leaky: return
 	_wrench_in_position = true
 	await plumbing_finished
+	
 
 
 ## After the wrench is positioned, left clicking the handle allows pushing

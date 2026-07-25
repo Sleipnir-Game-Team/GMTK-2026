@@ -16,26 +16,33 @@ var oxigen: float:
 	get:
 		var oxigen_final: float = ship_attributes['oxigen']
 		oxigen_final += state_manager.get_equalizer_oxi_value()
+		oxigen_final += state_manager.get_oxigen_tube()
+		oxigen_final += state_manager.get_oxigen_screws()
 		return clampf(oxigen_final, 0, 100)
 
 var temp: float:
 	get:
 		var temp_final: float = ship_attributes['temp']
 		temp_final += state_manager.get_equalizer_temp_value()
+		temp_final += state_manager.get_temp_pipe()
 		return temp_final
 
 var propulsor_1: bool:
 	get:
-		var total_screws: int = 4
+		var total_screws:int = state_manager.get_screw_total()
+		var total_pipes:int = state_manager.get_pipe_total()
 		var okay: bool = state_manager.get_thruster_1_screws() <= total_screws * 0.25
 		okay = okay and state_manager.get_thruster_1_fuel()
+		okay = okay and  state_manager.get_thruster_1_pipes() <= total_pipes * 0.25
 		return okay
 
 var propulsor_2: bool:
 	get:
-		var total_screws: int = 4
+		var total_screws:int = state_manager.get_screw_total()
+		var total_pipes:int = state_manager.get_pipe_total()
 		var okay: bool = state_manager.get_thruster_2_screws() <= total_screws * 0.25
 		okay = okay and state_manager.get_thruster_2_fuel()
+		okay = okay and  state_manager.get_thruster_2_pipes() <= total_pipes * 0.001
 		return okay
 
 var ship_conditions := {

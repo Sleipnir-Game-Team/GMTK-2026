@@ -26,6 +26,42 @@ var screw_states = {
 		false,
 		false,
 		false
+	], 
+	'screw_screen_2' = [
+		false,
+		false,
+		false,
+		false,
+		false
+	], 
+	'screw_screen_3' = [
+		false,
+		false,
+		false,
+		false
+	], 
+	'screw_screen_4' = [
+		false,
+		false,
+		false,
+		false,
+		false
+	], 
+	'screw_screen_5' = [
+		false,
+		false,
+		false,
+		false,
+		false,
+		false
+	], 
+	'screw_screen_6' = [
+		false,
+		false,
+		false,
+		false,
+		false,
+		false
 	]
 }
 
@@ -40,6 +76,78 @@ var fuel_states = {
 		'open' : false,
 		'full' : true
 	}
+}
+
+var pipe_states = {
+	'pipe_1' = [
+		false,
+		true,
+		true
+	],
+	'pipe_2' = [
+		false,
+		false,
+		false,
+		false
+	],
+	'pipe_3' = [
+		false,
+		false
+	],
+	'pipe_4' = [
+		false,
+		false
+	],
+	'pipe_5' = [
+		false,
+		false,
+		false,
+		false
+	],
+	'pipe_6' = [
+		false,
+		false,
+		false
+	],
+	'pipe_7' = [
+		false,
+		false,
+		false,
+		false
+	]
+}
+
+var tube_states = {
+	'tube_1' = [
+		false,
+		false,
+		false
+	],
+	'tube_2' = [
+		false,
+		false,
+		false,
+		false
+	],
+	'tube_3' = [
+		false,
+		false
+	],
+	'tube_4' = [
+		false,
+		false
+	],
+	'tube_5' = [
+		false,
+		false,
+		false,
+		false
+	],
+	'tube_6' = [
+		false,
+		false,
+		false
+	]
 }
 
 var break_functions := [
@@ -99,6 +207,12 @@ func get_equalizer_temp_value() -> float:
 		(equalizer_state['high_temp_value'] - equalizer_state['high_position']) * 1
 		)
 
+func get_true_amount(list):
+	var amount := 0
+	for value in list:
+		if value: amount += 1
+	return amount
+
 func get_oxigen_screws() -> int:
 	return 0
 
@@ -113,6 +227,39 @@ func get_thruster_1_fuel() -> bool:
 
 func get_thruster_2_fuel() -> bool:
 	return !fuel_states['fuel_2']['open'] and fuel_states['fuel_2']['full']
+
+func get_oxigen_tube() -> int:
+	return 0
+
+func get_temp_pipe() -> int:
+	return 0
+	
+func get_thruster_1_pipes() -> int:
+	return 0
+	
+func get_thruster_2_pipes() -> int:
+	return get_true_amount(pipe_states['pipe_1'])
+
+func get_screw_total() -> int:
+	var amount := 0
+	for screw_state in screw_states:
+		for screw in screw_states[screw_state]:
+			amount += 1
+	return amount
+
+func get_pipe_total() -> int:
+	var amount := 0
+	for pipe_state in pipe_states:
+		for pipe in pipe_states[pipe_state]:
+			amount += 1
+	return amount
+
+func get_tube_total() -> int:
+	var amount := 0
+	for tube_state in tube_states:
+		for tube in tube_states[tube_state]:
+			amount += 1
+	return amount
 
 func count_screws(screen_name) -> int:
 	var loose_amount: int = 0
