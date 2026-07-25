@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="25_ibube"]
 [ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="27_77ae2"]
 [ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="28_0etgu"]
+[ext_resource type="PackedScene" uid="uid://b76ystf0pfruu" path="res://game/tools/manual.tscn" id="33_fsjy5"]
 
 [sub_resource type="Animation" id="Animation_px363"]
 length = 0.001
@@ -444,13 +445,6 @@ mouse_filter = 2
 mouse_filter = 1
 stretch_mode = 0
 
-[node name="ToolBoxArea" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="3" unique_id=2004418641]
-monitoring = false
-monitorable = false
-
-[node name="Slots" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="4" unique_id=515828627]
-visible = false
-
 [node name="GavetaMeio" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=1691757581]
 z_index = -1
 offset_left = -174.0
@@ -474,13 +468,6 @@ mouse_filter = 2
 [node name="TextureButton" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="1" unique_id=1246168984]
 mouse_filter = 1
 
-[node name="ToolBoxArea" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="3" unique_id=2004418641]
-monitoring = false
-monitorable = false
-
-[node name="Slots" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="4" unique_id=515828627]
-visible = false
-
 [node name="GavetaFrente" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=2042995227]
 offset_left = -182.0
 offset_top = -288.0
@@ -489,6 +476,9 @@ offset_bottom = 367.0
 mouse_filter = 2
 texture = ExtResource("8_a5bbb")
 stretch_mode = 2
+
+[node name="Manual" parent="Workspace" unique_id=83848390 instance=ExtResource("33_fsjy5")]
+position = Vector2(324.99997, 816.99994)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665642088]
 libraries/ = SubResource("AnimationLibrary_px363")

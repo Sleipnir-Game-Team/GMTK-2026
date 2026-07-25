@@ -6,16 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://6orkrq5xgr33" path="res://assets/placeholders/tools/manual_aberto.png" id="4_eo4a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d87f6"]
-size = Vector2(106, 148)
+size = Vector2(96.30446, 147.7717)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo4a5"]
-size = Vector2(14, 148)
+size = Vector2(6.790697, 148)
 
 [node name="Manual" type="Area2D" unique_id=83848390]
+position = Vector2(721, 682)
 scale = Vector2(3.2397256, 3.2397256)
 script = ExtResource("1_in6qg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1628671763]
+position = Vector2(-2.3549505e-06, 0.11415479)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_d87f6")
 
 [node name="closed" type="Sprite2D" parent="." unique_id=753333140]
@@ -32,27 +35,61 @@ texture = ExtResource("4_eo4a5")
 
 [node name="LeftPage" type="TextEdit" parent="open" unique_id=54626974]
 unique_name_in_owner = true
+clip_contents = true
+layout_direction = 2
 offset_left = -946.9025
 offset_top = -610.61945
 offset_right = -53.09735
 offset_bottom = 584.07074
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
+selecting_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
+autowrap_mode = 1
+scroll_smooth = true
+scroll_v_scroll_speed = 1.0
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+caret_blink = true
+
+[node name="EditButton" type="Button" parent="open" unique_id=733940752]
+unique_name_in_owner = true
+offset_left = -961.7954
+offset_top = 499.87854
+offset_right = -725.7954
+offset_bottom = 598.87854
+theme_override_font_sizes/font_size = 66
+text = "EDITAR"
 
 [node name="RightPage" type="TextEdit" parent="open" unique_id=1919705114]
 unique_name_in_owner = true
+clip_contents = true
 offset_left = 35.39807
 offset_top = -601.7699
 offset_right = 929.20325
 offset_bottom = 592.9203
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
+selecting_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
+autowrap_mode = 1
+scroll_smooth = true
+scroll_v_scroll_speed = 1.0
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+caret_blink = true
 
 [node name="next_page" type="Area2D" parent="." unique_id=275568119]
 unique_name_in_owner = true
@@ -62,7 +99,7 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_page" unique_id=774980562]
-position = Vector2(-6, 0)
+position = Vector2(-5.207173, 0)
 shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
@@ -73,7 +110,8 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="open_book" unique_id=972997087]
-position = Vector2(-6, 0)
+position = Vector2(-8.143755, 0)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
@@ -90,9 +128,12 @@ shape = SubResource("RectangleShape2D_eo4a5")
 debug_color = Color(0.82770574, 0.39628926, 0, 0.41960785)
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("2_d87f6")]
+unique_name_in_owner = true
 
 [connection signal="text_changed" from="open/LeftPage" to="." method="_on_left_page_text_changed"]
+[connection signal="pressed" from="open/EditButton" to="." method="_on_edit_button_pressed"]
 [connection signal="text_changed" from="open/RightPage" to="." method="_on_right_page_text_changed"]
 [connection signal="input_event" from="next_page" to="." method="_on_next_page_input_event"]
 [connection signal="input_event" from="open_book" to="." method="_on_open_book_input_event"]
 [connection signal="input_event" from="previous_page" to="." method="_on_previous_page_input_event"]
+[connection signal="drag_start" from="use_draggable" to="." method="_on_use_draggable_drag_start"]
