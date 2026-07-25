@@ -36,7 +36,6 @@ func _ready() -> void:
 			shape.shape = rectangle
 			cracked_area.add_child(shape)
 	
-	AudioManager.play_global("gas.leak")
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -83,8 +82,8 @@ func stop_taping() -> void:
 	query.collide_with_bodies = false
 	query.collision_mask = 1 << 14 - 1
 	query.shape = SegmentShape2D.new()
-	query.shape.a = _current_tape.points[0]
-	query.shape.b = _current_tape.points[1]
+	query.shape.a = to_global(_current_tape.points[0])
+	query.shape.b = to_global(_current_tape.points[1])
 	
 	var space := get_world_2d().direct_space_state
 	var results := space.intersect_shape(query)
@@ -93,12 +92,7 @@ func stop_taping() -> void:
 		cracked_area.shape_owner_get_owner(shape_owner).queue_free()
 		_taped += 1
 	
-	var stopped: bool = _percentage_completed() > minimum_completion
-	
-	if stopped:
-		AudioManager.stop_global("gas.leak")
-	
-	finished.emit(stopped)
+	finished.emit(_percentage_completed() > minimum_completion)
 
 func _percentage_completed() -> float:
 	return float(_taped) / float(segment_columns * segment_rows)
