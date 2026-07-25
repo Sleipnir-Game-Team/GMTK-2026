@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dnu8sa7hdsqwa" path="res://assets/placeholders/craks2.webp" id="7_hwbsw"]
 
 [node name="Segment1" type="Node2D" unique_id=1008505715 node_paths=PackedStringArray("module_models")]
+position = Vector2(-238, 28.999998)
+scale = Vector2(0.6383883, 0.57079786)
 script = ExtResource("1_tsbby")
 module_models = {
 NodePath("Equalizer"): ExtResource("2_cl13d"),

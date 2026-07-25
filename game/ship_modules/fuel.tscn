@@ -21,13 +21,13 @@ image = NodePath("Door")
 screen_name = &"fuel_1"
 
 [node name="Door" type="TextureRect" parent="." unique_id=1035389226]
-offset_left = 1325.0
-offset_top = 21.0
-offset_right = 2125.0
-offset_bottom = 621.0
+offset_left = 49.0
+offset_top = 26.0
+offset_right = 849.0
+offset_bottom = 626.0
 scale = Vector2(0.70358825, 0.70358825)
 texture = ExtResource("2_j7wed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1125613968 groups=["use_unlock"]]
-position = Vector2(1596.5, 222.5)
+position = Vector2(320.5, 227.5)
 shape = SubResource("RectangleShape2D_qyb7x")

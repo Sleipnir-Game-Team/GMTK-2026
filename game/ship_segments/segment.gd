@@ -19,6 +19,7 @@ func _on_texture_button_toggled(module_model: PackedScene, panel: Node) -> void:
 		modules[panel] = module_model.instantiate()
 		get_parent().add_child(modules[panel])
 		current_panel = panel
+		visible = false
 
 func _exit_tree() -> void:
 	for module in modules:

@@ -5,12 +5,12 @@ extends Area2D
 var leaky_pipes: int = 0
 var necessary_leaky_pipes: int = 0
 
-@onready var pipes: Array[Area2D] = [%Pipe1, %Pipe2, %Pipe3, %Pipe4]
+@onready var pipes: Array = [%Pipe1, %Pipe2, %Pipe3, %Pipe4]
 @onready var state_manager: StateManager = get_tree().get_first_node_in_group("Jogo").state_manager
 
 
 func _ready() -> void:
-	var necessary_pipes: Array[Area2D] = pipes.filter(_filter_pipe)
+	var necessary_pipes: Array = pipes.filter(_filter_pipe)
 	for i in range(necessary_pipes.size()):
 		pipes[i].leaky = state_manager.pipe_states[screen_name][i]
 	for pipe in pipes:
@@ -37,5 +37,5 @@ func check_pipes() -> int:
 	return nes_leaky
 
 
-func _filter_pipe(pipe: Dictionary) -> bool:
+func _filter_pipe(pipe) -> bool:
 	return pipe.necessary

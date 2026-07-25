@@ -9,13 +9,13 @@ cracks = [NodePath("Crack"), NodePath("Crack2"), NodePath("Crack3")]
 screen_name = &"tube_1"
 
 [node name="Crack" parent="." unique_id=597074376 instance=ExtResource("1_k8mup")]
-position = Vector2(1368.0001, 135)
+position = Vector2(224.00012, 124)
 scale = Vector2(0.26583824, 0.35112503)
 
 [node name="Crack2" parent="." unique_id=1690211730 instance=ExtResource("1_k8mup")]
-position = Vector2(1415, 365)
+position = Vector2(271, 354)
 scale = Vector2(0.79918605, 0.30952272)
 
 [node name="Crack3" parent="." unique_id=729439098 instance=ExtResource("1_k8mup")]
-position = Vector2(1751, 179)
+position = Vector2(607, 168)
 scale = Vector2(0.33338758, 0.5133405)

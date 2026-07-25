@@ -1,20 +1,178 @@
 [gd_scene format=3 uid="uid://bi0nwileboayl"]
 
 [ext_resource type="Script" uid="uid://ceunm6ik2o4y4" path="res://game/main.gd" id="1_cxumw"]
+[ext_resource type="Texture2D" uid="uid://ditwe4thvvxyw" path="res://assets/Sprites/Background_Estacao.png" id="2_c08u8"]
+[ext_resource type="Texture2D" uid="uid://bufq0ehvknem2" path="res://assets/Sprites/Cortina.png" id="3_a5bbb"]
 [ext_resource type="Script" uid="uid://d0pk83r7k4mge" path="res://game/game_logic.gd" id="3_emt18"]
+[ext_resource type="Texture2D" uid="uid://cm2hr8iume2vu" path="res://assets/Sprites/Sala_control.png" id="4_4uwjs"]
 [ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://game/ship_segments/check.tscn" id="4_vop5m"]
 [ext_resource type="PackedScene" uid="uid://bic4u7fmhl5u6" path="res://game/toolbox_teste.tscn" id="5_5un7r"]
-[ext_resource type="PackedScene" uid="uid://3aok55b405ua" path="res://game/ship_segments/Segment 1.tscn" id="5_itumj"]
+[ext_resource type="Texture2D" uid="uid://obatikayt18x" path="res://assets/Sprites/Corda.png" id="5_px363"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
-[ext_resource type="Texture2D" uid="uid://chmme5b011d3f" path="res://assets/placeholders/cockpit.png" id="5_xkbyp"]
 [ext_resource type="Script" uid="uid://bv1h4s5g74844" path="res://game/state_manager.gd" id="6_dp3pf"]
-[ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/segment 2.tscn" id="6_ioaqv"]
-[ext_resource type="Texture2D" uid="uid://croikrl37aywb" path="res://assets/placeholders/mechionbridge2.png" id="6_lx3aj"]
-[ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="11_frwyw"]
-[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="12_ioaqv"]
-[ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="13_li27q"]
-[ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="14_g6fv7"]
-[ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="15_frwyw"]
+[ext_resource type="Texture2D" uid="uid://dgwqippspbh03" path="res://assets/Sprites/Gaveta_Off.png" id="6_rtjhp"]
+[ext_resource type="Texture2D" uid="uid://boyi5gd2nv5m2" path="res://assets/Sprites/Monitor.png" id="8_77ae2"]
+[ext_resource type="Texture2D" uid="uid://yrf2fsl8g4tx" path="res://assets/Sprites/Armario.png" id="8_a5bbb"]
+[ext_resource type="Texture2D" uid="uid://cowf3u836xvt" path="res://assets/Sprites/Monitor_2.png" id="9_0etgu"]
+[ext_resource type="Texture2D" uid="uid://cjymdmecrpxdq" path="res://assets/Sprites/Nave_Dir.png" id="10_fsjy5"]
+[ext_resource type="Texture2D" uid="uid://b3df4lt3m3rxd" path="res://assets/Sprites/Nave_Esq.png" id="11_l78i6"]
+[ext_resource type="PackedScene" uid="uid://3aok55b405ua" path="res://game/ship_segments/Segment 1.tscn" id="13_77ae2"]
+[ext_resource type="Texture2D" uid="uid://tcl8epvfjjso" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_4.png" id="13_tv0fx"]
+[ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/segment 2.tscn" id="14_0etgu"]
+[ext_resource type="Texture2D" uid="uid://kb5ihq8bdnlm" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_5.png" id="15_8ymx4"]
+[ext_resource type="Texture2D" uid="uid://bgsh2shypa8an" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_1.png" id="16_le3en"]
+[ext_resource type="Texture2D" uid="uid://di2a48lxveixy" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_2.png" id="17_rqwoc"]
+[ext_resource type="Texture2D" uid="uid://dy0j53kohh4g7" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_3.png" id="18_2o2kd"]
+[ext_resource type="Texture2D" uid="uid://e54ivl2xxcvs" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_4.png" id="19_rvc4y"]
+[ext_resource type="Texture2D" uid="uid://fsjlnwyb4ylq" path="res://assets/Sprites/Armario_divisor.png" id="20_le3en"]
+[ext_resource type="Texture2D" uid="uid://nolv0djx54tc" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_3.png" id="21_a5bbb"]
+[ext_resource type="Texture2D" uid="uid://icvq8o46ths5" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_5.png" id="22_77ae2"]
+[ext_resource type="Texture2D" uid="uid://dbxf5sfpsvr8v" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_6.png" id="24_0etgu"]
+[ext_resource type="PackedScene" uid="uid://cq0xomg3yjhjn" path="res://game/tools/screwdriver.tscn" id="24_rtjhp"]
+[ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="25_ibube"]
+[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="27_77ae2"]
+[ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="28_0etgu"]
+
+[sub_resource type="Animation" id="Animation_px363"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Grade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(449, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ship:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Bus_direita:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG/Bus esquerda:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Screen 2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, -368)]
+}
+
+[sub_resource type="Animation" id="Animation_c08u8"]
+resource_name = "bring_screen_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Screen 2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, -368), Vector2(1000, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_a5bbb"]
+resource_name = "open_curtains"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Grade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(449, 5), Vector2(449, -610)]
+}
+
+[sub_resource type="Animation" id="Animation_4uwjs"]
+resource_name = "turn_on_screen"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ship:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG/Bus_direita:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Bus esquerda:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_px363"]
+_data = {
+&"RESET": SubResource("Animation_px363"),
+&"bring_screen_2": SubResource("Animation_c08u8"),
+&"open_curtains": SubResource("Animation_a5bbb"),
+&"turn_on_screen": SubResource("Animation_4uwjs")
+}
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -31,109 +189,295 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cxumw")
 
+[node name="BG" type="Node" parent="." unique_id=1014985349]
+
+[node name="BackGround4" type="TextureRect" parent="BG" unique_id=1998982636]
+z_index = -4
+offset_left = 380.0
+offset_right = 1543.0
+offset_bottom = 647.0
+mouse_filter = 2
+texture = ExtResource("2_c08u8")
+stretch_mode = 2
+
+[node name="Grade" type="TextureRect" parent="BG" unique_id=1019106260]
+z_index = -4
+offset_left = 449.0
+offset_top = 5.0
+offset_right = 1453.0
+offset_bottom = 617.0
+mouse_filter = 2
+texture = ExtResource("3_a5bbb")
+stretch_mode = 2
+
+[node name="Sala" type="TextureRect" parent="BG" unique_id=1803595270]
+z_index = -4
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("4_4uwjs")
+stretch_mode = 2
+
+[node name="Cortina" type="TextureRect" parent="BG" unique_id=1999603017]
+z_index = -4
+offset_left = 1387.0
+offset_top = -222.0
+offset_right = 1423.0
+offset_bottom = 260.0
+mouse_filter = 2
+texture = ExtResource("5_px363")
+stretch_mode = 2
+
+[node name="Tela_1" type="TextureRect" parent="BG" unique_id=1072162968]
+z_index = -4
+offset_right = 724.0
+offset_bottom = 568.0
+mouse_filter = 2
+texture = ExtResource("8_77ae2")
+stretch_mode = 2
+
+[node name="Bus_direita" type="TextureRect" parent="BG" unique_id=2107489575]
+visible = false
+z_index = -4
+offset_left = 92.0
+offset_top = 28.0
+offset_right = 604.0
+offset_bottom = 284.0
+mouse_filter = 2
+texture = ExtResource("10_fsjy5")
+stretch_mode = 2
+
+[node name="Bus esquerda" type="TextureRect" parent="BG" unique_id=71411550]
+visible = false
+z_index = -4
+offset_left = 104.0
+offset_top = 266.0
+offset_right = 616.0
+offset_bottom = 522.0
+mouse_filter = 2
+texture = ExtResource("11_l78i6")
+stretch_mode = 2
+
 [node name="Hud" parent="." unique_id=658315518 instance=ExtResource("5_u5r6x")]
 layout_mode = 2
 
-[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager") groups=["Jogo"]]
+[node name="Screen 2" type="Node2D" parent="." unique_id=745309780]
+position = Vector2(1000, -368)
+
+[node name="Tela_2" type="TextureRect" parent="Screen 2" unique_id=1702014731]
+z_index = -3
+offset_right = 920.0
+offset_bottom = 367.0
+texture = ExtResource("9_0etgu")
+stretch_mode = 2
+
+[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "screen_2") groups=["Jogo"]]
 script = ExtResource("3_emt18")
 time_limit = 40.0
 panel_dict = {
-NodePath("../Ship/Cockpit"): ExtResource("4_vop5m"),
-NodePath("../Ship/Sessao 1"): ExtResource("5_itumj"),
-NodePath("../Ship/Sessao 2"): ExtResource("6_ioaqv"),
-NodePath("../Ship/Sessao 3"): null,
-NodePath("../Ship/Sessao 4"): null,
-NodePath("../Ship/Sessao 5"): null,
-NodePath("../Ship/Sessao 6"): null,
-NodePath("../Ship/Sessao 7"): null
+NodePath("../Ship/Cockpit1"): ExtResource("4_vop5m"),
+NodePath("../Ship/Cockpit2"): ExtResource("4_vop5m"),
+NodePath("../Ship/Estabilizador"): ExtResource("13_77ae2"),
+NodePath("../Ship/Task6"): ExtResource("14_0etgu")
 }
 state_manager = NodePath("State Manager")
+animation_player = NodePath("../AnimationPlayer")
+screen_2 = NodePath("../Screen 2")
 
 [node name="State Manager" type="Node" parent="Jogo" unique_id=1308149373]
 script = ExtResource("6_dp3pf")
 
 [node name="Ship" type="Node2D" parent="." unique_id=328625406]
+visible = false
 position = Vector2(161, 413)
 scale = Vector2(0.64759463, 0.64759463)
 
-[node name="Cockpit" type="TextureButton" parent="Ship" unique_id=1165334968]
-offset_left = 46.0
-offset_top = -411.0
-offset_right = 4046.0
-offset_bottom = 3589.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("5_xkbyp")
+[node name="Cockpit1" type="TextureButton" parent="Ship" unique_id=15707683]
+z_index = 2
+offset_left = -35.637695
+offset_top = -180.6686
+offset_right = 9.205288
+offset_bottom = -136.37363
+scale = Vector2(1.8509424, 6.3098783)
+texture_hover = ExtResource("13_tv0fx")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 1" type="TextureButton" parent="Ship" unique_id=1964648531]
-offset_left = 42.0
-offset_top = -218.0
-offset_right = 4042.0
-offset_bottom = 3782.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Cockpit2" type="TextureButton" parent="Ship" unique_id=1945690889]
+z_index = 2
+offset_left = 534.28485
+offset_top = -565.16833
+offset_right = 580.03644
+offset_bottom = -519.47797
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("15_8ymx4")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 2" type="TextureButton" parent="Ship" unique_id=1568266538]
-offset_left = -208.0
-offset_top = 2.0
-offset_right = 3792.0
-offset_bottom = 4002.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Estabilizador" type="TextureButton" parent="Ship" unique_id=1014675299]
+z_index = 2
+offset_left = 424.64835
+offset_top = -548.18243
+offset_right = 468.9922
+offset_bottom = -510.93484
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("16_le3en")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 3" type="TextureButton" parent="Ship" unique_id=1475223341]
-offset_left = 292.0
-offset_top = 11.0
-offset_right = 4292.0
-offset_bottom = 4011.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Task2" type="TextureButton" parent="Ship" unique_id=1447146913]
+z_index = 2
+offset_left = 191.47781
+offset_top = -375.23474
+offset_right = 283.68488
+offset_bottom = -363.56384
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("17_rqwoc")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 4" type="TextureButton" parent="Ship" unique_id=1788007668]
-offset_left = -213.0
-offset_top = 243.0
-offset_right = 3787.0
-offset_bottom = 4243.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Task3" type="TextureButton" parent="Ship" unique_id=2071307681]
+z_index = 2
+offset_left = -15.441748
+offset_top = -433.91342
+offset_right = 77.469215
+offset_bottom = -418.02112
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("18_2o2kd")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 5" type="TextureButton" parent="Ship" unique_id=1850080607]
-offset_left = 43.0
-offset_top = 237.0
-offset_right = 4043.0
-offset_bottom = 4237.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Task4" type="TextureButton" parent="Ship" unique_id=1508392096]
+z_index = 2
+offset_left = 26.251
+offset_top = -589.8752
+offset_right = 138.87036
+offset_bottom = -581.92896
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("19_rvc4y")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 6" type="TextureButton" parent="Ship" unique_id=394416474]
-offset_left = 292.0
-offset_top = 238.0
-offset_right = 4292.0
-offset_bottom = 4238.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Task5" type="TextureButton" parent="Ship" unique_id=334903951]
+z_index = 2
+offset_left = 26.251
+offset_top = -589.8752
+offset_right = 138.87036
+offset_bottom = -581.92896
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("19_rvc4y")
+ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Sessao 7" type="TextureButton" parent="Ship" unique_id=893996751]
-offset_left = 51.0
-offset_top = 466.0
-offset_right = 4051.0
-offset_bottom = 4466.0
-scale = Vector2(0.05252052, 0.05252052)
-texture_normal = ExtResource("6_lx3aj")
+[node name="Task6" type="TextureButton" parent="Ship" unique_id=2142038396]
+z_index = 2
+offset_left = 511.12213
+offset_top = -123.53409
+offset_right = 580.1015
+offset_bottom = -90.01125
+scale = Vector2(1.9901745, 2.925444)
+texture_hover = ExtResource("22_77ae2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Task7" type="TextureButton" parent="Ship" unique_id=647578128]
+z_index = 2
+offset_left = 287.2167
+offset_top = -50.957787
+offset_right = 359.71542
+offset_bottom = -36.55539
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("21_a5bbb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Task42" type="TextureButton" parent="Ship" unique_id=1702726623]
+z_index = 2
+offset_left = 321.18863
+offset_top = -210.00793
+offset_right = 430.9925
+offset_bottom = -202.0617
+scale = Vector2(2.1938338, 6.21856)
+texture_hover = ExtResource("19_rvc4y")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Task8" type="TextureButton" parent="Ship" unique_id=1929490950]
+z_index = 2
+offset_left = 512.66644
+offset_top = -27.795189
+offset_right = 581.6458
+offset_bottom = 5.727646
+scale = Vector2(1.9901745, 2.925444)
+texture_hover = ExtResource("24_0etgu")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Workspace" type="Node2D" parent="." unique_id=1625623387]
+z_index = 1
 
-[node name="ToolboxTeste" parent="Workspace" unique_id=490391838 instance=ExtResource("5_5un7r")]
+[node name="ToolboxTeste" type="Node2D" parent="Workspace" unique_id=490391838]
 position = Vector2(1856, 711)
 
-[node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("11_frwyw"), ExtResource("12_ioaqv"), ExtResource("13_li27q"), ExtResource("14_g6fv7"), ExtResource("15_frwyw")])
+[node name="Gaveta" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=825591464]
+z_index = -2
+offset_left = -176.0
+offset_top = -286.0
+offset_right = 71.0
+offset_bottom = 369.0
+mouse_filter = 2
+texture = ExtResource("6_rtjhp")
+stretch_mode = 2
 
-[editable path="Workspace/ToolboxTeste"]
+[node name="ToolboxTeste" parent="Workspace/ToolboxTeste" unique_id=499527040 instance=ExtResource("5_5un7r")]
+position = Vector2(-165, 54)
+
+[node name="Box" parent="Workspace/ToolboxTeste/ToolboxTeste" index="0" unique_id=1428926048]
+pre_store = Array[PackedScene]([ExtResource("24_rtjhp"), ExtResource("25_ibube")])
+
+[node name="Gavetinha_2" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="0" unique_id=200066326]
+z_index = -1
+mouse_filter = 2
+
+[node name="TextureButton" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="1" unique_id=1246168984]
+mouse_filter = 1
+stretch_mode = 0
+
+[node name="GavetaMeio" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=1691757581]
+z_index = -1
+offset_left = -174.0
+offset_top = 29.0
+offset_right = -24.0
+offset_bottom = 183.0
+mouse_filter = 2
+texture = ExtResource("20_le3en")
+stretch_mode = 2
+
+[node name="ToolboxTeste2" parent="Workspace/ToolboxTeste" unique_id=554775045 instance=ExtResource("5_5un7r")]
+position = Vector2(-165, -151)
+
+[node name="Box" parent="Workspace/ToolboxTeste/ToolboxTeste2" index="0" unique_id=1428926048]
+pre_store = Array[PackedScene]([ExtResource("27_77ae2"), ExtResource("28_0etgu")])
+
+[node name="Gavetinha_2" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="0" unique_id=200066326]
+z_index = -1
+mouse_filter = 2
+
+[node name="TextureButton" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="1" unique_id=1246168984]
+mouse_filter = 1
+
+[node name="GavetaFrente" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=2042995227]
+offset_left = -182.0
+offset_top = -288.0
+offset_right = 65.0
+offset_bottom = 367.0
+mouse_filter = 2
+texture = ExtResource("8_a5bbb")
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665642088]
+libraries/ = SubResource("AnimationLibrary_px363")
+
+[editable path="Workspace/ToolboxTeste/ToolboxTeste"]
+[editable path="Workspace/ToolboxTeste/ToolboxTeste2"]

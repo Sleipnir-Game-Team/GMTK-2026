@@ -13,94 +13,93 @@
 [ext_resource type="Texture2D" uid="uid://bwlfm6yasnnvj" path="res://assets/placeholders/pipes/register_small.png" id="10_yoklb"]
 
 [node name="Plumbing" type="Area2D" unique_id=245482926]
-position = Vector2(1567.0001, 278)
 scale = Vector2(0.5491614, 0.62404066)
 script = ExtResource("1_441ij")
 screen_name = &"pipe_1"
 
 [node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
-position = Vector2(-330, -161)
+position = Vector2(392.0783, 316.06143)
 rotation = -1.5522739
 
 [node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
-position = Vector2(339, -221)
+position = Vector2(1061.0784, 256.06146)
 necessary = true
 
 [node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
-position = Vector2(234, 273)
+position = Vector2(956.0784, 750.06146)
 necessary = true
 
 [node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_qd8nk")]
 unique_name_in_owner = true
-position = Vector2(-444, 106)
+position = Vector2(278.07843, 583.06146)
 necessary = true
 
 [node name="RegisterBig" type="Sprite2D" parent="." unique_id=121561216]
-position = Vector2(371, 210.24487)
+position = Vector2(1093.0784, 687.3063)
 scale = Vector2(1.2984633, 1.2984633)
 texture = ExtResource("2_iec6w")
 
 [node name="StraightSmall" type="Sprite2D" parent="." unique_id=607246356]
-position = Vector2(422, -223.75513)
+position = Vector2(1144.0784, 253.30634)
 texture = ExtResource("3_qd8nk")
 
 [node name="CrossSmall" type="Sprite2D" parent="." unique_id=223068907]
-position = Vector2(-530.9693, 107.74487)
+position = Vector2(191.10907, 584.8063)
 scale = Vector2(1.2034687, 1.2034687)
 texture = ExtResource("4_vkw0w")
 
 [node name="StraightLong" type="Sprite2D" parent="." unique_id=1757143429]
-position = Vector2(37, -57.755127)
+position = Vector2(759.0784, 419.30634)
 texture = ExtResource("5_1e30i")
 
 [node name="UturnSmall" type="Sprite2D" parent="." unique_id=2112799684]
-position = Vector2(-262.96933, 311.74487)
+position = Vector2(459.1091, 788.80634)
 texture = ExtResource("6_q6enw")
 
 [node name="Elbow" type="Sprite2D" parent="." unique_id=2056309783]
-position = Vector2(-383.96933, 150.74487)
+position = Vector2(338.1091, 627.80634)
 rotation = 1.5707964
 texture = ExtResource("7_1acx5")
 
 [node name="Curve2" type="Sprite2D" parent="." unique_id=1003138050]
-position = Vector2(216, -148.75513)
+position = Vector2(938.0784, 328.30634)
 rotation = 1.5707964
 texture = ExtResource("8_tmyky")
 
 [node name="Curve" type="Sprite2D" parent="." unique_id=692645368]
-position = Vector2(-103.96933, 121.74487)
+position = Vector2(618.10913, 598.80634)
 rotation = 1.5707964
 texture = ExtResource("8_tmyky")
 
 [node name="Tpiece" type="Sprite2D" parent="." unique_id=397885635]
-position = Vector2(88.03064, 52.744873)
+position = Vector2(810.1091, 529.80634)
 texture = ExtResource("9_p74k3")
 
 [node name="Elbow2" type="Sprite2D" parent="." unique_id=499729277]
-position = Vector2(177, 230.24487)
+position = Vector2(899.0784, 707.30634)
 rotation = -1.5707964
 texture = ExtResource("7_1acx5")
 
 [node name="Elbow4" type="Sprite2D" parent="." unique_id=345661729]
-position = Vector2(393, -94.75513)
+position = Vector2(1115.0784, 382.30634)
 rotation = 3.1415925
 texture = ExtResource("7_1acx5")
 
 [node name="Elbow3" type="Sprite2D" parent="." unique_id=1634008526]
-position = Vector2(-297, -102.75513)
+position = Vector2(425.07843, 374.30634)
 rotation = -1.5707964
 texture = ExtResource("7_1acx5")
 
 [node name="Curve3" type="Sprite2D" parent="." unique_id=1401813820]
-position = Vector2(509, -271.75513)
+position = Vector2(1231.0784, 205.30634)
 rotation = 1.5707964
 texture = ExtResource("8_tmyky")
 
 [node name="RegisterSmall" type="Sprite2D" parent="." unique_id=1848797819]
-position = Vector2(-362.99997, -308.75513)
+position = Vector2(359.0784, 168.30634)
 rotation = -1.5707964
 scale = Vector2(1.1200426, 1.1200426)
 texture = ExtResource("10_yoklb")

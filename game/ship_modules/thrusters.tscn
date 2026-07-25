@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b04j8bi86js1w"]
 
-[ext_resource type="Script" uid="uid://b84fdumuihked" path="res://game/ship_modules/thrusters.gd" id="1_lbvuc"]
+[ext_resource type="Script" uid="uid://b84fdumuihked" path="res://game/ship_modules/scripts/thrusters.gd" id="1_lbvuc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbvuc"]
 font_size = 40
@@ -16,16 +16,17 @@ label_1 = NodePath("Label")
 label_2 = NodePath("Label2")
 
 [node name="Label" type="Label" parent="." unique_id=1612819112]
-offset_left = 1390.0
-offset_right = 1920.0
-offset_bottom = 228.0
+offset_left = 31.0
+offset_top = 28.0
+offset_right = 561.0
+offset_bottom = 256.0
 text = "Oxygen in the air is: x%"
 label_settings = SubResource("LabelSettings_lbvuc")
 
 [node name="Label2" type="Label" parent="." unique_id=1034232110]
-offset_left = 1390.0
-offset_top = 85.0
-offset_right = 1920.0
-offset_bottom = 313.0
+offset_left = 31.0
+offset_top = 113.0
+offset_right = 561.0
+offset_bottom = 341.0
 text = "Oxygen in the air is: x%"
 label_settings = SubResource("LabelSettings_pfyau")

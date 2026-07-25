@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ce6nt44ivx8d3" path="res://game/toolbox_teste.gd" id="1_fxsc8"]
 [ext_resource type="PackedScene" uid="uid://1n2c8xxqa4o4" path="res://game/stored_item.tscn" id="2_18286"]
+[ext_resource type="Texture2D" uid="uid://60psg0jtujey" path="res://assets/Sprites/Gaveta.png" id="4_h5y8b"]
 [ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/uses/example_use.tscn" id="4_lstkq"]
-
-[sub_resource type="Gradient" id="Gradient_vop5m"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5un7r"]
-gradient = SubResource("Gradient_vop5m")
 
 [sub_resource type="Animation" id="Animation_fxsc8"]
 length = 0.001
@@ -37,7 +32,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-910, 0)]
+"values": [Vector2(0, 0), Vector2(-810, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_18286"]
@@ -47,6 +42,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5y8b"]
+size = Vector2(19.04401, 11.825054)
 
 [node name="ToolboxTeste" type="Node2D" unique_id=490391838]
 
@@ -57,17 +53,24 @@ toggle_button = NodePath("TextureButton")
 stored_item_model = ExtResource("2_18286")
 slots = [NodePath("Slots/Node2D"), NodePath("Slots/Node2D2"), NodePath("Slots/Node2D3"), NodePath("Slots/Node2D4"), NodePath("Slots/Node2D5")]
 
+[node name="Gavetinha_2" type="TextureRect" parent="Box" unique_id=200066326]
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 930.0
+offset_bottom = 312.0
+texture = ExtResource("4_h5y8b")
+stretch_mode = 2
+
 [node name="TextureButton" type="TextureButton" parent="Box" unique_id=1246168984]
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 137.0
+offset_bottom = 305.0
 toggle_mode = true
-texture_normal = SubResource("GradientTexture2D_5un7r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Box" unique_id=470394649]
 libraries/ = SubResource("AnimationLibrary_18286")
 
 [node name="ToolBoxArea" parent="Box" unique_id=2004418641 groups=["use_store"] instance=ExtResource("4_lstkq")]
-position = Vector2(546, 246.00003)
+position = Vector2(466, 157.00003)
 scale = Vector2(11.259012, 15.40478)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box/ToolBoxArea" unique_id=1040343872]
@@ -77,16 +80,16 @@ shape = SubResource("RectangleShape2D_h5y8b")
 [node name="Slots" type="Node2D" parent="Box" unique_id=515828627]
 
 [node name="Node2D" type="Node2D" parent="Box/Slots" unique_id=508181477]
-position = Vector2(201, 96)
+position = Vector2(232, 227)
 
 [node name="Node2D2" type="Node2D" parent="Box/Slots" unique_id=137380673]
-position = Vector2(483, 98)
+position = Vector2(361, 231)
 
 [node name="Node2D3" type="Node2D" parent="Box/Slots" unique_id=50501462]
-position = Vector2(785, 92)
+position = Vector2(482, 226)
 
 [node name="Node2D4" type="Node2D" parent="Box/Slots" unique_id=157639773]
-position = Vector2(332, 281)
+position = Vector2(617, 223)
 
 [node name="Node2D5" type="Node2D" parent="Box/Slots" unique_id=904289261]
-position = Vector2(639, 294)
+position = Vector2(748, 223)

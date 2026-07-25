@@ -3,9 +3,13 @@ extends Node
 @export var time_limit: float = 0.0
 @export var panel_dict: Dictionary[Node, PackedScene] = {}
 @export var state_manager: Node
+@export var animation_player: AnimationPlayer
+@export var screen_2: Node2D
 
 var current_panel: Node
 var current_segment: Node
+
+var screen_on := false
 
 var ship_attributes := {
 	'oxigen': 21.5,
@@ -56,6 +60,7 @@ var ship_conditions := {
 func _ready() -> void:
 	for panel in panel_dict:
 		panel.pressed.connect(_on_ship_panel_pressed.bind(panel))
+	animation_player.play("turn_on_screen")
 
 func setup(_save_data: Dictionary) -> void:
 	start_timer()
@@ -103,13 +108,24 @@ func _on_ship_panel_pressed(panel: Node) -> void:
 	var changing := current_panel != panel
 	
 	if current_panel:
+		if !current_segment.visible:
+			changing = true
 		current_segment.queue_free()
 		current_panel = null
 	
 	if changing:
 		current_segment = panel_dict[panel].instantiate()
-		get_parent().add_child(current_segment)
+		screen_2.add_child(current_segment)
 		current_panel = panel
+	
+	if screen_on and current_panel == null:
+		animation_player.speed_scale = 5
+		animation_player.play_backwards("bring_screen_2")
+		screen_on = false
+	elif !screen_on and current_panel != null:
+		animation_player.speed_scale = 5
+		animation_player.play("bring_screen_2")
+		screen_on = true
 	
 	#if current_segments.has(panel):
 		#current_segments[panel].queue_free()

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cj1j3tmmldvjn"]
+
+[ext_resource type="Script" uid="uid://ce6nt44ivx8d3" path="res://game/toolbox_teste.gd" id="1_teawk"]
+[ext_resource type="PackedScene" uid="uid://1n2c8xxqa4o4" path="res://game/stored_item.tscn" id="2_qpn32"]
+[ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="3_whsga"]
+[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key_1.tscn" id="4_i3xi4"]
+[ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="5_yl06m"]
+[ext_resource type="PackedScene" uid="uid://bje2u8v6xejty" path="res://game/tools/fuel.tscn" id="6_0npt6"]
+[ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="7_nwhfs"]
+[ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/uses/example_use.tscn" id="8_c28tx"]
+[ext_resource type="Texture2D" uid="uid://60psg0jtujey" path="res://assets/Sprites/Gaveta.png" id="9_wry1l"]
+
+[sub_resource type="Animation" id="Animation_fxsc8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7187u"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-910, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18286"]
+_data = {
+&"RESET": SubResource("Animation_fxsc8"),
+&"open": SubResource("Animation_7187u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0etgu"]
+size = Vector2(19.024004, 11.865921)
+
+[node name="Box" type="Node2D" unique_id=526048553 node_paths=PackedStringArray("anim_player", "toggle_button", "slots") groups=["tool_draggable"]]
+script = ExtResource("1_teawk")
+anim_player = NodePath("AnimationPlayer")
+toggle_button = NodePath("TextureButton")
+stored_item_model = ExtResource("2_qpn32")
+slots = [NodePath("Slots/Node2D"), NodePath("Slots/Node2D2"), NodePath("Slots/Node2D3"), NodePath("Slots/Node2D4"), NodePath("Slots/Node2D5")]
+pre_store = Array[PackedScene]([ExtResource("3_whsga"), ExtResource("4_i3xi4"), ExtResource("5_yl06m"), ExtResource("6_0npt6"), ExtResource("7_nwhfs")])
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=301445755]
+offset_left = -150.61905
+offset_top = -132.09268
+offset_right = 124.17966
+offset_bottom = -2.910614
+rotation = 0.75049156
+toggle_mode = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1120792025]
+libraries/ = SubResource("AnimationLibrary_18286")
+
+[node name="ToolBoxArea" parent="." unique_id=2004418641 groups=["use_store"] instance=ExtResource("8_c28tx")]
+position = Vector2(546, 246.00003)
+scale = Vector2(11.259012, 15.40478)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToolBoxArea" unique_id=1098500173]
+position = Vector2(-21.849163, -3.2457476)
+scale = Vector2(4.262541, 1.5883819)
+shape = SubResource("RectangleShape2D_0etgu")
+
+[node name="Slots" type="Node2D" parent="." unique_id=1523177042]
+
+[node name="Node2D" type="Node2D" parent="Slots" unique_id=1456258298]
+position = Vector2(201, 96)
+
+[node name="Node2D2" type="Node2D" parent="Slots" unique_id=567259334]
+position = Vector2(483, 98)
+
+[node name="Node2D3" type="Node2D" parent="Slots" unique_id=1565134416]
+position = Vector2(785, 92)
+
+[node name="Node2D4" type="Node2D" parent="Slots" unique_id=249294245]
+position = Vector2(332, 281)
+
+[node name="Node2D5" type="Node2D" parent="Slots" unique_id=1620954807]
+position = Vector2(639, 294)
+
+[node name="Gavetinha_2" type="TextureRect" parent="." unique_id=1120278240]
+offset_left = -166.0
+offset_top = 47.0
+offset_right = 766.0
+offset_bottom = 358.0
+texture = ExtResource("9_wry1l")
+stretch_mode = 2

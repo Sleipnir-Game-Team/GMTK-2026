@@ -6,6 +6,7 @@
 font_size = 40
 
 [node name="Estabilizer" type="Node2D" unique_id=239087859 node_paths=PackedStringArray("slider_1", "slider_2", "slider_3", "label_oxi", "label_temp") groups=["Estabilizer"]]
+scale = Vector2(0.8878435, 0.85440904)
 script = ExtResource("1_uith5")
 slider_1 = NodePath("VSlider")
 slider_2 = NodePath("VSlider2")
@@ -14,9 +15,9 @@ label_oxi = NodePath("Label")
 label_temp = NodePath("Label2")
 
 [node name="VSlider" type="VSlider" parent="." unique_id=1791192789]
-offset_left = 1176.0
+offset_left = 68.00012
 offset_top = 21.000002
-offset_right = 1192.0
+offset_right = 84.00012
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
@@ -25,9 +26,9 @@ ticks_on_borders = true
 ticks_position = 3
 
 [node name="VSlider2" type="VSlider" parent="." unique_id=329107700]
-offset_left = 1283.0001
+offset_left = 175.00024
 offset_top = 21.0
-offset_right = 1299.0001
+offset_right = 191.00024
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
@@ -36,9 +37,9 @@ ticks_on_borders = true
 ticks_position = 3
 
 [node name="VSlider3" type="VSlider" parent="." unique_id=122718010]
-offset_left = 1394.0
+offset_left = 286.00012
 offset_top = 21.000002
-offset_right = 1410.0
+offset_right = 302.00012
 offset_bottom = 492.0
 scale = Vector2(4.2522087, 1.1223147)
 value = 50.0
@@ -47,17 +48,17 @@ ticks_on_borders = true
 ticks_position = 3
 
 [node name="Label" type="Label" parent="." unique_id=1261226294]
-offset_left = 1538.0
+offset_left = 430.0
 offset_top = 192.0
-offset_right = 1864.0
+offset_right = 756.0
 offset_bottom = 247.0
 text = "Oxigenio: xx,xx%"
 label_settings = SubResource("LabelSettings_4j4dj")
 
 [node name="Label2" type="Label" parent="." unique_id=783779573]
-offset_left = 1536.0
+offset_left = 428.0
 offset_top = 281.0
-offset_right = 1908.0
+offset_right = 800.0
 offset_bottom = 336.0
 text = "Temperatura: xx C°"
 label_settings = SubResource("LabelSettings_4j4dj")

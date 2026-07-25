@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dxf0gxab3ejya" path="res://assets/placeholders/hazard.png" id="5_dp0yn"]
 
 [node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
+position = Vector2(-311.00003, -2)
+scale = Vector2(0.85317665, 0.9702357)
 script = ExtResource("1_bvxae")
 module_models = {
 NodePath("Screw"): ExtResource("2_dwwdm"),
