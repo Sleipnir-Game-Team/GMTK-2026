@@ -43,7 +43,7 @@ var _current_tape: Line2D
 
 @onready var total_segments: int = segment_rows * segment_columns
 @onready var cracked_area: Area2D = %CrackedArea
-@onready var crack: Sprite2D = %Crack
+@onready var crack: Sprite2D = %VisibleCrack
 
 func _ready() -> void:
 	var area: Rect2 = crack.get_rect() * crack.transform
