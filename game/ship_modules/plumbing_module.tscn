@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bxokrabkatrvy"]
+[gd_scene format=3 uid="uid://dnq7vaq8uqep5"]
 
 [ext_resource type="Texture2D" uid="uid://bn1f6ljkhhfre" path="res://assets/register_big.png" id="2_iec6w"]
 [ext_resource type="PackedScene" uid="uid://cwoqcfqkw1scl" path="res://game/uses/pipe.tscn" id="2_qd8nk"]

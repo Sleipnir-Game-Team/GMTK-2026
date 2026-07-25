@@ -11,4 +11,4 @@ func _ready() -> void:
 		label.label_settings.font_color = Color.RED
 	else:
 		label.label_settings.font_color = Color.GREEN
-	label.text = 'Oxygen in the air is: '+str(o2)+'%'
+	label.text = 'Oxygen in the air is: '+str(snapped(o2,0.01))+'%'

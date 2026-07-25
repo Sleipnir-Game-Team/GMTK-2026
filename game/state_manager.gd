@@ -20,7 +20,14 @@ var equalizer_state := {
 	'high_temp_value' = 50
 }
 
-
+var screw_states = {
+	'screw_screen_1' = [
+		false,
+		true,
+		false,
+		true
+	]
+}
 
 var break_functions := [
 	break_equalizer
@@ -79,8 +86,24 @@ func get_equalizer_temp_value() -> float:
 		(equalizer_state['high_temp_value'] - equalizer_state['high_position']) * 1
 		)
 
+func get_oxigen_screws() -> int:
+	return 0
+
+func get_thruster_1_screws() -> int:
+	return count_screws('screw_screen_1')
+
+func get_thruster_2_screws() -> int:
+	return 0
+
+func count_screws(screen_name) -> int:
+	var loose_amount: int = 0
+	for screw in screw_states[screen_name]:
+		if screw:
+			loose_amount += 1
+	return loose_amount 
+
 func break_equalizer() -> void:
-	var values: Array[float] = [rng.randf_range(0,100), rng.randf_range(0,100), rng.randf_range(0,100)]
+	var values = [rng.randf_range(0,100), rng.randf_range(0,100), rng.randf_range(0,100)]
 	equalizer_state['low_oxi_value'] = values[equalizer_state['low_oxi_slider']]
 	equalizer_state['mid_oxi_value'] = values[equalizer_state['mid_oxi_slider']]
 	equalizer_state['high_oxi_value'] = values[equalizer_state['high_oxi_slider']]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rlqbpqilhq8k"]
+
+[ext_resource type="Script" uid="uid://ctjar5dhgsxdj" path="res://game/behaviours/scripts/screwable.gd" id="1_may5x"]
+
+[node name="use_screwable" type="Node" unique_id=700470007]
+script = ExtResource("1_may5x")

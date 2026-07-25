@@ -1,12 +1,13 @@
 extends Area2D
 
-signal finished
+signal finished(enough: bool)
 
-@export var percentage_completed: float = 0.6
+@export_range(0, 1) var minimum_completion: float = 0.6
 @export var segment_rows: int = 5
 @export var segment_columns: int = 5
 @export var line_texture: Texture2D
 
+var _taped: int = 0
 var _taping: bool = false:
 	set(taping):
 		if taping:
@@ -18,16 +19,31 @@ var _taping: bool = false:
 			_current_tape.add_point(get_local_mouse_position())
 			_current_tape.add_point(get_local_mouse_position())
 			add_child(_current_tape)
-		
 		elif _taping: # was taping and is no longer
-			finished.emit()
+			var query := PhysicsShapeQueryParameters2D.new()
+			query.collide_with_areas = true
+			query.collide_with_bodies = false
+			query.collision_mask = 1 << 14 - 1
+			query.shape = SegmentShape2D.new()
+			query.shape.a = _current_tape.points[0]
+			query.shape.b = _current_tape.points[1]
+			
+			var space := get_world_2d().direct_space_state
+			var results := space.intersect_shape(query)
+			for result in results:
+				var shape_owner = cracked_area.shape_find_owner(result.shape)
+				cracked_area.shape_owner_get_owner(shape_owner).queue_free()
+				_taped += 1
+			
+			finished.emit(_percentage_completed() > minimum_completion)
 		
 		_taping = taping
 
 var _current_tape: Line2D
 
 @onready var total_segments: int = segment_rows * segment_columns
-@onready var crack: Sprite2D = $Crack
+@onready var cracked_area: Area2D = %CrackedArea
+@onready var crack: Sprite2D = %Crack
 
 func _ready() -> void:
 	var area: Rect2 = crack.get_rect() * crack.transform
@@ -43,7 +59,7 @@ func _ready() -> void:
 			shape.position.x = crack.position.x + (rectangle.size.x * row) + (rectangle.size.x / 2)
 			shape.position.y = crack.position.y + (rectangle.size.y * column) + (rectangle.size.y / 2)
 			shape.shape = rectangle
-			add_child(shape)
+			cracked_area.add_child(shape)
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -72,3 +88,7 @@ func start_taping() -> void:
 	await get_tree().process_frame
 	_taping = true
 	await finished
+
+
+func _percentage_completed() -> float:
+	return float(_taped) / float(segment_columns * segment_rows)

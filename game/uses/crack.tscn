@@ -5,15 +5,30 @@
 [ext_resource type="Texture2D" uid="uid://b6njdnle5mndx" path="res://assets/duct_tape - Copia.png" id="3_0onxk"]
 [ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="4_qetbp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qetbp"]
+size = Vector2(528, 472)
+
 [node name="Node2D" type="Node2D" unique_id=842445144]
 
-[node name="Crack" type="Area2D" parent="." unique_id=2004418641 groups=["use_tape"]]
-collision_layer = 40960
+[node name="TapeableArea" type="Area2D" parent="." unique_id=597074376 groups=["use_tape"]]
+collision_layer = 32768
 collision_mask = 2048
+monitoring = false
 script = ExtResource("1_8u5gk")
 line_texture = ExtResource("3_0onxk")
 
-[node name="Crack" type="Sprite2D" parent="Crack" unique_id=527946665]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeableArea" unique_id=1464983058]
+position = Vector2(200, 172)
+shape = SubResource("RectangleShape2D_qetbp")
+debug_color = Color(3.080368e-06, 0.6444441, 0.28688, 0.41960785)
+
+[node name="CrackedArea" type="Area2D" parent="TapeableArea" unique_id=2004418641]
+unique_name_in_owner = true
+collision_layer = 8192
+collision_mask = 0
+
+[node name="Crack" type="Sprite2D" parent="TapeableArea/CrackedArea" unique_id=527946665]
+unique_name_in_owner = true
 clip_children = 2
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_1552p")
@@ -22,5 +37,5 @@ centered = false
 [node name="DuctTape" parent="." unique_id=1574064096 instance=ExtResource("4_qetbp")]
 position = Vector2(627, 280)
 
-[connection signal="input_event" from="Crack" to="Crack" method="_on_input_event"]
-[connection signal="mouse_exited" from="Crack" to="Crack" method="_on_mouse_exited"]
+[connection signal="input_event" from="TapeableArea" to="TapeableArea" method="_on_input_event"]
+[connection signal="mouse_exited" from="TapeableArea" to="TapeableArea" method="_on_mouse_exited"]

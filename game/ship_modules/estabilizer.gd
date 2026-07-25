@@ -57,7 +57,7 @@ func update_values() -> void:
 	state_manager.equalizer_state.high_temp_value = high_temp_slider.value
 	change_labels()
 
-
 func change_labels() -> void:
-	label_oxi.text = "Oxigenio: "+str(jogo.oxigen)+"%"
-	label_temp.text = "Temperatura: "+str(jogo.temp)+"°C"
+	var jogo = get_tree().get_first_node_in_group("Jogo")
+	label_oxi.text = "Oxigenio: "+str(snapped(jogo.oxigen, 0.01))+"%"
+	label_temp.text = "Temperatura: "+str(snapped(jogo.temp, 1))+"°C"
