@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bfvnpg8x3ilvv" path="res://game/tools/scripts/manual.gd" id="1_in6qg"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="2_d87f6"]
-[ext_resource type="Texture2D" uid="uid://h0v024jm446w" path="res://assets/manual.png" id="3_d87f6"]
-[ext_resource type="Texture2D" uid="uid://6orkrq5xgr33" path="res://assets/manual_aberto.png" id="4_eo4a5"]
+[ext_resource type="Texture2D" uid="uid://h0v024jm446w" path="res://assets/placeholders/tools/manual.png" id="3_d87f6"]
+[ext_resource type="Texture2D" uid="uid://6orkrq5xgr33" path="res://assets/placeholders/tools/manual_aberto.png" id="4_eo4a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d87f6"]
 size = Vector2(106, 148)

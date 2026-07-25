@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dkxq52o405pg8"]
 
 [ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_bvxae"]
-[ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/_Pngtree_vector_metal_panel_material_2335501-removebg-preview.png" id="1_rua3i"]
-[ext_resource type="PackedScene" uid="uid://bhyeka2twm2ep" path="res://game/ship_modules/screw 1.tscn" id="2_dwwdm"]
-[ext_resource type="Texture2D" uid="uid://c8rlji58j3t0m" path="res://assets/screw-plus-head-png.webp" id="2_wmm1i"]
+[ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/placeholders/metal_base.png" id="1_rua3i"]
+[ext_resource type="PackedScene" uid="uid://dkctng5q5c3al" path="res://game/ship_modules/screw 1.tscn" id="2_dwwdm"]
+[ext_resource type="Texture2D" uid="uid://c8rlji58j3t0m" path="res://assets/placeholders/tools/screws/screw-plus.webp" id="2_wmm1i"]
 [ext_resource type="PackedScene" uid="uid://b3blnhhfq5mwy" path="res://game/ship_modules/fuel.tscn" id="3_2x24h"]
-[ext_resource type="Texture2D" uid="uid://dxf0gxab3ejya" path="res://assets/pngtree-radioactive-icon-png-image_6136354.png" id="5_dp0yn"]
+[ext_resource type="Texture2D" uid="uid://dxf0gxab3ejya" path="res://assets/placeholders/hazard.png" id="5_dp0yn"]
 
 [node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
 script = ExtResource("1_bvxae")

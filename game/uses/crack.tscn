@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnlr86qyl0grx"]
 
 [ext_resource type="Script" uid="uid://cujyfmjv46gr0" path="res://game/uses/scripts/crack.gd" id="1_8u5gk"]
-[ext_resource type="Texture2D" uid="uid://dnu8sa7hdsqwa" path="res://assets/wall-cracks-with-broken-texture-ground-earthquake-effect-hole-lines-on-earth-and-ice-rock-destruction-scratch-png.webp" id="2_8u5gk"]
+[ext_resource type="Texture2D" uid="uid://dnu8sa7hdsqwa" path="res://assets/placeholders/craks2.webp" id="2_8u5gk"]
 
 [sub_resource type="Resource" id="Resource_0onxk"]
 metadata/__load_path__ = "res://assets/duct_tape - Copia.png"

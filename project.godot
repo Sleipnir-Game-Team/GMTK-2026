@@ -35,7 +35,7 @@ JsonHandler="*res://globals/json_handler.gd"
 AudioManager="*uid://dy5jkn7prdgvx"
 SleipnirMaestro="*uid://cq7lvdpdewp3"
 SaveManager="*uid://cc000xggt14bs"
-SfxGlobals="*uid://dh70xcu1lubbi"
+SfxGlobals="*uid://lg6kuv3fkktu"
 
 [debug]
 

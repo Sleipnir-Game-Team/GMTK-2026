@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="2_scq0q"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="3_fyiom"]
 [ext_resource type="PackedScene" uid="uid://cq0hwsu707qrj" path="res://game/behaviours/tape.tscn" id="5_jbv15"]
-[ext_resource type="Texture2D" uid="uid://dwaj1cfb7c67" path="res://assets/Transparent_duct_tape_roll.png" id="5_uwd2s"]
+[ext_resource type="Texture2D" uid="uid://dwaj1cfb7c67" path="res://assets/placeholders/tools/duct_tape_alternative.png" id="5_uwd2s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyiom"]
 radius = 51.801315

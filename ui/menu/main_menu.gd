@@ -1,6 +1,6 @@
 extends Control
 
-@onready var anim_player = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @export var pivot_dict:Dictionary[StringName, Vector2] = {}
 
 func _ready() -> void:

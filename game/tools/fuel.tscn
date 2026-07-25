@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bje2u8v6xejty"]
 
-[ext_resource type="Texture2D" uid="uid://drg3qvve118v0" path="res://assets/uranio-elemento-quimico-simbolo.webp" id="1_43uww"]
+[ext_resource type="Texture2D" uid="uid://drg3qvve118v0" path="res://assets/placeholders/uranium.webp" id="1_43uww"]
 [ext_resource type="Script" uid="uid://dfau8y36pygri" path="res://game/tools/fuel.gd" id="1_qr5xg"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="3_oq7fe"]
 [ext_resource type="PackedScene" uid="uid://btoa0c2doqn8w" path="res://game/behaviours/fuel.tscn" id="4_w8wtc"]

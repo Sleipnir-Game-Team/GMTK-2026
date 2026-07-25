@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cew6hy2ndcd0h" path="res://game/tools/scripts/key.gd" id="1_mjex0"]
 [ext_resource type="Shader" uid="uid://bpovyuilxe5fy" path="res://shaders/color.gdshader" id="2_6suvi"]
-[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://assets/chave.png" id="2_lpmr7"]
+[ext_resource type="Texture2D" uid="uid://dlfj3y7687lio" path="res://assets/placeholders/tools/chave.png" id="2_lpmr7"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="3_6suvi"]
 [ext_resource type="PackedScene" uid="uid://cqeg5ece2xy0r" path="res://game/behaviours/unlock.tscn" id="4_brkyu"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="5_absq1"]
