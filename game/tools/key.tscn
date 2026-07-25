@@ -28,6 +28,7 @@ flip_h = true
 
 [node name="use_unlock" parent="." unique_id=1133804510 instance=ExtResource("2_yt6j6")]
 unique_name_in_owner = true
+color = null
 group = &"use_unlock"
 
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("5_dfg08")]

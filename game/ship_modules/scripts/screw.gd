@@ -20,6 +20,7 @@ func on_screw_changed(state: bool, screw: int) -> void:
 		AudioManager.stop_global("screw.loose")
 
 	state_manager.screw_states[screen_name][screw] = state
+	print(get_unscrewed())
 
 func get_unscrewed() -> int:
 	var amount: int = 0
