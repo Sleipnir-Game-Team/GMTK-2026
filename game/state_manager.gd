@@ -215,7 +215,7 @@ func get_equalizer_temp_value() -> float:
 
 func get_true_amount(list: Array) -> int:
 	var amount: int = 0
-	for value:bool in list:
+	for value: bool in list:
 		amount += int(value)
 	return amount
 
