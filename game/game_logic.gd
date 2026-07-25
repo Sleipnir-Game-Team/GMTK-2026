@@ -31,18 +31,18 @@ var propulsor_1: bool:
 	get:
 		var total_screws:int = state_manager.get_screw_total()
 		var total_pipes:int = state_manager.get_pipe_total()
-		var okay: bool = state_manager.get_thruster_1_screws() <= total_screws * 0.25
+		var okay: bool = state_manager.get_thruster_1_screws() <= total_screws * 0.5
 		okay = okay and state_manager.get_thruster_1_fuel()
-		okay = okay and  state_manager.get_thruster_1_pipes() <= total_pipes * 0.25
+		okay = okay and  state_manager.get_thruster_1_pipes() <= total_pipes * 0.5
 		return okay
 
 var propulsor_2: bool:
 	get:
 		var total_screws:int = state_manager.get_screw_total()
 		var total_pipes:int = state_manager.get_pipe_total()
-		var okay: bool = state_manager.get_thruster_2_screws() <= total_screws * 0.25
+		var okay: bool = state_manager.get_thruster_2_screws() <= total_screws * 0.5
 		okay = okay and state_manager.get_thruster_2_fuel()
-		okay = okay and  state_manager.get_thruster_2_pipes() <= total_pipes * 0.001
+		okay = okay and  state_manager.get_thruster_2_pipes() <= total_pipes * 0.5
 		return okay
 
 var ship_conditions := {

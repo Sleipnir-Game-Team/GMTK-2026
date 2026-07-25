@@ -214,13 +214,31 @@ func get_true_amount(list):
 	return amount
 
 func get_oxigen_screws() -> int:
-	return 0
+	return (
+		count_screws('screw_screen_1') * -1 +
+		count_screws('screw_screen_2') * -2 +
+		count_screws('screw_screen_4') * -1
+	)
 
 func get_thruster_1_screws() -> int:
-	return count_screws('screw_screen_1')
+	return (
+		count_screws('screw_screen_1') +
+		count_screws('screw_screen_2') +
+		count_screws('screw_screen_3') +
+		count_screws('screw_screen_4') +
+		count_screws('screw_screen_5') +
+		count_screws('screw_screen_6')
+	)
 
 func get_thruster_2_screws() -> int:
-	return 0
+	return (
+		count_screws('screw_screen_1') +
+		count_screws('screw_screen_2') +
+		count_screws('screw_screen_3') +
+		count_screws('screw_screen_4') +
+		count_screws('screw_screen_5') +
+		count_screws('screw_screen_6')
+	)
 
 func get_thruster_1_fuel() -> bool:
 	return !fuel_states['fuel_1']['open'] and fuel_states['fuel_1']['full']
@@ -229,16 +247,41 @@ func get_thruster_2_fuel() -> bool:
 	return !fuel_states['fuel_2']['open'] and fuel_states['fuel_2']['full']
 
 func get_oxigen_tube() -> int:
-	return get_true_amount(tube_states['tube_1']) * -5
+	return (get_true_amount(tube_states['tube_1']) * -0.5 +
+			get_true_amount(tube_states['tube_2']) * -0.5 +
+			get_true_amount(tube_states['tube_3']) * -1.5 +
+			get_true_amount(tube_states['tube_4']) * -1 +
+			get_true_amount(tube_states['tube_5']) * -2 +
+			get_true_amount(tube_states['tube_6']) * -2.5
+			)
 
 func get_temp_pipe() -> int:
-	return 0
+	return (get_true_amount(pipe_states['pipe_1']) * 2.5 +
+			get_true_amount(pipe_states['pipe_2']) * 2.5 +
+			get_true_amount(pipe_states['pipe_5']) * 3.5 +
+			get_true_amount(pipe_states['pipe_6']) * 3.5 +
+			get_true_amount(pipe_states['pipe_7']) * 5
+			)
 	
 func get_thruster_1_pipes() -> int:
-	return 0
+	return (get_true_amount(pipe_states['pipe_1']) +
+			get_true_amount(pipe_states['pipe_2']) +
+			get_true_amount(pipe_states['pipe_3']) +
+			get_true_amount(pipe_states['pipe_4']) +
+			get_true_amount(pipe_states['pipe_5']) +
+			get_true_amount(pipe_states['pipe_6']) +
+			get_true_amount(pipe_states['pipe_7'])
+			)
 	
 func get_thruster_2_pipes() -> int:
-	return get_true_amount(pipe_states['pipe_1'])
+	return (get_true_amount(pipe_states['pipe_1']) +
+			get_true_amount(pipe_states['pipe_2']) +
+			get_true_amount(pipe_states['pipe_3']) +
+			get_true_amount(pipe_states['pipe_4']) +
+			get_true_amount(pipe_states['pipe_5']) +
+			get_true_amount(pipe_states['pipe_6']) +
+			get_true_amount(pipe_states['pipe_7'])
+			)
 
 func get_screw_total() -> int:
 	var amount := 0
