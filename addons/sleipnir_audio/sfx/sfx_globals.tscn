@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cmtj5ipao7u27" path="res://assets/sfx/minigames/propulsion.off.mp3" id="8_20jmg"]
 [ext_resource type="AudioStream" uid="uid://3ub8logt0koe" path="res://assets/sfx/minigames/screw.tighten1.mp3" id="9_rkeyg"]
 [ext_resource type="AudioStream" uid="uid://bw222s2uvwu2u" path="res://assets/sfx/minigames/screw.tighten2.mp3" id="10_0lhd4"]
+[ext_resource type="AudioStream" uid="uid://bxgmxjd6ealb" path="res://assets/sfx/minigames/screw.loose.mp3" id="11_3wota"]
 [ext_resource type="AudioStream" uid="uid://dgwkp8p37u0s4" path="res://assets/sfx/minigames/oxygen.tape1.mp3" id="11_ieycu"]
 [ext_resource type="AudioStream" uid="uid://dwni0oxsubrdf" path="res://assets/sfx/minigames/oxygen.tape2.mp3" id="12_w7erw"]
 [ext_resource type="AudioStream" uid="uid://dh7xwibdvsjvl" path="res://assets/sfx/minigames/gas.leak.mp3" id="13_r3qsx"]
@@ -80,6 +81,13 @@ stream = ExtResource("8_20jmg")
 
 [node name="tighten" type="AudioStreamPlayer" parent="screw" unique_id=1802030524]
 stream = SubResource("AudioStreamRandomizer_bkgn2")
+
+[node name="loose" type="Node" parent="screw" unique_id=824473973]
+script = ExtResource("3_3wota")
+metadata/_custom_type_script = "uid://ccc8q5f8jlgth"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="screw/loose" unique_id=766759373]
+stream = ExtResource("11_3wota")
 
 [node name="oxygen" type="Node" parent="." unique_id=912821252]
 
