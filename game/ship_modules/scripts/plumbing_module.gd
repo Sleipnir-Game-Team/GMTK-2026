@@ -10,7 +10,7 @@ var necessary_leaky_pipes: int = 0
 
 
 func _ready() -> void:
-	var necessary_pipes: Array[Area2D] = pipes.filter(_filter_pipe)
+	var necessary_pipes: Array = pipes.filter(_filter_pipe)
 	for i in range(necessary_pipes.size()):
 		pipes[i].leaky = state_manager.pipe_states[screen_name][i]
 	for pipe in pipes:
