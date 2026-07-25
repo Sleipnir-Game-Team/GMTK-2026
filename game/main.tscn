@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/segment 2.tscn" id="6_ioaqv"]
 [ext_resource type="Texture2D" uid="uid://croikrl37aywb" path="res://assets/mechionbridge2.png" id="6_lx3aj"]
 [ext_resource type="PackedScene" uid="uid://cq0xomg3yjhjn" path="res://game/tools/screwdriver.tscn" id="11_dp3pf"]
+[ext_resource type="PackedScene" uid="uid://3h4yjcjhnvxg" path="res://game/tools/key.tscn" id="12_ioaqv"]
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -130,6 +131,6 @@ stretch_mode = 0
 position = Vector2(1856, 711)
 
 [node name="Box" parent="Workspace/ToolboxTeste" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("11_dp3pf")])
+pre_store = Array[PackedScene]([ExtResource("11_dp3pf"), ExtResource("12_ioaqv")])
 
 [editable path="Workspace/ToolboxTeste"]

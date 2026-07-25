@@ -79,6 +79,7 @@ use_plumbing=""
 Estabilizer=""
 use_tape=""
 use_screwable=""
+use_fuel=""
 
 [input]
 

@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func on_screw_changed(state: bool, screw: int) -> void:
 	state_manager.screw_states[screen_name][screw] = state
+	print(get_unscrewed())
 
 func get_unscrewed() -> int:
 	var amount: int = 0

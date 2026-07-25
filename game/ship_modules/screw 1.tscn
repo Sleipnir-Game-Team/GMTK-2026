@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bhyeka2twm2ep"]
+[gd_scene format=3 uid="uid://dkctng5q5c3al"]
 
 [ext_resource type="Script" uid="uid://bkq81q480r1c2" path="res://game/ship_modules/scripts/screw.gd" id="1_a6ce5"]
 [ext_resource type="Texture2D" uid="uid://cbb8d6te1pa4o" path="res://assets/Scratch_BG_Metal_Plate_02.png" id="1_kyg0o"]

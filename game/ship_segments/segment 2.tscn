@@ -4,11 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/_Pngtree_vector_metal_panel_material_2335501-removebg-preview.png" id="1_rua3i"]
 [ext_resource type="PackedScene" uid="uid://bhyeka2twm2ep" path="res://game/ship_modules/screw 1.tscn" id="2_dwwdm"]
 [ext_resource type="Texture2D" uid="uid://c8rlji58j3t0m" path="res://assets/screw-plus-head-png.webp" id="2_wmm1i"]
+[ext_resource type="PackedScene" uid="uid://b3blnhhfq5mwy" path="res://game/ship_modules/fuel.tscn" id="3_2x24h"]
+[ext_resource type="Texture2D" uid="uid://dxf0gxab3ejya" path="res://assets/pngtree-radioactive-icon-png-image_6136354.png" id="5_dp0yn"]
 
 [node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
 script = ExtResource("1_bvxae")
 module_models = {
-NodePath("Screw"): ExtResource("2_dwwdm")
+NodePath("Screw"): ExtResource("2_dwwdm"),
+NodePath("Fuel"): ExtResource("3_2x24h")
 }
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=685861630]
@@ -26,4 +29,13 @@ offset_right = 1441.0
 offset_bottom = 643.0
 scale = Vector2(0.33714092, 0.30616173)
 texture_normal = ExtResource("2_wmm1i")
+stretch_mode = 0
+
+[node name="Fuel" type="TextureButton" parent="." unique_id=656070477]
+offset_left = 727.0
+offset_top = 67.0
+offset_right = 1239.0
+offset_bottom = 579.0
+scale = Vector2(0.34949094, 0.34949094)
+texture_normal = ExtResource("5_dp0yn")
 stretch_mode = 0

@@ -29,6 +29,19 @@ var screw_states = {
 	]
 }
 
+var fuel_states = {
+	'fuel_1' = {
+		'color' : 'blue',
+		'open' : false,
+		'full' : true
+	},
+	'fuel_2' = {
+		'color' : 'red',
+		'open' : false,
+		'full' : true
+	}
+}
+
 var break_functions := [
 	break_equalizer
 ]
