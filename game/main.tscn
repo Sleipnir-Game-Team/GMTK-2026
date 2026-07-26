@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://tcl8epvfjjso" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_4.png" id="13_tv0fx"]
 [ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/Segment 6.tscn" id="14_0etgu"]
 [ext_resource type="Texture2D" uid="uid://kb5ihq8bdnlm" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_5.png" id="15_8ymx4"]
-[ext_resource type="PackedScene" uid="uid://xeyfk4ocv5oh" path="res://game/ship_segments/Segment 2.tscn" id="15_gob4j"]
+[ext_resource type="PackedScene" uid="uid://dckok7rk7k40a" path="res://game/ship_segments/Segment 2.tscn" id="15_gob4j"]
 [ext_resource type="Texture2D" uid="uid://bgsh2shypa8an" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_1.png" id="16_le3en"]
 [ext_resource type="PackedScene" uid="uid://ba4xq56v062cq" path="res://game/ship_segments/Segment 1.tscn" id="16_uvurp"]
 [ext_resource type="Texture2D" uid="uid://di2a48lxveixy" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_2.png" id="17_rqwoc"]
@@ -56,7 +56,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Ship:visible")
+tracks/1/path = NodePath("BG/Bus_direita:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -68,7 +68,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BG/Bus_direita:visible")
+tracks/2/path = NodePath("BG/Bus esquerda:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -80,26 +80,38 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BG/Bus esquerda:visible")
+tracks/3/path = NodePath("Screen 2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(1000, -368)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Screen 2:position")
+tracks/4/path = NodePath("BG/Cortina:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1000, -368)]
+"values": [Vector2(1387, -222)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ship:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_c08u8"]
@@ -132,17 +144,33 @@ tracks/0/keys = {
 "values": [Vector2(449, 5), Vector2(449, -610)]
 }
 
+[sub_resource type="Animation" id="Animation_vcdjx"]
+resource_name = "pull_cord"
+length = 1.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Cortina:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1387, -222), Vector2(1387, -121), Vector2(1387, -20), Vector2(1387, -222)]
+}
+
 [sub_resource type="Animation" id="Animation_4uwjs"]
 resource_name = "turn_on_screen"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ship:visible")
+tracks/0/path = NodePath("BG/Bus_direita:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.18),
+"times": PackedFloat32Array(0, 0.19),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -150,7 +178,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BG/Bus_direita:visible")
+tracks/1/path = NodePath("BG/Bus esquerda:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -162,14 +190,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BG/Bus esquerda:visible")
+tracks/2/path = NodePath("Ship:process_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.19),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [4, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_px363"]
@@ -177,7 +205,45 @@ _data = {
 &"RESET": SubResource("Animation_px363"),
 &"bring_screen_2": SubResource("Animation_c08u8"),
 &"open_curtains": SubResource("Animation_a5bbb"),
+&"pull_cord": SubResource("Animation_vcdjx"),
 &"turn_on_screen": SubResource("Animation_4uwjs")
+}
+
+[sub_resource type="Animation" id="Animation_f85yp"]
+resource_name = "open_curtains"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Grade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(449, 5), Vector2(449, -610)]
+}
+
+[sub_resource type="Animation" id="Animation_4gc7v"]
+resource_name = "pull_cord"
+length = 1.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Cortina:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1387, -222), Vector2(1387, -121), Vector2(1387, -20), Vector2(1387, -222)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4gc7v"]
+_data = {
+&"open_curtains": SubResource("Animation_f85yp"),
+&"pull_cord": SubResource("Animation_4gc7v")
 }
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
@@ -280,7 +346,7 @@ offset_bottom = 367.0
 texture = ExtResource("9_0etgu")
 stretch_mode = 2
 
-[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "screen_2", "manual") groups=["Jogo"]]
+[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "animation_player_extra", "screen_2", "manual") groups=["Jogo"]]
 script = ExtResource("3_emt18")
 time_limit = 40.0
 panel_dict = {
@@ -297,127 +363,96 @@ NodePath("../Ship/Task8"): ExtResource("14_0etgu")
 }
 state_manager = NodePath("State Manager")
 animation_player = NodePath("../AnimationPlayer")
+animation_player_extra = NodePath("../AnimationPlayer2")
 screen_2 = NodePath("../Screen 2")
 manual = NodePath("../Workspace/Manual")
 
 [node name="State Manager" type="Node" parent="Jogo" unique_id=1308149373]
 script = ExtResource("6_dp3pf")
 
-[node name="Ship" type="Node2D" parent="." unique_id=328625406]
-visible = false
-position = Vector2(161, 413)
-scale = Vector2(0.64759463, 0.64759463)
+[node name="Ship" type="Node" parent="." unique_id=2002830317]
+process_mode = 4
 
 [node name="Cockpit1" type="TextureButton" parent="Ship" unique_id=15707683]
 z_index = 2
-offset_left = -35.637695
-offset_top = -180.6686
-offset_right = 9.205288
-offset_bottom = -136.37363
-scale = Vector2(1.8509424, 6.3098783)
+offset_left = 136.0
+offset_top = 286.0
+offset_right = 198.0
+offset_bottom = 492.0
 texture_hover = ExtResource("13_tv0fx")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Cockpit2" type="TextureButton" parent="Ship" unique_id=1945690889]
 z_index = 2
-offset_left = 534.28485
-offset_top = -565.16833
-offset_right = 580.03644
-offset_bottom = -519.47797
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 502.0
+offset_top = 34.0
+offset_right = 564.0
+offset_bottom = 242.0
 texture_hover = ExtResource("15_8ymx4")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Estabilizador" type="TextureButton" parent="Ship" unique_id=1014675299]
 z_index = 2
-offset_left = 424.64835
-offset_top = -548.18243
-offset_right = 468.9922
-offset_bottom = -510.93484
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 436.0
+offset_top = 56.0
+offset_right = 503.0
+offset_bottom = 217.0
 texture_hover = ExtResource("16_le3en")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task2" type="TextureButton" parent="Ship" unique_id=1447146913]
 z_index = 2
-offset_left = 191.47781
-offset_top = -375.23474
-offset_right = 283.68488
-offset_bottom = -363.56384
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 278.0
+offset_top = 175.0
+offset_right = 421.0
+offset_bottom = 214.0
 texture_hover = ExtResource("17_rqwoc")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task3" type="TextureButton" parent="Ship" unique_id=2071307681]
 z_index = 2
-offset_left = -15.441748
-offset_top = -433.91342
-offset_right = 77.469215
-offset_bottom = -418.02112
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 133.0
+offset_top = 128.0
+offset_right = 287.0
+offset_bottom = 201.0
 texture_hover = ExtResource("18_2o2kd")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task4" type="TextureButton" parent="Ship" unique_id=1508392096]
 z_index = 2
-offset_left = 26.251
-offset_top = -589.8752
-offset_right = 138.87036
-offset_bottom = -581.92896
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 161.0
+offset_top = 32.0
+offset_right = 350.0
+offset_bottom = 62.0
 texture_hover = ExtResource("19_rvc4y")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task6" type="TextureButton" parent="Ship" unique_id=2142038396]
 z_index = 2
-offset_left = 511.12213
-offset_top = -123.53409
-offset_right = 580.1015
-offset_bottom = -90.01125
-scale = Vector2(1.9901745, 2.925444)
+offset_left = 490.0
+offset_top = 330.0
+offset_right = 586.0
+offset_bottom = 403.0
 texture_hover = ExtResource("22_77ae2")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task7" type="TextureButton" parent="Ship" unique_id=647578128]
 z_index = 2
-offset_left = 287.2167
-offset_top = -50.957787
-offset_right = 359.71542
-offset_bottom = -36.55539
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 352.0
+offset_top = 383.0
+offset_right = 444.0
+offset_bottom = 438.0
 texture_hover = ExtResource("21_a5bbb")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Task42" type="TextureButton" parent="Ship" unique_id=1702726623]
 z_index = 2
-offset_left = 321.18863
-offset_top = -210.00793
-offset_right = 430.9925
-offset_bottom = -202.0617
-scale = Vector2(2.1938338, 6.21856)
+offset_left = 347.0
+offset_top = 277.0
+offset_right = 536.0
+offset_bottom = 307.0
 texture_hover = ExtResource("19_rvc4y")
-ignore_texture_size = true
-stretch_mode = 0
 flip_h = true
 
 [node name="Task8" type="TextureButton" parent="Ship" unique_id=1929490950]
 z_index = 2
-offset_left = 512.66644
-offset_top = -27.795189
-offset_right = 581.6458
-offset_bottom = 5.727646
-scale = Vector2(1.9901745, 2.925444)
+offset_left = 496.0
+offset_top = 396.0
+offset_right = 587.0
+offset_bottom = 462.0
 texture_hover = ExtResource("24_0etgu")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Workspace" type="Node2D" parent="." unique_id=1625623387]
 z_index = 1
@@ -482,10 +517,13 @@ texture = ExtResource("8_a5bbb")
 stretch_mode = 2
 
 [node name="Manual" parent="Workspace" unique_id=83848390 instance=ExtResource("33_fsjy5")]
-position = Vector2(324.99997, 816.99994)
+position = Vector2(643.00006, 831.00006)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665642088]
 libraries/ = SubResource("AnimationLibrary_px363")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=344477522]
+libraries/ = SubResource("AnimationLibrary_4gc7v")
 
 [editable path="Workspace/ToolboxTeste/ToolboxTeste"]
 [editable path="Workspace/ToolboxTeste/ToolboxTeste2"]

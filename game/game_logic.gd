@@ -4,6 +4,7 @@ extends Node
 @export var panel_dict: Dictionary[Node, PackedScene] = {}
 @export var state_manager: Node
 @export var animation_player: AnimationPlayer
+@export var animation_player_extra: AnimationPlayer
 @export var screen_2: Node2D
 @export var manual: BaseTool
 
@@ -61,13 +62,21 @@ var ship_conditions := {
 func _ready() -> void:
 	for panel in panel_dict:
 		panel.pressed.connect(_on_ship_panel_pressed.bind(panel))
-	animation_player.play("turn_on_screen")
+
+
 
 func setup(_save_data: Dictionary) -> void:
-	start_timer()
-	print(_save_data)
+	animation_player.play("turn_on_screen")
 	if _save_data:
 		manual.pages = _save_data.pages
+
+func start_run() -> void:
+	configure_run()
+	animation_player.queue("open_curtains")
+	start_timer()
+
+func configure_run():
+	pass
 
 func save() -> Dictionary:
 	var data:Dictionary = {}

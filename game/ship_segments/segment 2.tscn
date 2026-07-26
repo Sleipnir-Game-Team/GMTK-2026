@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://xeyfk4ocv5oh"]
+[gd_scene format=3 uid="uid://dckok7rk7k40a"]
 
 [ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_fo0oh"]
 [ext_resource type="PackedScene" uid="uid://dkctng5q5c3al" path="res://game/ship_modules/screw/screw 1.tscn" id="2_wbpb4"]
