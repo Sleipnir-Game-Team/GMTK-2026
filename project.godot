@@ -18,7 +18,8 @@ config/name="GMTK 2026"
 config/tags=PackedStringArray("jam_game", "on_going")
 run/main_scene="res://ui/menu/main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bsr2nnn3u0hl8"
+config/windows_native_icon="res://assets/Icarus_Icon.ico"
 
 [audio]
 
