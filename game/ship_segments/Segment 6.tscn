@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkxq52o405pg8"]
+
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_bvxae"]
+[ext_resource type="PackedScene" uid="uid://b3blnhhfq5mwy" path="res://game/ship_modules/fuel.tscn" id="3_2x24h"]
+[ext_resource type="PackedScene" uid="uid://vkmhewlqqsx" path="res://game/ship_modules/fuel_2.tscn" id="3_10j5k"]
+[ext_resource type="Texture2D" uid="uid://bnh0y5dycb31j" path="res://assets/Sprites/Nave_Segmento/Nave_Segmento_6.png" id="4_10j5k"]
+[ext_resource type="Texture2D" uid="uid://npxw07yycrub" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_16.png" id="5_10j5k"]
+[ext_resource type="Texture2D" uid="uid://b2iom1xmvgm0k" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_17.png" id="6_10j5k"]
+
+[node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_bvxae")
+module_models = {
+NodePath("Fuel1"): ExtResource("3_2x24h"),
+NodePath("Fuel2"): ExtResource("3_10j5k")
+}
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=685861630]
+self_modulate = Color(1, 1, 1, 0.70980394)
+offset_right = 810.0
+offset_bottom = 421.0
+texture = ExtResource("4_10j5k")
+stretch_mode = 2
+
+[node name="Fuel1" type="TextureButton" parent="." unique_id=518412540]
+offset_left = 199.00002
+offset_top = 139.0
+offset_right = 699.0
+offset_bottom = 711.0
+scale = Vector2(0.24988088, 0.21802102)
+texture_hover = ExtResource("5_10j5k")
+stretch_mode = 0
+
+[node name="Fuel2" type="TextureButton" parent="." unique_id=656070477]
+offset_left = 318.00003
+offset_top = 90.00001
+offset_right = 830.0
+offset_bottom = 602.0
+scale = Vector2(0.26906422, 0.26906422)
+texture_hover = ExtResource("6_10j5k")
+stretch_mode = 0

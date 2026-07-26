@@ -23,8 +23,8 @@ var equalizer_state: Dictionary[String, Variant]= {
 var screw_states: Dictionary[String, Array] = {
 	'screw_screen_1' = [
 		false,
-		true,
-		true,
+		false,
+		false,
 		false
 	], 
 	'screw_screen_2' = [
@@ -38,26 +38,10 @@ var screw_states: Dictionary[String, Array] = {
 		false,
 		false,
 		false,
+		false,
 		false
 	], 
 	'screw_screen_4' = [
-		false,
-		false,
-		false,
-		false,
-		false
-	], 
-	'screw_screen_5' = [
-		false,
-		false,
-		false,
-		false,
-		false,
-		false
-	], 
-	'screw_screen_6' = [
-		false,
-		false,
 		false,
 		false,
 		false,
@@ -96,22 +80,11 @@ var pipe_states: Dictionary[String, Array] = {
 	],
 	'pipe_4' = [
 		false,
+		false,
+		false,
 		false
 	],
 	'pipe_5' = [
-		false,
-		false,
-		false,
-		false
-	],
-	'pipe_6' = [
-		false,
-		false,
-		false
-	],
-	'pipe_7' = [
-		false,
-		false,
 		false,
 		false
 	]
@@ -121,10 +94,10 @@ var tube_states: Dictionary[String, Array]  = {
 	'tube_1' = [
 		false,
 		false,
+		true,
 		false
 	],
 	'tube_2' = [
-		false,
 		false,
 		false,
 		false
@@ -135,15 +108,10 @@ var tube_states: Dictionary[String, Array]  = {
 	],
 	'tube_4' = [
 		false,
+		true,
 		false
 	],
 	'tube_5' = [
-		false,
-		false,
-		false,
-		false
-	],
-	'tube_6' = [
 		false,
 		false,
 		false
@@ -233,9 +201,7 @@ func get_thruster_1_screws() -> int:
 		count_screws('screw_screen_1') +
 		count_screws('screw_screen_2') +
 		count_screws('screw_screen_3') +
-		count_screws('screw_screen_4') +
-		count_screws('screw_screen_5') +
-		count_screws('screw_screen_6')
+		count_screws('screw_screen_4')
 	)
 
 
@@ -244,9 +210,7 @@ func get_thruster_2_screws() -> int:
 		count_screws('screw_screen_1') +
 		count_screws('screw_screen_2') +
 		count_screws('screw_screen_3') +
-		count_screws('screw_screen_4') +
-		count_screws('screw_screen_5') +
-		count_screws('screw_screen_6')
+		count_screws('screw_screen_4')
 	)
 
 
@@ -264,8 +228,7 @@ func get_oxigen_tube() -> float:
 			get_true_amount(tube_states['tube_2']) * -0.5 +
 			get_true_amount(tube_states['tube_3']) * -1.5 +
 			get_true_amount(tube_states['tube_4']) * -1.0 +
-			get_true_amount(tube_states['tube_5']) * -2.0 +
-			get_true_amount(tube_states['tube_6']) * -2.5
+			get_true_amount(tube_states['tube_5'])
 	)
 
 
@@ -273,9 +236,7 @@ func get_temp_pipe() -> float:
 	return (
 			get_true_amount(pipe_states['pipe_1']) * 2.5 +
 			get_true_amount(pipe_states['pipe_2']) * 2.5 +
-			get_true_amount(pipe_states['pipe_5']) * 3.5 +
-			get_true_amount(pipe_states['pipe_6']) * 3.5 +
-			get_true_amount(pipe_states['pipe_7']) * 5
+			get_true_amount(pipe_states['pipe_5']) * 3.5
 	)
 
 
@@ -285,9 +246,7 @@ func get_thruster_1_pipes() -> int:
 			get_true_amount(pipe_states['pipe_2']) +
 			get_true_amount(pipe_states['pipe_3']) +
 			get_true_amount(pipe_states['pipe_4']) +
-			get_true_amount(pipe_states['pipe_5']) +
-			get_true_amount(pipe_states['pipe_6']) +
-			get_true_amount(pipe_states['pipe_7'])
+			get_true_amount(pipe_states['pipe_5'])
 	)
 
 
@@ -297,9 +256,7 @@ func get_thruster_2_pipes() -> int:
 			get_true_amount(pipe_states['pipe_2']) +
 			get_true_amount(pipe_states['pipe_3']) +
 			get_true_amount(pipe_states['pipe_4']) +
-			get_true_amount(pipe_states['pipe_5']) +
-			get_true_amount(pipe_states['pipe_6']) +
-			get_true_amount(pipe_states['pipe_7'])
+			get_true_amount(pipe_states['pipe_5'])
 	)
 
 

@@ -39,15 +39,18 @@ func _ready():
 func update_door():
 	var img = Texture2D
 	if aberta:
+		image.position = Vector2(80,44.0)
 		if cheia:
 			img = img_cheia
 		else:
 			img = img_vazia
 	else:
+		image.position = Vector2(322.0,44.0)
 		match(cor):
 			'blue': img = img_azul
 			'red': img = img_vermelha
 	image.texture = img
+	image.size = Vector2(0,0)
 
 func update_state(slot, value):
 	var state_manager = get_tree().get_first_node_in_group("Jogo").state_manager

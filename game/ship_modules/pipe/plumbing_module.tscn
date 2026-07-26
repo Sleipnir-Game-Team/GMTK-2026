@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dnq7vaq8uqep5"]
+
+[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/scripts/plumbing_module.gd" id="1_441ij"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="2_qd8nk"]
+[ext_resource type="Texture2D" uid="uid://b33myw00v53gj" path="res://assets/Sprites/Modulos/Cano/Straight_small.png" id="3_5f0in"]
+[ext_resource type="Texture2D" uid="uid://b5o8dyh4it3iy" path="res://assets/Sprites/Modulos/Cano/Cross_small.png" id="4_6c3oj"]
+[ext_resource type="Texture2D" uid="uid://dhw68kavbaxs" path="res://assets/Sprites/Modulos/Cano/Straight_long.png" id="5_b8yy5"]
+[ext_resource type="Texture2D" uid="uid://gn0tgtgyywpb" path="res://assets/Sprites/Modulos/Cano/Uturn_small.png" id="6_cwoyp"]
+[ext_resource type="Texture2D" uid="uid://bkayosnqyst1f" path="res://assets/Sprites/Modulos/Cano/Elbow.png" id="7_wlc28"]
+[ext_resource type="Texture2D" uid="uid://bo324vjdhijqi" path="res://assets/Sprites/Modulos/Cano/Curve.png" id="8_xpmyy"]
+[ext_resource type="Texture2D" uid="uid://vlto3d1uufbf" path="res://assets/Sprites/Modulos/Cano/Tpiece.png" id="9_3na4d"]
+
+[node name="Plumbing" type="Area2D" unique_id=245482926 node_paths=PackedStringArray("pipes")]
+scale = Vector2(0.37891784, 0.43058407)
+script = ExtResource("1_441ij")
+screen_name = &"pipe_1"
+pipes = [NodePath("Pipe1"), NodePath("Pipe2"), NodePath("Pipe3"), NodePath("Pipe4")]
+
+[node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(752.3318, 253.26904)
+rotation = -1.5522739
+
+[node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(1421.3317, 193.26912)
+necessary = true
+
+[node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(1316.3318, 687.26917)
+necessary = true
+
+[node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_qd8nk")]
+unique_name_in_owner = true
+position = Vector2(638.3319, 520.2691)
+necessary = true
+
+[node name="RegisterBig" type="Sprite2D" parent="." unique_id=121561216]
+position = Vector2(1480.1428, 688.7612)
+scale = Vector2(1.2984633, 1.2984633)
+texture = ExtResource("3_5f0in")
+
+[node name="StraightSmall" type="Sprite2D" parent="." unique_id=607246356]
+position = Vector2(1504.3317, 190.51399)
+texture = ExtResource("3_5f0in")
+
+[node name="CrossSmall" type="Sprite2D" parent="." unique_id=223068907]
+position = Vector2(551.36255, 522.0139)
+scale = Vector2(1.2034687, 1.2034687)
+texture = ExtResource("4_6c3oj")
+
+[node name="StraightLong" type="Sprite2D" parent="." unique_id=1757143429]
+position = Vector2(1119.3318, 356.51398)
+texture = ExtResource("5_b8yy5")
+
+[node name="UturnSmall" type="Sprite2D" parent="." unique_id=2112799684]
+position = Vector2(819.3626, 726.01404)
+texture = ExtResource("6_cwoyp")
+
+[node name="Elbow" type="Sprite2D" parent="." unique_id=2056309783]
+position = Vector2(698.3626, 565.01404)
+rotation = 1.5707964
+texture = ExtResource("7_wlc28")
+
+[node name="Curve2" type="Sprite2D" parent="." unique_id=1003138050]
+position = Vector2(1298.3318, 265.51398)
+rotation = 1.5707964
+texture = ExtResource("8_xpmyy")
+
+[node name="Curve" type="Sprite2D" parent="." unique_id=692645368]
+position = Vector2(978.3626, 536.01404)
+rotation = 1.5707964
+texture = ExtResource("8_xpmyy")
+
+[node name="Tpiece" type="Sprite2D" parent="." unique_id=397885635]
+position = Vector2(1170.3624, 467.01398)
+texture = ExtResource("9_3na4d")
+
+[node name="Elbow2" type="Sprite2D" parent="." unique_id=499729277]
+position = Vector2(1259.3318, 644.51404)
+rotation = -1.5707964
+texture = ExtResource("7_wlc28")
+
+[node name="Elbow4" type="Sprite2D" parent="." unique_id=345661729]
+position = Vector2(1475.3317, 319.51398)
+rotation = 3.1415925
+texture = ExtResource("7_wlc28")
+
+[node name="Elbow3" type="Sprite2D" parent="." unique_id=1634008526]
+position = Vector2(785.3319, 311.51398)
+rotation = -1.5707964
+texture = ExtResource("7_wlc28")
+
+[node name="Curve3" type="Sprite2D" parent="." unique_id=1401813820]
+position = Vector2(1591.3317, 142.51399)
+rotation = 1.5707964
+texture = ExtResource("8_xpmyy")
+
+[node name="RegisterSmall" type="Sprite2D" parent="." unique_id=1848797819]
+position = Vector2(752.4261, 143.89137)
+rotation = -1.5707964
+scale = Vector2(0.761264, 1.2413821)
+texture = ExtResource("3_5f0in")

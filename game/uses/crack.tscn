@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cnlr86qyl0grx"]
 
 [ext_resource type="Script" uid="uid://cujyfmjv46gr0" path="res://game/uses/scripts/crack.gd" id="1_8u5gk"]
-[ext_resource type="Texture2D" uid="uid://dnu8sa7hdsqwa" path="res://assets/placeholders/craks2.webp" id="2_8u5gk"]
+[ext_resource type="Texture2D" uid="uid://dvys0408wl1uh" path="res://assets/Sprites/Modulos/Tubo/Rachadura.png" id="2_8u5gk"]
 
 [sub_resource type="Resource" id="Resource_0onxk"]
 metadata/__load_path__ = "res://assets/duct_tape - Copia.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qetbp"]
-size = Vector2(528, 472)
+size = Vector2(132, 136)
 
 [node name="Crack" type="Area2D" unique_id=597074376 groups=["use_tape"]]
 collision_layer = 32768
@@ -17,6 +17,7 @@ script = ExtResource("1_8u5gk")
 line_texture = SubResource("Resource_0onxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1464983058]
+position = Vector2(6, 4)
 shape = SubResource("RectangleShape2D_qetbp")
 debug_color = Color(3.080368e-06, 0.6444441, 0.28688, 0.41960785)
 
@@ -29,8 +30,7 @@ collision_mask = 0
 [node name="VisibleCrack" type="Sprite2D" parent="CrackedArea" unique_id=527946665]
 unique_name_in_owner = true
 clip_children = 2
-position = Vector2(-63.999996, -63.999996)
-scale = Vector2(1.2800788, 1.3472419)
+position = Vector2(179, 132)
 texture = ExtResource("2_8u5gk")
 centered = false
 

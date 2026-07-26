@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bjni5u0q18brm"]
+
+[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/scripts/plumbing_module.gd" id="1_2qslj"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="2_2payr"]
+[ext_resource type="Texture2D" uid="uid://b33myw00v53gj" path="res://assets/Sprites/Modulos/Cano/Straight_small.png" id="3_3arxp"]
+[ext_resource type="Texture2D" uid="uid://b5o8dyh4it3iy" path="res://assets/Sprites/Modulos/Cano/Cross_small.png" id="4_g7fn3"]
+[ext_resource type="Texture2D" uid="uid://dhw68kavbaxs" path="res://assets/Sprites/Modulos/Cano/Straight_long.png" id="5_5hlyo"]
+[ext_resource type="Texture2D" uid="uid://dugu372yi0ltn" path="res://assets/Sprites/Modulos/Cano/Spiece.png" id="7_68p36"]
+[ext_resource type="Texture2D" uid="uid://bkayosnqyst1f" path="res://assets/Sprites/Modulos/Cano/Elbow.png" id="7_pffvu"]
+
+[node name="Plumbing" type="Area2D" unique_id=245482926 node_paths=PackedStringArray("pipes")]
+scale = Vector2(0.37891784, 0.43058407)
+script = ExtResource("1_2qslj")
+screen_name = &"pipe_2"
+pipes = [NodePath("Pipe1"), NodePath("Pipe2"), NodePath("Pipe3"), NodePath("Pipe4")]
+
+[node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_2payr")]
+unique_name_in_owner = true
+position = Vector2(1199.8895, 89.77097)
+rotation = -1.5522739
+necessary = true
+
+[node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_2payr")]
+unique_name_in_owner = true
+position = Vector2(1445.3254, 275.5651)
+necessary = true
+
+[node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_2payr")]
+unique_name_in_owner = true
+position = Vector2(972.92755, 454.392)
+necessary = true
+
+[node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_2payr")]
+unique_name_in_owner = true
+position = Vector2(811.9428, 600.70483)
+necessary = true
+
+[node name="StraightSmall2" type="Sprite2D" parent="." unique_id=700609167]
+position = Vector2(577.0634, 691.2795)
+texture = ExtResource("3_3arxp")
+
+[node name="Elbow5" type="Sprite2D" parent="." unique_id=1187052112]
+position = Vector2(767.0782, 661.08795)
+rotation = -3.1415927
+texture = ExtResource("7_pffvu")
+
+[node name="StraightLong2" type="Sprite2D" parent="." unique_id=698626738]
+position = Vector2(811.9428, 389.9974)
+rotation = -1.5707964
+scale = Vector2(0.72464657, 1)
+texture = ExtResource("5_5hlyo")
+
+[node name="Elbow6" type="Sprite2D" parent="." unique_id=1537098587]
+position = Vector2(856.80743, 124.60737)
+texture = ExtResource("7_pffvu")
+
+[node name="StraightLong3" type="Sprite2D" parent="." unique_id=1981266109]
+position = Vector2(1213.0851, 92.09339)
+texture = ExtResource("5_5hlyo")
+
+[node name="StraightSmall4" type="Sprite2D" parent="." unique_id=1401727663]
+position = Vector2(577.06335, 449.7471)
+texture = ExtResource("3_3arxp")
+
+[node name="StraightLong4" type="Sprite2D" parent="." unique_id=1395417986]
+position = Vector2(972.92755, 449.7471)
+texture = ExtResource("5_5hlyo")
+
+[node name="CrossSmall2" type="Sprite2D" parent="." unique_id=1886153809]
+position = Vector2(1331.8444, 449.74716)
+scale = Vector2(1.1786255, 1.0728652)
+texture = ExtResource("4_g7fn3")
+
+[node name="Spiece" type="Sprite2D" parent="." unique_id=557298387]
+position = Vector2(1437.4082, 633.2188)
+scale = Vector2(1.2360023, 1.2532197)
+texture = ExtResource("7_68p36")
+
+[node name="Elbow7" type="Sprite2D" parent="." unique_id=1602329186]
+position = Vector2(1374.07, 308.0791)
+texture = ExtResource("7_pffvu")
+
+[node name="StraightSmall5" type="Sprite2D" parent="." unique_id=2071748787]
+position = Vector2(1586.9661, 274.80576)
+scale = Vector2(1.146085, 1.1514122)
+texture = ExtResource("3_3arxp")
+
+[node name="StraightSmall3" type="Sprite2D" parent="." unique_id=1236290638]
+position = Vector2(1608.9492, 92.09338)
+texture = ExtResource("3_3arxp")
+
+[node name="StraightSmall" type="Sprite2D" parent="." unique_id=590535148]
+position = Vector2(1565.4042, 450.90836)
+scale = Vector2(1.3250223, 1.1045692)
+texture = ExtResource("3_3arxp")

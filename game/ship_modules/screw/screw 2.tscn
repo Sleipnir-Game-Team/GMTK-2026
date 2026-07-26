@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfwimh71fnf5"]
+
+[ext_resource type="Script" uid="uid://bkq81q480r1c2" path="res://game/ship_modules/scripts/screw.gd" id="1_t6vvg"]
+[ext_resource type="Texture2D" uid="uid://d0oewbpkxw1wy" path="res://assets/Sprites/Modulos/Parafuso/Placa_metal.png" id="2_t6vvg"]
+[ext_resource type="PackedScene" uid="uid://cpnn18tt6b065" path="res://game/uses/screw_use.tscn" id="3_5jc4i"]
+
+[sub_resource type="Shader" id="Shader_gc44r"]
+code = "shader_type canvas_item;
+
+uniform bool loose = false;
+
+float rand(vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void vertex() {
+	if(loose){
+		VERTEX += vec2((rand(vec2(45,1) * TIME) * 2.0 - 1.0) * 10.0, (rand(vec2(1,45) * TIME) * 2.0 - 1.0) * 10.0);
+	}
+}"
+
+[node name="Screw1" type="Node2D" unique_id=1792564692 node_paths=PackedStringArray("screws")]
+scale = Vector2(0.77045125, 0.77045125)
+script = ExtResource("1_t6vvg")
+screws = [NodePath("ScrewUse"), NodePath("ScrewUse2"), NodePath("ScrewUse3"), NodePath("ScrewUse4"), NodePath("ScrewUse5")]
+screen_name = &"screw_screen_2"
+
+[node name="Plate" type="TextureRect" parent="." unique_id=602430992]
+offset_left = 288.14282
+offset_top = 42.83204
+offset_right = 816.1428
+offset_bottom = 415.83203
+texture = ExtResource("2_t6vvg")
+
+[node name="ScrewUse" parent="." unique_id=926542711 instance=ExtResource("3_5jc4i")]
+position = Vector2(463.14282, 92.83204)
+loose_shader = SubResource("Shader_gc44r")
+
+[node name="ScrewUse2" parent="." unique_id=1808352701 instance=ExtResource("3_5jc4i")]
+position = Vector2(669.1428, 90.83204)
+
+[node name="ScrewUse3" parent="." unique_id=1216349073 instance=ExtResource("3_5jc4i")]
+position = Vector2(334.14282, 294.83203)
+
+[node name="ScrewUse4" parent="." unique_id=1104235858 instance=ExtResource("3_5jc4i")]
+position = Vector2(779.1428, 304.83203)
+
+[node name="ScrewUse5" parent="." unique_id=471595557 instance=ExtResource("3_5jc4i")]
+position = Vector2(559.1428, 383.83203)

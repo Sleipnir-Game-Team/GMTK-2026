@@ -5,7 +5,7 @@ extends Area2D
 var leaky_pipes: int = 0
 var necessary_leaky_pipes: int = 0
 
-@onready var pipes: Array = [%Pipe1, %Pipe2, %Pipe3, %Pipe4]
+@export var pipes: Array[Node2D]
 @onready var state_manager: StateManager = get_tree().get_first_node_in_group("Jogo").state_manager
 
 

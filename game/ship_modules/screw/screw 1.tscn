@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dkctng5q5c3al"]
 
 [ext_resource type="Script" uid="uid://bkq81q480r1c2" path="res://game/ship_modules/scripts/screw.gd" id="1_a6ce5"]
-[ext_resource type="Texture2D" uid="uid://cbb8d6te1pa4o" path="res://assets/placeholders/modules/metal_plate.png" id="1_kyg0o"]
 [ext_resource type="PackedScene" uid="uid://cpnn18tt6b065" path="res://game/uses/screw_use.tscn" id="2_a6ce5"]
+[ext_resource type="Texture2D" uid="uid://d0oewbpkxw1wy" path="res://assets/Sprites/Modulos/Parafuso/Placa_metal.png" id="2_dp8c8"]
 
 [sub_resource type="Shader" id="Shader_gc44r"]
 code = "shader_type canvas_item;
@@ -20,26 +20,27 @@ void vertex() {
 }"
 
 [node name="Screw1" type="Node2D" unique_id=1792564692 node_paths=PackedStringArray("screws")]
+scale = Vector2(0.7396008, 0.7396008)
 script = ExtResource("1_a6ce5")
 screws = [NodePath("ScrewUse"), NodePath("ScrewUse2"), NodePath("ScrewUse3"), NodePath("ScrewUse4")]
 screen_name = &"screw_screen_1"
 
 [node name="Plate" type="TextureRect" parent="." unique_id=602430992]
-offset_left = 77.0
-offset_top = 49.0
-offset_right = 605.0
-offset_bottom = 422.0
-texture = ExtResource("1_kyg0o")
+offset_left = 344.7806
+offset_top = 58.139473
+offset_right = 872.78064
+offset_bottom = 431.13947
+texture = ExtResource("2_dp8c8")
 
 [node name="ScrewUse" parent="." unique_id=926542711 instance=ExtResource("2_a6ce5")]
-position = Vector2(98, 68)
+position = Vector2(374.7806, 89.13948)
 loose_shader = SubResource("Shader_gc44r")
 
 [node name="ScrewUse2" parent="." unique_id=1808352701 instance=ExtResource("2_a6ce5")]
-position = Vector2(562, 64)
+position = Vector2(840.78064, 89.13948)
 
 [node name="ScrewUse3" parent="." unique_id=1216349073 instance=ExtResource("2_a6ce5")]
-position = Vector2(90, 379)
+position = Vector2(375.7806, 403.13947)
 
 [node name="ScrewUse4" parent="." unique_id=1104235858 instance=ExtResource("2_a6ce5")]
-position = Vector2(562, 380)
+position = Vector2(840.78064, 405.13947)

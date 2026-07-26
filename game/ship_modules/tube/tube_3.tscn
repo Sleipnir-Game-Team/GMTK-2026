@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bgm8wtb3g3u2r"]
+
+[ext_resource type="Script" uid="uid://bgi5jfa3ie1b6" path="res://game/ship_modules/scripts/tube.gd" id="1_kucx7"]
+[ext_resource type="Texture2D" uid="uid://cdt1j5y6nebwm" path="res://assets/Sprites/Modulos/Tubo/Reto.png" id="2_7l1n2"]
+[ext_resource type="Texture2D" uid="uid://pasfsi2iawbl" path="res://assets/Sprites/Modulos/Tubo/Cotovelo.png" id="4_afls6"]
+[ext_resource type="PackedScene" uid="uid://cnlr86qyl0grx" path="res://game/uses/crack.tscn" id="5_opws2"]
+
+[node name="Tube1" type="Node2D" unique_id=2144573194 node_paths=PackedStringArray("cracks")]
+script = ExtResource("1_kucx7")
+cracks = [NodePath("Crack"), NodePath("Crack2")]
+screen_name = &"tube_3"
+
+[node name="Reto" type="Sprite2D" parent="." unique_id=1138529826]
+position = Vector2(305.5, 71)
+texture = ExtResource("2_7l1n2")
+
+[node name="Reto2" type="Sprite2D" parent="." unique_id=1289649172]
+position = Vector2(497.7143, 228.59491)
+rotation = 1.550966
+scale = Vector2(0.891261, 1)
+texture = ExtResource("2_7l1n2")
+
+[node name="Cotovelo" type="Sprite2D" parent="." unique_id=1476465882]
+position = Vector2(465, 113)
+texture = ExtResource("4_afls6")
+
+[node name="Crack" parent="." unique_id=597074376 instance=ExtResource("5_opws2")]
+position = Vector2(288, 72.99999)
+scale = Vector2(0.5180389, 0.50077647)
+
+[node name="Crack2" parent="." unique_id=1103423620 instance=ExtResource("5_opws2")]
+position = Vector2(496, 243)
+rotation = 0.6149455
+scale = Vector2(0.5180389, 0.50077647)

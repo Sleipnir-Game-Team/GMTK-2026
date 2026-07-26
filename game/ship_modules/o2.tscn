@@ -1,19 +1,43 @@
 [gd_scene format=3 uid="uid://bh07ejue0rifg"]
 
 [ext_resource type="Script" uid="uid://drn4os5r7hvrc" path="res://game/ship_modules/scripts/o_2.gd" id="1_xssrw"]
+[ext_resource type="Texture2D" uid="uid://b1tyemglf4ijl" path="res://assets/Sprites/Modulos/Info/Info_Cells.png" id="2_otdht"]
+[ext_resource type="Texture2D" uid="uid://bsfn4b1r0k5tw" path="res://assets/Sprites/Modulos/Info/O2_Dangerous.png" id="3_2awaj"]
+[ext_resource type="Texture2D" uid="uid://cnan7swdw1elp" path="res://assets/Sprites/Modulos/Info/O2_OK.png" id="3_hnq4g"]
+[ext_resource type="Texture2D" uid="uid://bet73xdqcj3nv" path="res://assets/Sprites/Modulos/Info/O2_Dangerous_Status.png" id="4_ou357"]
+[ext_resource type="Texture2D" uid="uid://cbi2rlo8kv1fn" path="res://assets/Sprites/Modulos/Info/O2_OK_Status.png" id="5_cdt8g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_otdht"]
 font_size = 40
 font_color = Color(0, 1, 0, 1)
 
-[node name="O2" type="Node2D" unique_id=139539690 node_paths=PackedStringArray("label")]
+[node name="O2" type="Node2D" unique_id=139539690 node_paths=PackedStringArray("label", "sprite_icon", "sprite_status")]
 script = ExtResource("1_xssrw")
 label = NodePath("Label")
+danger_icon = ExtResource("3_2awaj")
+safe_icon = ExtResource("3_hnq4g")
+danger_status = ExtResource("4_ou357")
+safe_status = ExtResource("5_cdt8g")
+sprite_icon = NodePath("O2Dangerous")
+sprite_status = NodePath("O2DangerousStatus")
+
+[node name="InfoCells" type="Sprite2D" parent="." unique_id=399164254]
+position = Vector2(457, 174)
+texture = ExtResource("2_otdht")
+
+[node name="O2Dangerous" type="Sprite2D" parent="." unique_id=628342479]
+position = Vector2(186, 171)
+texture = ExtResource("3_2awaj")
+
+[node name="O2DangerousStatus" type="Sprite2D" parent="." unique_id=796693567]
+position = Vector2(454, 178)
+texture = ExtResource("4_ou357")
 
 [node name="Label" type="Label" parent="." unique_id=1147156950]
-offset_left = 20.0
-offset_top = 26.0
-offset_right = 550.0
-offset_bottom = 254.0
-text = "Oxygen in the air is: x%"
+offset_left = 606.0
+offset_top = 115.99999
+offset_right = 740.0
+offset_bottom = 171.0
+scale = Vector2(1.6400001, 1.2399997)
+text = "xx,xx%"
 label_settings = SubResource("LabelSettings_otdht")

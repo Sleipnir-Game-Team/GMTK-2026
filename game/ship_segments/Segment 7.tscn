@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dtykqg5pafuvw"]
+
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_hbfp2"]
+[ext_resource type="PackedScene" uid="uid://bh07ejue0rifg" path="res://game/ship_modules/o2.tscn" id="2_eid4q"]
+[ext_resource type="PackedScene" uid="uid://b435fhok3tg3a" path="res://game/ship_modules/temp.tscn" id="3_dboxs"]
+[ext_resource type="PackedScene" uid="uid://b04j8bi86js1w" path="res://game/ship_modules/thrusters.tscn" id="4_5il7p"]
+[ext_resource type="Texture2D" uid="uid://dk742cphvobuy" path="res://assets/Sprites/Nave_Segmento/Nave_Segmento_7.png" id="5_dboxs"]
+[ext_resource type="Texture2D" uid="uid://cu6o3in5p73gh" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_18.png" id="6_s8o3c"]
+[ext_resource type="Texture2D" uid="uid://gvgx8kdd0yd6" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_19.png" id="7_g8x5a"]
+[ext_resource type="Texture2D" uid="uid://du1j54io41fak" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_20.png" id="8_6jjue"]
+
+[node name="Check" type="Node2D" unique_id=1366412851 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_hbfp2")
+module_models = {
+NodePath("O2"): ExtResource("2_eid4q"),
+NodePath("Temp"): ExtResource("3_dboxs"),
+NodePath("Thrusters"): ExtResource("4_5il7p")
+}
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=57330849]
+self_modulate = Color(1, 1, 1, 0.70980394)
+offset_right = 883.0
+offset_bottom = 367.0
+texture = ExtResource("5_dboxs")
+stretch_mode = 2
+
+[node name="O2" type="TextureButton" parent="." unique_id=1820458035]
+offset_left = 229.00002
+offset_top = 93.00001
+offset_right = 338.0
+offset_bottom = 223.0
+scale = Vector2(0.88911635, 0.88911635)
+texture_hover = ExtResource("6_s8o3c")
+
+[node name="Temp" type="TextureButton" parent="." unique_id=1444943775]
+offset_left = 313.0
+offset_top = 78.0
+offset_right = 385.0
+offset_bottom = 199.0
+scale = Vector2(0.9090584, 0.9090584)
+texture_hover = ExtResource("7_g8x5a")
+
+[node name="Thrusters" type="TextureButton" parent="." unique_id=1969297291]
+offset_left = 590.00006
+offset_top = 172.0
+offset_right = 688.00006
+offset_bottom = 272.0
+scale = Vector2(0.89759314, 0.89759314)
+texture_hover = ExtResource("8_6jjue")

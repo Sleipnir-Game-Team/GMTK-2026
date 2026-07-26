@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://xop7e3v13ux0"]
+
+[ext_resource type="Script" uid="uid://bgi5jfa3ie1b6" path="res://game/ship_modules/scripts/tube.gd" id="1_o54ld"]
+[ext_resource type="Texture2D" uid="uid://cdt1j5y6nebwm" path="res://assets/Sprites/Modulos/Tubo/Reto.png" id="2_rfmkg"]
+[ext_resource type="Texture2D" uid="uid://dh7ywqn364equ" path="res://assets/Sprites/Modulos/Tubo/U_Tubo.png" id="3_ykwwb"]
+[ext_resource type="PackedScene" uid="uid://cnlr86qyl0grx" path="res://game/uses/crack.tscn" id="5_f8bt3"]
+
+[node name="Tube1" type="Node2D" unique_id=2144573194 node_paths=PackedStringArray("cracks")]
+script = ExtResource("1_o54ld")
+cracks = [NodePath("Crack"), NodePath("Crack2"), NodePath("Crack3")]
+screen_name = &"tube_4"
+
+[node name="Reto" type="Sprite2D" parent="." unique_id=1138529826]
+position = Vector2(266.5, 104)
+texture = ExtResource("2_rfmkg")
+
+[node name="Reto2" type="Sprite2D" parent="." unique_id=769703642]
+position = Vector2(260, 266)
+texture = ExtResource("2_rfmkg")
+
+[node name="UTubo" type="Sprite2D" parent="." unique_id=1646518671]
+position = Vector2(499, 189)
+rotation = 1.5707964
+texture = ExtResource("3_ykwwb")
+
+[node name="Crack" parent="." unique_id=597074376 instance=ExtResource("5_f8bt3")]
+position = Vector2(609, 151)
+rotation = 0.34799105
+scale = Vector2(0.5180389, 0.50077647)
+
+[node name="Crack2" parent="." unique_id=1103423620 instance=ExtResource("5_f8bt3")]
+position = Vector2(280, 101)
+scale = Vector2(0.5180389, 0.50077647)
+
+[node name="Crack3" parent="." unique_id=681860047 instance=ExtResource("5_f8bt3")]
+position = Vector2(293.00003, 265)
+rotation = 0.9429901
+scale = Vector2(0.5180389, 0.50077647)

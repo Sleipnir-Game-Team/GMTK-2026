@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://ckipofgtljgvn"]
+
+[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/scripts/plumbing_module.gd" id="1_nqsol"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="2_ol48r"]
+[ext_resource type="Texture2D" uid="uid://b33myw00v53gj" path="res://assets/Sprites/Modulos/Cano/Straight_small.png" id="3_wbc5s"]
+[ext_resource type="Texture2D" uid="uid://dhw68kavbaxs" path="res://assets/Sprites/Modulos/Cano/Straight_long.png" id="5_j080n"]
+[ext_resource type="Texture2D" uid="uid://gn0tgtgyywpb" path="res://assets/Sprites/Modulos/Cano/Uturn_small.png" id="6_ieqje"]
+[ext_resource type="Texture2D" uid="uid://ddoqnkhlkdu2c" path="res://assets/Sprites/Modulos/Cano/Uturn_long.png" id="6_oresy"]
+[ext_resource type="Texture2D" uid="uid://bkayosnqyst1f" path="res://assets/Sprites/Modulos/Cano/Elbow.png" id="7_2hrvg"]
+[ext_resource type="Texture2D" uid="uid://dugu372yi0ltn" path="res://assets/Sprites/Modulos/Cano/Spiece.png" id="7_nqsol"]
+
+[node name="Plumbing" type="Area2D" unique_id=245482926 node_paths=PackedStringArray("pipes")]
+scale = Vector2(0.37891784, 0.43058407)
+script = ExtResource("1_nqsol")
+screen_name = &"pipe_4"
+pipes = [NodePath("Pipe1"), NodePath("Pipe2"), NodePath("Pipe3"), NodePath("Pipe4")]
+
+[node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_ol48r")]
+unique_name_in_owner = true
+position = Vector2(873.5402, 279.23636)
+rotation = -1.5522739
+necessary = true
+
+[node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_ol48r")]
+unique_name_in_owner = true
+position = Vector2(915.7658, 413.93713)
+necessary = true
+
+[node name="Pipe3" parent="." unique_id=468307275 instance=ExtResource("2_ol48r")]
+unique_name_in_owner = true
+position = Vector2(1031.886, 525.41364)
+necessary = true
+
+[node name="Pipe4" parent="." unique_id=517505432 instance=ExtResource("2_ol48r")]
+unique_name_in_owner = true
+position = Vector2(767.9765, 523.0912)
+necessary = true
+
+[node name="StraightSmall2" type="Sprite2D" parent="." unique_id=1103093761]
+position = Vector2(580.60077, 281.9606)
+scale = Vector2(1, 1.009801)
+texture = ExtResource("3_wbc5s")
+
+[node name="StraightSmall5" type="Sprite2D" parent="." unique_id=888039713]
+position = Vector2(1406.6373, 151.50288)
+scale = Vector2(1, 1.009801)
+texture = ExtResource("3_wbc5s")
+
+[node name="StraightSmall4" type="Sprite2D" parent="." unique_id=1231540067]
+position = Vector2(768.93677, 130.60104)
+rotation = -1.5707964
+scale = Vector2(0.7176344, 1.0409464)
+texture = ExtResource("3_wbc5s")
+
+[node name="StraightSmall6" type="Sprite2D" parent="." unique_id=25289580]
+position = Vector2(1145.3671, 125.9562)
+rotation = -1.5707964
+scale = Vector2(0.7176344, 1.0409464)
+texture = ExtResource("3_wbc5s")
+
+[node name="StraightLong4" type="Sprite2D" parent="." unique_id=1284625751]
+position = Vector2(1142.7279, 318.71768)
+rotation = -1.5707964
+scale = Vector2(0.3890056, 0.94371235)
+texture = ExtResource("5_j080n")
+
+[node name="UturnLong" type="Sprite2D" parent="." unique_id=1741170520]
+position = Vector2(1018.69037, 413.9371)
+rotation = -1.5707964
+scale = Vector2(1, 0.9999995)
+texture = ExtResource("6_oresy")
+
+[node name="Spiece" type="Sprite2D" parent="." unique_id=1784036538]
+position = Vector2(1203.427, 230.46542)
+rotation = 1.5707964
+scale = Vector2(0.9425481, 0.9999995)
+texture = ExtResource("7_nqsol")
+
+[node name="StraightLong2" type="Sprite2D" parent="." unique_id=557695785]
+position = Vector2(1064.3162, 630.59344)
+scale = Vector2(0.70479727, 0.9825827)
+texture = ExtResource("5_j080n")
+
+[node name="UturnSmall" type="Sprite2D" parent="." unique_id=1589826257]
+position = Vector2(1329.496, 552.748)
+rotation = -1.5707964
+scale = Vector2(0.9023138, 1.0000001)
+texture = ExtResource("6_ieqje")
+
+[node name="StraightLong3" type="Sprite2D" parent="." unique_id=895408439]
+position = Vector2(767.9765, 362.86667)
+rotation = 1.5707964
+scale = Vector2(0.53350747, 1)
+texture = ExtResource("5_j080n")
+
+[node name="Elbow3" type="Sprite2D" parent="." unique_id=716862133]
+position = Vector2(801.56604, 588.399)
+rotation = -1.5707964
+scale = Vector2(0.9395744, 0.95368683)
+texture = ExtResource("7_2hrvg")
+
+[node name="StraightSmall7" type="Sprite2D" parent="." unique_id=52959796]
+position = Vector2(1227.179, 718.17505)
+rotation = -1.5707964
+scale = Vector2(0.7176343, 1.0409462)
+texture = ExtResource("3_wbc5s")
+
+[node name="Elbow6" type="Sprite2D" parent="." unique_id=1358840118]
+position = Vector2(1192.8707, 559.2386)
+rotation = 1.5707964
+scale = Vector2(0.9839148, 1)
+texture = ExtResource("7_2hrvg")
+
+[node name="StraightLong" type="Sprite2D" parent="." unique_id=1273735098]
+position = Vector2(877.21967, 282.3847)
+scale = Vector2(0.6479585, 0.94371235)
+texture = ExtResource("5_j080n")
+
+[node name="Elbow" type="Sprite2D" parent="." unique_id=40400043]
+position = Vector2(1124.2542, 318.36505)
+rotation = 1.5707964
+scale = Vector2(0.81268126, 0.99999994)
+texture = ExtResource("7_2hrvg")
+
+[node name="StraightSmall3" type="Sprite2D" parent="." unique_id=1631950463]
+position = Vector2(917.5957, 716.56464)
+rotation = -1.5707964
+scale = Vector2(0.75027215, 1.1090027)
+texture = ExtResource("3_wbc5s")
+
+[node name="Elbow4" type="Sprite2D" parent="." unique_id=1392606722]
+position = Vector2(963.26935, 562.57245)
+scale = Vector2(0.9999999, 1)
+texture = ExtResource("7_2hrvg")
+
+[node name="Elbow5" type="Sprite2D" parent="." unique_id=1399497596]
+position = Vector2(1100.5023, 492.89966)
+rotation = 3.1415925
+scale = Vector2(0.9999997, 1)
+texture = ExtResource("7_2hrvg")
+
+[node name="Elbow2" type="Sprite2D" parent="." unique_id=554911869]
+position = Vector2(1195.5098, 435.26428)
+rotation = -1.5707964
+scale = Vector2(0.8912342, 0.99999994)
+texture = ExtResource("7_2hrvg")

@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://b3blnhhfq5mwy"]
 
 [ext_resource type="Script" uid="uid://cybvm7dn2tcr1" path="res://game/ship_modules/scripts/fuel.gd" id="1_nori0"]
-[ext_resource type="Texture2D" uid="uid://dhx44mtlg4ugx" path="res://assets/placeholders/pl_porta_az.png" id="2_j7wed"]
-[ext_resource type="Texture2D" uid="uid://c0yimbfbf84hp" path="res://assets/placeholders/pl_porta_vm.png" id="3_qyb7x"]
-[ext_resource type="Texture2D" uid="uid://ub4ce6qbbkr2" path="res://assets/placeholders/pl_porta_vaz.png" id="4_acyob"]
-[ext_resource type="Texture2D" uid="uid://beurp0dcs7j64" path="res://assets/placeholders/pl_porta_cheio.png" id="5_n7fxv"]
+[ext_resource type="Texture2D" uid="uid://dudjq05a4brhm" path="res://assets/Sprites/Modulos/Combustivel/Porta_B.png" id="2_qyb7x"]
+[ext_resource type="Texture2D" uid="uid://bpbvb04t8tevw" path="res://assets/Sprites/Modulos/Combustivel/Porta_A.png" id="3_acyob"]
+[ext_resource type="Texture2D" uid="uid://ci67onfks753w" path="res://assets/Sprites/Modulos/Combustivel/Vazio.png" id="4_n7fxv"]
+[ext_resource type="Texture2D" uid="uid://civdw5vfrhx5x" path="res://assets/Sprites/Modulos/Combustivel/Cheio.png" id="5_4mf2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyb7x"]
-size = Vector2(371, 345)
+size = Vector2(284.5, 288.5)
 
 [node name="Fuel" type="Area2D" unique_id=1300935115 node_paths=PackedStringArray("image") groups=["use_fuel", "use_unlock"]]
 collision_layer = 32768
 collision_mask = 2048
 script = ExtResource("1_nori0")
-img_azul = ExtResource("2_j7wed")
-img_vermelha = ExtResource("3_qyb7x")
-img_vazia = ExtResource("4_acyob")
-img_cheia = ExtResource("5_n7fxv")
+img_azul = ExtResource("2_qyb7x")
+img_vermelha = ExtResource("3_acyob")
+img_vazia = ExtResource("4_n7fxv")
+img_cheia = ExtResource("5_4mf2s")
 image = NodePath("Door")
 screen_name = &"fuel_1"
 
 [node name="Door" type="TextureRect" parent="." unique_id=1035389226]
-offset_left = 49.0
-offset_top = 26.0
-offset_right = 849.0
-offset_bottom = 626.0
-scale = Vector2(0.70358825, 0.70358825)
-texture = ExtResource("2_j7wed")
+offset_left = 322.0
+offset_top = 44.0
+offset_right = 607.0
+offset_bottom = 330.0
+texture = ExtResource("2_qyb7x")
+stretch_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1125613968 groups=["use_unlock"]]
-position = Vector2(320.5, 227.5)
+position = Vector2(465.75, 188.75)
 shape = SubResource("RectangleShape2D_qyb7x")

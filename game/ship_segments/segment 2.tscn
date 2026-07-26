@@ -1,43 +1,38 @@
-[gd_scene format=3 uid="uid://dkxq52o405pg8"]
+[gd_scene format=3 uid="uid://xeyfk4ocv5oh"]
 
-[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_bvxae"]
-[ext_resource type="Texture2D" uid="uid://rpy1g8vhuffa" path="res://assets/placeholders/metal_base.png" id="1_rua3i"]
-[ext_resource type="PackedScene" uid="uid://dkctng5q5c3al" path="res://game/ship_modules/screw 1.tscn" id="2_dwwdm"]
-[ext_resource type="Texture2D" uid="uid://c8rlji58j3t0m" path="res://assets/placeholders/tools/screws/screw-plus.webp" id="2_wmm1i"]
-[ext_resource type="PackedScene" uid="uid://b3blnhhfq5mwy" path="res://game/ship_modules/fuel.tscn" id="3_2x24h"]
-[ext_resource type="Texture2D" uid="uid://dxf0gxab3ejya" path="res://assets/placeholders/hazard.png" id="5_dp0yn"]
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_fo0oh"]
+[ext_resource type="PackedScene" uid="uid://dkctng5q5c3al" path="res://game/ship_modules/screw/screw 1.tscn" id="2_wbpb4"]
+[ext_resource type="PackedScene" uid="uid://bfwimh71fnf5" path="res://game/ship_modules/screw/screw 2.tscn" id="3_qfkhh"]
+[ext_resource type="Texture2D" uid="uid://coa52lr516q18" path="res://assets/Sprites/Nave_Segmento/Nave_Segmento_2.png" id="5_fo0oh"]
+[ext_resource type="Texture2D" uid="uid://bj0gb2mun1eac" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_4.png" id="6_qfkhh"]
+[ext_resource type="Texture2D" uid="uid://c3m0hm6n4pl2c" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_5.png" id="7_fo0oh"]
 
-[node name="Segment2" type="Node2D" unique_id=1985506923 node_paths=PackedStringArray("module_models")]
-position = Vector2(-311.00003, -2)
-scale = Vector2(0.85317665, 0.9702357)
-script = ExtResource("1_bvxae")
+[node name="Check" type="Node2D" unique_id=1366412851 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_fo0oh")
 module_models = {
-NodePath("Screw"): ExtResource("2_dwwdm"),
-NodePath("Fuel"): ExtResource("3_2x24h")
+NodePath("PF1"): ExtResource("2_wbpb4"),
+NodePath("PF 2"): ExtResource("3_qfkhh")
 }
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=685861630]
-offset_left = 418.0
-offset_top = -96.0
-offset_right = 918.0
-offset_bottom = 404.0
-scale = Vector2(1.6094726, 1.0158539)
-texture = ExtResource("1_rua3i")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=57330849]
+self_modulate = Color(1, 1, 1, 0.70980394)
+offset_left = -8.0
+offset_right = 912.0
+offset_bottom = 367.0
+texture = ExtResource("5_fo0oh")
+stretch_mode = 2
 
-[node name="Screw" type="TextureButton" parent="." unique_id=518412540]
-offset_left = 941.0
-offset_top = 71.0
-offset_right = 1441.0
-offset_bottom = 643.0
-scale = Vector2(0.33714092, 0.30616173)
-texture_normal = ExtResource("2_wmm1i")
-stretch_mode = 0
+[node name="PF1" type="TextureButton" parent="." unique_id=1820458035]
+offset_left = 34.0
+offset_top = 10.0
+offset_right = 449.0
+offset_bottom = 288.0
+texture_hover = ExtResource("6_qfkhh")
 
-[node name="Fuel" type="TextureButton" parent="." unique_id=656070477]
-offset_left = 727.0
-offset_top = 67.0
-offset_right = 1239.0
-offset_bottom = 579.0
-scale = Vector2(0.34949094, 0.34949094)
-texture_normal = ExtResource("5_dp0yn")
-stretch_mode = 0
+[node name="PF 2" type="TextureButton" parent="." unique_id=1444943775]
+offset_left = 390.0
+offset_top = 24.0
+offset_right = 887.0
+offset_bottom = 335.0
+scale = Vector2(1.0200939, 1.0200939)
+texture_hover = ExtResource("7_fo0oh")

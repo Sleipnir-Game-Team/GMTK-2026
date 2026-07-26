@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cmvdkieo6t537"]
+
+[ext_resource type="Script" uid="uid://dr3umdosqwgme" path="res://game/ship_modules/scripts/plumbing_module.gd" id="1_skis2"]
+[ext_resource type="PackedScene" uid="uid://bxokrabkatrvy" path="res://game/uses/pipe.tscn" id="2_kjaoe"]
+[ext_resource type="Texture2D" uid="uid://b33myw00v53gj" path="res://assets/Sprites/Modulos/Cano/Straight_small.png" id="3_y8ii6"]
+[ext_resource type="Texture2D" uid="uid://dhw68kavbaxs" path="res://assets/Sprites/Modulos/Cano/Straight_long.png" id="5_y3ytb"]
+[ext_resource type="Texture2D" uid="uid://bkayosnqyst1f" path="res://assets/Sprites/Modulos/Cano/Elbow.png" id="7_gn5m5"]
+[ext_resource type="Texture2D" uid="uid://vlto3d1uufbf" path="res://assets/Sprites/Modulos/Cano/Tpiece.png" id="9_fovm2"]
+
+[node name="Plumbing" type="Area2D" unique_id=245482926 node_paths=PackedStringArray("pipes")]
+scale = Vector2(0.37891784, 0.43058407)
+script = ExtResource("1_skis2")
+screen_name = &"pipe_3"
+pipes = [NodePath("Pipe1"), NodePath("Pipe2")]
+
+[node name="Pipe1" parent="." unique_id=542192343 instance=ExtResource("2_kjaoe")]
+unique_name_in_owner = true
+position = Vector2(1073.213, 299.86426)
+rotation = -1.5522739
+necessary = true
+
+[node name="Pipe2" parent="." unique_id=535577390 instance=ExtResource("2_kjaoe")]
+unique_name_in_owner = true
+position = Vector2(1363.5135, 513.5275)
+necessary = true
+
+[node name="StraightSmall2" type="Sprite2D" parent="." unique_id=76112945]
+position = Vector2(590.2588, 397.40616)
+texture = ExtResource("3_y8ii6")
+
+[node name="StraightSmall3" type="Sprite2D" parent="." unique_id=2011213455]
+position = Vector2(1590.4757, 413.66315)
+texture = ExtResource("3_y8ii6")
+
+[node name="StraightSmall4" type="Sprite2D" parent="." unique_id=1087540735]
+position = Vector2(963.7847, 741.1254)
+rotation = 1.5707964
+scale = Vector2(0.6575411, 1)
+texture = ExtResource("3_y8ii6")
+
+[node name="StraightSmall6" type="Sprite2D" parent="." unique_id=931873714]
+position = Vector2(1534.7428, 116.663704)
+rotation = 1.5707964
+scale = Vector2(0.6575411, 1)
+texture = ExtResource("3_y8ii6")
+
+[node name="StraightSmall7" type="Sprite2D" parent="." unique_id=1084292892]
+position = Vector2(1160.1869, 114.0701)
+rotation = 1.5707964
+scale = Vector2(0.6575411, 1.0615294)
+texture = ExtResource("3_y8ii6")
+
+[node name="Elbow" type="Sprite2D" parent="." unique_id=1924212130]
+position = Vector2(772.3563, 435.98904)
+rotation = 1.5707964
+scale = Vector2(0.90348864, 1)
+texture = ExtResource("7_gn5m5")
+
+[node name="Elbow2" type="Sprite2D" parent="." unique_id=427670828]
+position = Vector2(840.9727, 553.5343)
+rotation = -1.5707964
+scale = Vector2(0.80697685, 1)
+texture = ExtResource("7_gn5m5")
+
+[node name="StraightLong" type="Sprite2D" parent="." unique_id=135713153]
+position = Vector2(1072.6547, 589.497)
+scale = Vector2(0.5884352, 0.92225945)
+texture = ExtResource("5_y3ytb")
+
+[node name="Elbow3" type="Sprite2D" parent="." unique_id=597687016]
+position = Vector2(1313.3706, 562.2705)
+rotation = -3.1415927
+scale = Vector2(1, 0.79004496)
+texture = ExtResource("7_gn5m5")
+
+[node name="Elbow4" type="Sprite2D" parent="." unique_id=1976119200]
+position = Vector2(1400.4609, 444.76355)
+scale = Vector2(1, 0.9484686)
+texture = ExtResource("7_gn5m5")
+
+[node name="StraightLong2" type="Sprite2D" parent="." unique_id=900825166]
+position = Vector2(963.7846, 526.4882)
+rotation = -1.5707964
+scale = Vector2(0.50140136, 1)
+texture = ExtResource("5_y3ytb")
+
+[node name="Elbow5" type="Sprite2D" parent="." unique_id=2005509486]
+position = Vector2(1005.90186, 327.76492)
+scale = Vector2(0.9649783, 0.92940617)
+texture = ExtResource("7_gn5m5")
+
+[node name="StraightSmall" type="Sprite2D" parent="." unique_id=857400408]
+position = Vector2(1329.2052, 296.7824)
+scale = Vector2(0.78844196, 1.0381231)
+texture = ExtResource("3_y8ii6")
+
+[node name="Elbow6" type="Sprite2D" parent="." unique_id=1769818320]
+position = Vector2(1489.8782, 262.97662)
+rotation = -3.1415927
+texture = ExtResource("7_gn5m5")
+
+[node name="Tpiece" type="Sprite2D" parent="." unique_id=371720712]
+position = Vector2(1155.0251, 248.77084)
+rotation = 1.5707964
+scale = Vector2(0.84840554, 0.89110464)
+texture = ExtResource("9_fovm2")

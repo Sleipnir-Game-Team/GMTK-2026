@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://vkmhewlqqsx"]
+
+[ext_resource type="Script" uid="uid://cybvm7dn2tcr1" path="res://game/ship_modules/scripts/fuel.gd" id="1_hh0o1"]
+[ext_resource type="Texture2D" uid="uid://dudjq05a4brhm" path="res://assets/Sprites/Modulos/Combustivel/Porta_B.png" id="2_6oegd"]
+[ext_resource type="Texture2D" uid="uid://bpbvb04t8tevw" path="res://assets/Sprites/Modulos/Combustivel/Porta_A.png" id="3_2wm04"]
+[ext_resource type="Texture2D" uid="uid://ci67onfks753w" path="res://assets/Sprites/Modulos/Combustivel/Vazio.png" id="4_btwx8"]
+[ext_resource type="Texture2D" uid="uid://civdw5vfrhx5x" path="res://assets/Sprites/Modulos/Combustivel/Cheio.png" id="5_l2aqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyb7x"]
+size = Vector2(284.5, 288.5)
+
+[node name="Fuel" type="Area2D" unique_id=1300935115 node_paths=PackedStringArray("image") groups=["use_fuel", "use_unlock"]]
+collision_layer = 32768
+collision_mask = 2048
+script = ExtResource("1_hh0o1")
+img_azul = ExtResource("2_6oegd")
+img_vermelha = ExtResource("3_2wm04")
+img_vazia = ExtResource("4_btwx8")
+img_cheia = ExtResource("5_l2aqu")
+image = NodePath("Door")
+screen_name = &"fuel_2"
+
+[node name="Door" type="TextureRect" parent="." unique_id=1035389226]
+offset_left = 322.0
+offset_top = 44.0
+offset_right = 644.0
+offset_bottom = 330.0
+texture = ExtResource("2_6oegd")
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1125613968 groups=["use_unlock"]]
+position = Vector2(465.75, 188.75)
+shape = SubResource("RectangleShape2D_qyb7x")

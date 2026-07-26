@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://kvm75w1sem62"]
+
+[ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_e2pdk"]
+[ext_resource type="PackedScene" uid="uid://b8mxjmyphtsub" path="res://game/ship_modules/tube/tube_5.tscn" id="2_1odn6"]
+[ext_resource type="PackedScene" uid="uid://6oyl1s80v64o" path="res://game/ship_modules/screw/screw 4.tscn" id="3_1odn6"]
+[ext_resource type="Texture2D" uid="uid://b6idj6sek53v2" path="res://assets/Sprites/Nave_Segmento/Nave_Segmento_5.png" id="5_e2pdk"]
+[ext_resource type="Texture2D" uid="uid://b6ubbxgcpgnuy" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_15.png" id="6_v2o7l"]
+[ext_resource type="Texture2D" uid="uid://ntd48jj6fsep" path="res://assets/Sprites/Segmento_Hover/Segmento_Hover_14.png" id="7_v2o7l"]
+
+[node name="Check" type="Node2D" unique_id=1366412851 node_paths=PackedStringArray("module_models")]
+script = ExtResource("1_e2pdk")
+module_models = {
+NodePath("Tube1"): ExtResource("2_1odn6"),
+NodePath("PF1"): ExtResource("3_1odn6")
+}
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=57330849]
+self_modulate = Color(1, 1, 1, 0.70980394)
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 909.0
+offset_bottom = 381.0
+texture = ExtResource("5_e2pdk")
+stretch_mode = 2
+
+[node name="Tube1" type="TextureButton" parent="." unique_id=1820458035]
+offset_left = 133.00002
+offset_top = 212.99998
+offset_right = 664.0
+offset_bottom = 354.0
+scale = Vector2(0.8354911, 0.8364057)
+texture_hover = ExtResource("6_v2o7l")
+
+[node name="PF1" type="TextureButton" parent="." unique_id=1444943775]
+offset_left = 163.00002
+offset_top = 76.0
+offset_right = 762.0
+offset_bottom = 331.0
+scale = Vector2(0.84413636, 0.84413636)
+texture_hover = ExtResource("7_v2o7l")

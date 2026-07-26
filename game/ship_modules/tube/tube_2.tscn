@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://caacb0jhel4ak"]
+
+[ext_resource type="Script" uid="uid://bgi5jfa3ie1b6" path="res://game/ship_modules/scripts/tube.gd" id="1_d3dug"]
+[ext_resource type="Texture2D" uid="uid://gre6xwbbnvyt" path="res://assets/Sprites/Modulos/Tubo/S_Tubo.png" id="3_sjs1d"]
+[ext_resource type="Texture2D" uid="uid://pasfsi2iawbl" path="res://assets/Sprites/Modulos/Tubo/Cotovelo.png" id="4_vjy1r"]
+[ext_resource type="PackedScene" uid="uid://cnlr86qyl0grx" path="res://game/uses/crack.tscn" id="5_8bcam"]
+
+[node name="Tube1" type="Node2D" unique_id=2144573194 node_paths=PackedStringArray("cracks")]
+script = ExtResource("1_d3dug")
+cracks = [NodePath("Crack"), NodePath("Crack2"), NodePath("Crack3")]
+screen_name = &"tube_2"
+
+[node name="STubo2" type="Sprite2D" parent="." unique_id=1640078567]
+position = Vector2(226, 225)
+texture = ExtResource("3_sjs1d")
+
+[node name="STubo3" type="Sprite2D" parent="." unique_id=690487961]
+position = Vector2(456, 137)
+rotation = 1.5707964
+texture = ExtResource("3_sjs1d")
+
+[node name="Cotovelo2" type="Sprite2D" parent="." unique_id=1879810020]
+position = Vector2(368, 244)
+rotation = 1.5707964
+texture = ExtResource("4_vjy1r")
+
+[node name="Crack" parent="." unique_id=597074376 instance=ExtResource("5_8bcam")]
+position = Vector2(213, 196)
+rotation = 0.65273726
+scale = Vector2(0.5180389, 0.50077647)
+
+[node name="Crack2" parent="." unique_id=1103423620 instance=ExtResource("5_8bcam")]
+position = Vector2(374, 265)
+scale = Vector2(0.5180389, 0.50077647)
+
+[node name="Crack3" parent="." unique_id=681860047 instance=ExtResource("5_8bcam")]
+position = Vector2(446.00006, 128.00003)
+rotation = 0.9429901
+scale = Vector2(0.5180389, 0.50077647)
