@@ -82,7 +82,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1738364228]
 layout_mode = 2
-text = "OPÇÕES"
+text = "OPTIONS"
 label_settings = SubResource("LabelSettings_djikq")
 horizontal_alignment = 1
 
@@ -99,7 +99,7 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-text = "VÍDEO"
+text = "VIDEO"
 label_settings = SubResource("LabelSettings_7j5fk")
 
 [node name="Control" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=587481890]
@@ -110,7 +110,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-text = "ÁUDIO"
+text = "AUDIO"
 label_settings = SubResource("LabelSettings_a7ybw")
 
 [node name="Control2" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=899419308]
@@ -121,7 +121,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-text = "CONTROLES"
+text = "KEYBINDS"
 label_settings = SubResource("LabelSettings_2ujm3")
 
 [node name="Control" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer/MarginContainer/VBoxContainer" unique_id=482172181]
@@ -162,7 +162,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
-text = "Resoluções"
+text = "Resolution"
 label_settings = SubResource("LabelSettings_fg87v")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -273,7 +273,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Volume Geral"
+text = "Master Volume"
 label_settings = SubResource("LabelSettings_fg87v")
 horizontal_alignment = 1
 
@@ -318,7 +318,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Volume Música"
+text = "Music Volume"
 label_settings = SubResource("LabelSettings_fg87v")
 horizontal_alignment = 1
 
@@ -363,7 +363,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Volume SFX"
+text = "Effects Volume"
 label_settings = SubResource("LabelSettings_fg87v")
 horizontal_alignment = 1
 
@@ -470,7 +470,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 40
-text = "Resetar Controles"
+text = "Reset"
 
 [node name="Control" type="Control" parent="CanvasLayer/TextureRect/VBoxContainer" unique_id=1135884699]
 custom_minimum_size = Vector2(0, 100)

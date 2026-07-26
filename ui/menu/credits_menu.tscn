@@ -35,7 +35,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=453739286]
 layout_mode = 2
-text = "CRÉDITOS"
+text = "CREDITS"
 label_settings = SubResource("LabelSettings_4flhf")
 horizontal_alignment = 1
 
@@ -58,6 +58,6 @@ custom_minimum_size = Vector2(600, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 40
-text = "Voltar"
+text = "Close"
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/back/back_button" to="." method="_on_back_button_pressed"]
