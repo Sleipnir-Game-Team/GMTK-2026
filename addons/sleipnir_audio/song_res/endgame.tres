@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SongData" format=3 uid="uid://svbg3isoinub"]
+
+[ext_resource type="AudioStream" uid="uid://dexgw5cmfatkv" path="res://assets/Music/endgame.mp3" id="1_cx5uu"]
+[ext_resource type="Script" uid="uid://dogxqur5hw3mf" path="res://addons/sleipnir_audio/music/maestro_core/song_data.gd" id="1_fgowc"]
+
+[resource]
+script = ExtResource("1_fgowc")
+BPM = 96
+MainClips = ExtResource("1_cx5uu")
+metadata/_custom_type_script = "uid://dogxqur5hw3mf"

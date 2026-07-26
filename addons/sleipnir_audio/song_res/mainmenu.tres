@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SongData" format=3 uid="uid://xpar8kka61jj"]
+
+[ext_resource type="Script" uid="uid://dogxqur5hw3mf" path="res://addons/sleipnir_audio/music/maestro_core/song_data.gd" id="1_64qp3"]
+[ext_resource type="AudioStream" uid="uid://b8tu7lw11ptk2" path="res://assets/Music/mainmenu.mp3" id="1_bel7r"]
+
+[resource]
+script = ExtResource("1_64qp3")
+BPM = 103
+MainClips = ExtResource("1_bel7r")
+metadata/_custom_type_script = "uid://dogxqur5hw3mf"
