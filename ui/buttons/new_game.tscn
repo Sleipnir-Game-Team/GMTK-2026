@@ -11,6 +11,6 @@ script = ExtResource("1_uv8kt")
 [node name="New Game Button" type="Button" parent="." unique_id=57757453]
 layout_mode = 2
 theme = SubResource("Theme_fqh3t")
-text = "Novo jogo"
+text = "New Game"
 
 [connection signal="pressed" from="New Game Button" to="." method="_on_new_game_button_pressed"]
