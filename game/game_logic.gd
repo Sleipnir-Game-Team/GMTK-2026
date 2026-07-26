@@ -162,9 +162,9 @@ func check_conditions() -> bool:
 
 func _process(delta):
 	if ship_timer and !ship_timer.is_stopped():
-		teste.text = "%02d" % snapped(ship_timer.time_left / 60,1) + ":%02d" % (ship_timer.time_left - snapped(ship_timer.time_left / 60,1) * 60) + " until launch"
+		teste.text = "%02d"% ship_timer.time_left + " until launch"
 	elif interval_timer and !interval_timer.is_stopped():
-		teste.text = "%02d" % snapped(interval_timer.time_left / 60,1) + ":%02d" % (interval_timer.time_left - snapped(interval_timer.time_left / 60,1) * 60) + " until next"
+		teste.text = "%02d" % interval_timer.time_left+ " until next"
 	else:
 		teste.text = "Waiting for start (Pull the cord)"
 	
