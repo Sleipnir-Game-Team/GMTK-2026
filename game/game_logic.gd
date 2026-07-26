@@ -65,8 +65,8 @@ var propulsor_2: bool:
 var ship_conditions := {
 	'min_oxigen': 19.5,
 	'max_oxigen': 23.5,
-	'min_temp': 10,
-	'max_temp': 50
+	'min_temp': 20,
+	'max_temp': 40
 }
 
 
