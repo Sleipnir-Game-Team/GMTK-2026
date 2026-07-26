@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cq0xomg3yjhjn"]
 
 [ext_resource type="Script" uid="uid://nb87rw114fbd" path="res://game/tools/scripts/screwdriver.gd" id="1_41e2a"]
-[ext_resource type="Texture2D" uid="uid://ck320h58peuer" path="res://assets/6-2-screwdriver-download-png.png" id="2_bdnlh"]
+[ext_resource type="Texture2D" uid="uid://b1dp7su3jy7bp" path="res://assets/Sprites/Tools/Screwdriver.png" id="2_r66uh"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="3_d1fns"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="4_r66uh"]
+[ext_resource type="Texture2D" uid="uid://byejb88v6pq3l" path="res://assets/Sprites/Tools/Drawer_Tools/Squish_Screwdriver.png" id="5_k88ff"]
 [ext_resource type="PackedScene" uid="uid://rlqbpqilhq8k" path="res://game/behaviours/screwable.tscn" id="5_r66uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41e2a"]
-size = Vector2(70, 361)
+size = Vector2(54.933876, 294.2649)
 
 [node name="Screwdriver" type="Area2D" unique_id=127685553]
 rotation = -0.5881256
@@ -16,17 +17,17 @@ collision_mask = 32768
 script = ExtResource("1_41e2a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016635172]
-position = Vector2(-3, 2.5)
+position = Vector2(1.3779163, 0.137268)
 shape = SubResource("RectangleShape2D_41e2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894663106]
 rotation = 1.5707964
-scale = Vector2(0.24740933, 0.24740934)
-texture = ExtResource("2_bdnlh")
+texture = ExtResource("2_r66uh")
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("3_d1fns")]
 
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("4_r66uh")]
+store_image = ExtResource("5_k88ff")
 group = &"use_store"
 
 [node name="use_screwable" parent="." unique_id=700470007 instance=ExtResource("5_r66uh")]

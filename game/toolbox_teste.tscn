@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce6nt44ivx8d3" path="res://game/toolbox_teste.gd" id="1_fxsc8"]
 [ext_resource type="PackedScene" uid="uid://1n2c8xxqa4o4" path="res://game/stored_item.tscn" id="2_18286"]
+[ext_resource type="Texture2D" uid="uid://48b7f7tf4t4y" path="res://assets/Sprites/Tools/Drawer_Tools/Squish_Uranio.png" id="3_h5y8b"]
 [ext_resource type="Texture2D" uid="uid://60psg0jtujey" path="res://assets/Sprites/Gaveta.png" id="4_h5y8b"]
 [ext_resource type="PackedScene" uid="uid://du2ailw7a70vy" path="res://game/uses/example_use.tscn" id="4_lstkq"]
 
@@ -124,6 +125,7 @@ anim_player = NodePath("AnimationPlayer")
 toggle_button = NodePath("TextureButton")
 stored_item_model = ExtResource("2_18286")
 slots = [NodePath("Slots/Node2D"), NodePath("Slots/Node2D2"), NodePath("Slots/Node2D3"), NodePath("Slots/Node2D4"), NodePath("Slots/Node2D5")]
+uranium = ExtResource("3_h5y8b")
 
 [node name="Gavetinha_2" type="TextureRect" parent="Box" unique_id=200066326]
 offset_left = -2.0
@@ -155,16 +157,16 @@ shape = SubResource("RectangleShape2D_h5y8b")
 visible = false
 
 [node name="Node2D" type="Node2D" parent="Box/Slots" unique_id=508181477]
-position = Vector2(232, 227)
+position = Vector2(160, 274)
 
 [node name="Node2D2" type="Node2D" parent="Box/Slots" unique_id=137380673]
-position = Vector2(361, 231)
+position = Vector2(297, 272)
 
 [node name="Node2D3" type="Node2D" parent="Box/Slots" unique_id=50501462]
-position = Vector2(482, 226)
+position = Vector2(447, 274)
 
 [node name="Node2D4" type="Node2D" parent="Box/Slots" unique_id=157639773]
-position = Vector2(617, 223)
+position = Vector2(597, 279)
 
 [node name="Node2D5" type="Node2D" parent="Box/Slots" unique_id=904289261]
-position = Vector2(748, 223)
+position = Vector2(734, 282)

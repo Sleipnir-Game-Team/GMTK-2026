@@ -62,7 +62,7 @@ func _drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) ->
 		
 		if _dragging:
 			drag_start.emit()
-		elif _mouse_in_use_area:
+		elif _intersecting_use_area:
 			drag_end.emit()
 			drop_on_use_area.emit(_intersecting_use_area, _intersecting_use_group)
 			_mouse_in_use_area = false

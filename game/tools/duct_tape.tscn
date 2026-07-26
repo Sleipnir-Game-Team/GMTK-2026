@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://70smgawpyhqw" path="res://game/tools/scripts/duct_tape.gd" id="1_2e1jp"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="2_scq0q"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="3_fyiom"]
+[ext_resource type="Texture2D" uid="uid://bm7gebtwqv3xg" path="res://assets/Sprites/Tools/Drawer_Tools/Squish_Duct_Tape.png" id="3_uwd2s"]
 [ext_resource type="PackedScene" uid="uid://cq0hwsu707qrj" path="res://game/behaviours/tape.tscn" id="5_jbv15"]
-[ext_resource type="Texture2D" uid="uid://dwaj1cfb7c67" path="res://assets/placeholders/tools/duct_tape_alternative.png" id="5_uwd2s"]
+[ext_resource type="Texture2D" uid="uid://1ikjo8t76vgx" path="res://assets/Sprites/Tools/Duct_Tape.png" id="5_uwd2s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyiom"]
-radius = 51.801315
-height = 117.42752
+radius = 71.4207
+height = 203.74538
 
 [node name="DuctTape" type="Area2D" unique_id=1574064096]
 collision_layer = 2048
@@ -16,6 +17,7 @@ collision_mask = 32768
 script = ExtResource("1_2e1jp")
 
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("3_fyiom")]
+store_image = ExtResource("3_uwd2s")
 group = &"use_store"
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("2_scq0q")]
@@ -23,11 +25,10 @@ group = &"use_store"
 [node name="use_tape" parent="." unique_id=1934677521 instance=ExtResource("5_jbv15")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=413403748]
-scale = Vector2(0.06358989, 0.06358989)
 texture = ExtResource("5_uwd2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219060545]
-position = Vector2(-17, -2.9999995)
+position = Vector2(-5, 13)
 rotation = -0.7714381
 shape = SubResource("CapsuleShape2D_fyiom")
 

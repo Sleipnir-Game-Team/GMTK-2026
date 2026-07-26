@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cx1oa2ednntbd" path="res://assets/UI/Mainmenu/Buttons/Credits_Normal.png" id="7_t3kfx"]
 [ext_resource type="Texture2D" uid="uid://c4hetcdl8mie4" path="res://assets/UI/Mainmenu/Buttons/Credits_Hover.png" id="8_hut73"]
 [ext_resource type="Texture2D" uid="uid://cfqutmu63j5s2" path="res://assets/UI/Mainmenu/Ad_Banner.png" id="11_hut73"]
+[ext_resource type="Texture2D" uid="uid://33oxo6axwtre" path="res://assets/UI/Mainmenu/Buttons/Exit_Normal.png" id="11_kf8oo"]
 [ext_resource type="Texture2D" uid="uid://7ui872in8ids" path="res://assets/UI/Mainmenu/Table_Lamp.png" id="12_3pyrn"]
+[ext_resource type="Texture2D" uid="uid://dfcowhuc5yijr" path="res://assets/UI/Mainmenu/Buttons/Exit_Hover.png" id="12_kurrx"]
 [ext_resource type="Texture2D" uid="uid://cngmymrfspnld" path="res://assets/UI/Mainmenu/Light_Overlay.png" id="13_kf8oo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t3kfx"]
@@ -135,8 +137,8 @@ stretch_mode = 0
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture_normal = ExtResource("3_h2671")
-texture_hover = ExtResource("4_umht6")
+texture_normal = ExtResource("11_kf8oo")
+texture_hover = ExtResource("12_kurrx")
 stretch_mode = 0
 
 [node name="Control2" type="VBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=103847770]

@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://bxokrabkatrvy"]
 
 [ext_resource type="Script" uid="uid://b1dhqvy3v3cgi" path="res://game/uses/scripts/pipe.gd" id="1_8qqf2"]
-[ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://assets/placeholders/tools/wrench_full.png" id="2_pxm4n"]
+[ext_resource type="Texture2D" uid="uid://c6khj5bbarxgl" path="res://assets/Sprites/Tools/Wrench.png" id="2_riww7"]
+[ext_resource type="Texture2D" uid="uid://ds55mrwxpwm5s" path="res://assets/Sprites/Modulos/Cano/Gas_2.png" id="3_qhuys"]
+[ext_resource type="Texture2D" uid="uid://bibwot6b1tm7t" path="res://assets/Sprites/Modulos/Cano/Gas_1.png" id="3_u1k5y"]
+[ext_resource type="Texture2D" uid="uid://btkuh6p7aiocv" path="res://assets/Sprites/Modulos/Cano/Gas_3.png" id="4_xh0py"]
+[ext_resource type="Texture2D" uid="uid://bykjiybtl3fvm" path="res://assets/Sprites/Modulos/Cano/Gas_4.png" id="5_7hmuc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iec6w"]
 radius = 31.06445
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k2sy"]
-size = Vector2(27, 76.5338)
+size = Vector2(82.000015, 262.63345)
 
-[node name="Pipe" type="Area2D" unique_id=542192343 groups=["use_plumbing"]]
+[sub_resource type="Curve" id="Curve_qhuys"]
+_data = [Vector2(0, 0.21625155), 0.0, 0.0, 0, 0, Vector2(1, 0.35255563), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Pipe" type="Area2D" unique_id=542192343 node_paths=PackedStringArray("particles") groups=["use_plumbing"]]
 z_index = 1
 collision_layer = 32768
 collision_mask = 2048
 input_pickable = false
 script = ExtResource("1_8qqf2")
+particles = NodePath("GPUParticles2D")
+particle_textures = Array[Texture2D]([ExtResource("3_u1k5y"), ExtResource("3_qhuys"), ExtResource("4_xh0py"), ExtResource("5_7hmuc")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=503324810]
 z_index = 1
@@ -24,17 +34,33 @@ debug_color = Color(6.738305e-07, 0.6450337, 0.2751431, 0.41960785)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=106291286]
 unique_name_in_owner = true
 visible = false
+position = Vector2(0, -1)
 rotation = 3.1415927
-scale = Vector2(0.3278018, 0.3278018)
-texture = ExtResource("2_pxm4n")
+texture = ExtResource("2_riww7")
 centered = false
-offset = Vector2(-93.59, -62.17)
+offset = Vector2(-47.48, -29.47)
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=238950092]
 unique_name_in_owner = true
-scale = Vector2(3.050624, 3.050624)
+position = Vector2(45.000004, 36.999996)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1994342002]
-position = Vector2(1.5000005, 128)
+position = Vector2(-54.999992, 66.00001)
 shape = SubResource("RectangleShape2D_6k2sy")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=1480506593]
+emitting = false
+amount = 4
+texture = ExtResource("3_u1k5y")
+one_shot = true
+speed_scale = 0.58
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+spread = 177.66
+gravity = Vector2(0, 0)
+initial_velocity_min = 58.44
+initial_velocity_max = 58.44
+scale_amount_curve = SubResource("Curve_qhuys")

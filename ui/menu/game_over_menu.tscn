@@ -1,31 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://beo8088eeuvfy"]
+[gd_scene format=3 uid="uid://beo8088eeuvfy"]
 
 [ext_resource type="Script" uid="uid://baehqb25lxd4x" path="res://ui/menu/game_over_menu.gd" id="1_ps2gm"]
+[ext_resource type="Texture2D" uid="uid://djbfs6j7y7em4" path="res://assets/Sprites/Game_Over.png" id="2_vibjm"]
 
 [sub_resource type="Theme" id="Theme_fsuem"]
 
-[sub_resource type="FontFile" id="FontFile_o3t8p"]
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_ts586"]
+font_size = 50
+font_color = Color(0.015686275, 0.03529412, 0.003921569, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_cwspd"]
-font = SubResource("FontFile_o3t8p")
-font_size = 45
-font_color = Color(0, 0, 0, 1)
-outline_size = 12
-outline_color = Color(1, 1, 1, 0.67451)
-shadow_size = 14
-shadow_color = Color(0, 0, 0, 0.447059)
-
-[node name="GameOverMenu" type="Control"]
+[node name="GameOverMenu" type="Control" unique_id=1504173610]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -36,7 +20,7 @@ grow_vertical = 2
 theme = SubResource("Theme_fsuem")
 script = ExtResource("1_ps2gm")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1996992651]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,63 +29,76 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
-[node name="left_blank_space" type="Control" parent="GridContainer"]
+[node name="left_blank_space" type="Control" parent="GridContainer" unique_id=1795077339]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="content_container" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="label_container" type="VBoxContainer" parent="GridContainer/content_container"]
+[node name="content_container" type="VBoxContainer" parent="GridContainer" unique_id=1457260078]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="GridContainer/content_container/label_container"]
+[node name="label_container" type="VBoxContainer" parent="GridContainer/content_container" unique_id=1070352225]
 layout_mode = 2
-size_flags_vertical = 0
-text = "VOCÊ 
-PERDEU!"
-label_settings = SubResource("LabelSettings_cwspd")
-horizontal_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/content_container"]
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/content_container" unique_id=495365931]
 layout_mode = 2
 theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 800
 theme_override_constants/margin_right = 300
 
-[node name="button_container" type="VBoxContainer" parent="GridContainer/content_container/MarginContainer"]
+[node name="button_container" type="VBoxContainer" parent="GridContainer/content_container/MarginContainer" unique_id=1972489108]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="restart_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container"]
+[node name="restart_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=542540533]
 layout_mode = 2
-text = "Tentar de novo"
+text = "Try again"
 
-[node name="main_menu_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container"]
+[node name="main_menu_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=1222724851]
 layout_mode = 2
-text = "Voltar ao menu principal"
+text = "Back to Main Menu"
 
-[node name="quit_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container"]
+[node name="quit_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=1023878714]
 layout_mode = 2
-text = "Sair"
+text = "Quit"
 
-[node name="mid_down_blank_space" type="Control" parent="GridContainer/content_container"]
+[node name="mid_down_blank_space" type="Control" parent="GridContainer/content_container" unique_id=1606476406]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="right_blank_space" type="Control" parent="GridContainer"]
+[node name="right_blank_space" type="Control" parent="GridContainer" unique_id=1720767463]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Node" type="Node" parent="." unique_id=342462167]
+
+[node name="TextureRect" type="TextureRect" parent="Node" unique_id=1763531267]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vibjm")
+
+[node name="Label" type="Label" parent="Node" unique_id=1849366224]
+offset_left = 477.0
+offset_top = 498.0
+offset_right = 1361.0
+offset_bottom = 855.0
+text = "You performed poorly and were immediately fired from Icarus Inc.
+
+As you leave, their Icarus statue glares at you with contempt."
+label_settings = SubResource("LabelSettings_ts586")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]

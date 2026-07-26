@@ -6,7 +6,12 @@ const MIN_ROTATION: float = deg_to_rad(75)
 const MAX_ROTATION: float = PI
 
 @export var necessary: bool = false
-@export var leaky: bool = false
+@export var leaky: bool = false:
+	set(new_value):
+		leaky = new_value
+		if leaky:
+			particles.emitting = true
+			particles.finished.connect(emit_particle)
 @export_range(0.1, 5, 0.1) var min_duration: float = 1
 
 var _pushing: bool = false
@@ -19,10 +24,16 @@ var _wrench_in_position: bool = false:
 @onready var wrench_handle: Area2D = %Area2D
 @onready var _max_angular_velocity: float = (MAX_ROTATION - MIN_ROTATION) * (1 / min_duration)
 
+@export var particles: CPUParticles2D
+@export var particle_textures: Array[Texture2D]
 
 func _ready() -> void:
 	wrench_handle.input_event.connect(_push_handle)
 
+func emit_particle() -> void:
+	if leaky:
+		particles.texture = particle_textures[randi_range(0, particle_textures.size() - 1)]
+		particles.restart()
 
 ## When the left mouse button is released, stop pushing the wrench
 ## The reason this is here instead of on the _push_handle method is

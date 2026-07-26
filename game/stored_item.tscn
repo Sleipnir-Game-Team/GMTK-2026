@@ -3,22 +3,23 @@
 [ext_resource type="Script" uid="uid://byxniyqrg4ps0" path="res://game/stored_item.gd" id="1_l556t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxsc8"]
-size = Vector2(136, 156)
+resource_local_to_scene = true
+size = Vector2(29.065712, 25.742249)
 
-[node name="StoredItem" type="Area2D" unique_id=2106525060 node_paths=PackedStringArray("textura")]
+[node name="StoredItem" type="Area2D" unique_id=2106525060 node_paths=PackedStringArray("textura", "colision")]
 script = ExtResource("1_l556t")
 textura = NodePath("TextureRect")
+colision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304822310]
-scale = Vector2(1.1019708, 1.0743603)
+position = Vector2(15.467148, -13.128876)
 shape = SubResource("RectangleShape2D_fxsc8")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=178810317]
-offset_left = -69.0
-offset_top = -78.0
-offset_right = -29.0
-offset_bottom = -38.0
-scale = Vector2(3.480202, 3.8384979)
+offset_left = 1.0
+offset_top = -76.0
+offset_right = 105.0
+offset_bottom = -1.0
 stretch_mode = 2
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

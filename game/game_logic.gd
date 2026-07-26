@@ -1,15 +1,23 @@
 extends Node
 
 @export var time_limit: float = 0.0
+@export var time_interval: float = 0.0
 @export var panel_dict: Dictionary[Node, PackedScene] = {}
 @export var state_manager: Node
 @export var animation_player: AnimationPlayer
 @export var animation_player_extra: AnimationPlayer
+@export var animation_player_bus: AnimationPlayer
+
 @export var screen_2: Node2D
 @export var manual: BaseTool
 
+@export var teste: Label
+
 var current_panel: Node
 var current_segment: Node
+
+var ship_timer: Timer
+var interval_timer: Timer
 
 var screen_on := false
 
@@ -17,6 +25,9 @@ var ship_attributes := {
 	'oxigen': 21.5,
 	'temp': 30
 }
+
+var fixed_ships := 0
+var blown_ships := 0
 
 var oxigen: float:
 	get:
@@ -66,17 +77,18 @@ func _ready() -> void:
 
 
 func setup(_save_data: Dictionary) -> void:
-	animation_player.play("turn_on_screen")
 	if _save_data:
 		manual.pages = _save_data.pages
 
 func start_run() -> void:
 	configure_run()
+	animation_player.play("turn_on_screen")
 	animation_player.queue("open_curtains")
+	animation_player_bus.play("arrive")
 	start_timer()
 
 func configure_run():
-	pass
+	state_manager.setup()
 
 func save() -> Dictionary:
 	var data:Dictionary = {}
@@ -88,20 +100,46 @@ func save() -> Dictionary:
 	return data
 
 func start_timer() -> void:
-	var ship_timer := Timer.new()
+	ship_timer = Timer.new()
 	ship_timer.wait_time = time_limit
 	ship_timer.timeout.connect(evaluate_ship)
+	ship_timer.one_shot = true
 	
 	add_child(ship_timer)
 	ship_timer.start()
+	
+	interval_timer = Timer.new()
+	interval_timer.wait_time = time_interval
+	interval_timer.timeout.connect(start_run)
+	interval_timer.one_shot = true
+	
+	add_child(interval_timer)
+
 
 func evaluate_ship() -> void:
 	if check_conditions():
-		GameManager.win_game()
+		fix_ship()
 	else:
-		AudioManager.play_global("game.failure.scream")
-		GameManager.game_over()
-	
+		blow_ship()
+	if fixed_ships + blown_ships >= 10:
+		if blown_ships >= 7:
+			Game_Manager.game_over()
+		else:
+			Game_Manager.win_game()
+	else:
+		animation_player.play_backwards("turn_on_screen")
+		animation_player_extra.play_backwards("open_curtains")
+		interval_timer.start()
+
+func fix_ship() -> void:
+	fixed_ships += 1 
+	animation_player_bus.play("happy_departure")
+
+func blow_ship() -> void:
+	blown_ships += 1 
+	AudioManager.play_global("game.failure.scream")
+	animation_player_bus.play("sad_departure")
+
 func check_conditions() -> bool:
 	var passable: bool = (
 			oxigen < ship_conditions['max_oxigen'] 
@@ -122,7 +160,14 @@ func check_conditions() -> bool:
 			#break
 	return passable
 
-
+func _process(delta):
+	if ship_timer and !ship_timer.is_stopped():
+		teste.text = "%02d" % snapped(ship_timer.time_left / 60,1) + ":%02d" % (ship_timer.time_left - snapped(ship_timer.time_left / 60,1) * 60) + " until launch"
+	elif interval_timer and !interval_timer.is_stopped():
+		teste.text = "%02d" % snapped(interval_timer.time_left / 60,1) + ":%02d" % (interval_timer.time_left - snapped(interval_timer.time_left / 60,1) * 60) + " until next"
+	else:
+		teste.text = "Waiting for start (Pull the cord)"
+	
 func _on_ship_panel_pressed(panel: Node) -> void:
 	var changing := current_panel != panel
 	

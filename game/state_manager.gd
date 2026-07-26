@@ -2,139 +2,164 @@ class_name StateManager extends Node
 
 var rng := RandomNumberGenerator.new()
 
-var equalizer_state: Dictionary[String, Variant]= {
-	'low_position' = 0.0,
-	'mid_position' = 0.0,
-	'high_position' = 0.0,
-	'low_oxi_slider' = 0,
-	'mid_oxi_slider' = 1,
-	'high_oxi_slider' = 2,
-	'low_oxi_value' = 50,
-	'mid_oxi_value' = 50,
-	'high_oxi_value' = 50,
-	'low_temp_slider' = 0,
-	'mid_temp_slider' = 1,
-	'high_temp_slider' = 2,
-	'low_temp_value' = 50,
-	'mid_temp_value' = 50,
-	'high_temp_value' = 50
-}
+var equalizer_state: Dictionary[String, Variant]
 
-var screw_states: Dictionary[String, Array] = {
-	'screw_screen_1' = [
-		false,
-		false,
-		false,
-		false
-	], 
-	'screw_screen_2' = [
-		false,
-		false,
-		false,
-		false,
-		false
-	], 
-	'screw_screen_3' = [
-		false,
-		false,
-		false,
-		false,
-		false
-	], 
-	'screw_screen_4' = [
-		false,
-		false,
-		false,
-		false
-	]
-}
+var screw_states: Dictionary[String, Array]
 
-var fuel_states: Dictionary[String, Dictionary] = {
-	'fuel_1' = {
-		'color' : 'blue',
-		'open' : false,
-		'full' : true
-	},
-	'fuel_2' = {
-		'color' : 'red',
-		'open' : false,
-		'full' : true
-	}
-}
+var fuel_states: Dictionary[String, Dictionary]
 
-var pipe_states: Dictionary[String, Array] = {
-	'pipe_1' = [
-		false,
-		false,
-		false
-	],
-	'pipe_2' = [
-		false,
-		false,
-		false,
-		false
-	],
-	'pipe_3' = [
-		false,
-		false
-	],
-	'pipe_4' = [
-		false,
-		false,
-		false,
-		false
-	],
-	'pipe_5' = [
-		false,
-		false
-	]
-}
+var pipe_states: Dictionary[String, Array]
 
-var tube_states: Dictionary[String, Array]  = {
-	'tube_1' = [
-		false,
-		false,
-		true,
-		false
-	],
-	'tube_2' = [
-		false,
-		false,
-		false
-	],
-	'tube_3' = [
-		false,
-		false
-	],
-	'tube_4' = [
-		false,
-		true,
-		false
-	],
-	'tube_5' = [
-		false,
-		false,
-		false
-	]
-}
+var tube_states: Dictionary[String, Array]
 
-var break_functions := [
-#	break_equalizer
+var limited_break_functions := [
+	break_equalizer,
+	unload_fuel.bind("fuel_1"),
+	unload_fuel.bind("fuel_2"),
 ]
 
+func default_values():
 
-func _ready() -> void:
+	equalizer_state = {
+		'low_position' = 0.0,
+		'mid_position' = 0.0,
+		'high_position' = 0.0,
+		'low_oxi_slider' = 0,
+		'mid_oxi_slider' = 1,
+		'high_oxi_slider' = 2,
+		'low_oxi_value' = 50,
+		'mid_oxi_value' = 50,
+		'high_oxi_value' = 50,
+		'low_temp_slider' = 0,
+		'mid_temp_slider' = 1,
+		'high_temp_slider' = 2,
+		'low_temp_value' = 50,
+		'mid_temp_value' = 50,
+		'high_temp_value' = 50
+	}
+
+	screw_states = {
+		'screw_screen_1' = [
+			false,
+			false,
+			false,
+			false
+		], 
+		'screw_screen_2' = [
+			false,
+			false,
+			false,
+			false,
+			false
+		], 
+		'screw_screen_3' = [
+			false,
+			false,
+			false,
+			false,
+			false
+		], 
+		'screw_screen_4' = [
+			false,
+			false,
+			false,
+			false
+		]
+	}
+	fuel_states = {
+		'fuel_1' = {
+			'color' : 'blue',
+			'open' : false,
+			'full' : true
+		},
+		'fuel_2' = {
+			'color' : 'red',
+			'open' : false,
+			'full' : true
+		}
+	}
+
+	pipe_states = {
+		'pipe_1' = [
+			false,
+			false,
+			false
+		],
+		'pipe_2' = [
+			false,
+			false,
+			false,
+			false
+		],
+		'pipe_3' = [
+			false,
+			false
+		],
+		'pipe_4' = [
+			false,
+			false,
+			false,
+			false
+		],
+		'pipe_5' = [
+			false,
+			false
+		]
+	}
+
+	tube_states = {
+		'tube_1' = [
+			false,
+			false,
+			false,
+			false
+		],
+		'tube_2' = [
+			false,
+			false,
+			false
+		],
+		'tube_3' = [
+			false,
+			false
+		],
+		'tube_4' = [
+			false,
+			false,
+			false
+		],
+		'tube_5' = [
+			false,
+			false,
+			false
+		]
+	}
+
+func setup() -> void:
+	default_values()
 	roll_equalizer()
-	break_things(1)
+	break_things(15)
 
 
 func break_things(number: int) -> void:
-	while number > 0 and break_functions.size() > 0:
-		var selecionado: int = rng.randi_range(0, break_functions.size() -1)
-		break_functions[selecionado].call()
-		break_functions.remove_at(selecionado)
+	var limited_breaks = rng.randi_range(0, 3)
+	break_limited(limited_breaks)
+	number -= limited_breaks
+	var new_breaks = rng.randi_range(1, number-2)
+	number -= new_breaks
+	break_screws(new_breaks)
+	new_breaks = rng.randi_range(1, number-1)
+	number -= new_breaks
+	break_tubes(new_breaks)
+	break_pipes(number)
+	
+func break_limited(number: int):
+	var functions = limited_break_functions.duplicate()
+	while number > 0:
+		var selecionado: int = rng.randi_range(0, functions.size() -1)
+		functions[selecionado].call()
+		functions.remove_at(selecionado)
 		number -= 1
-
 
 func roll_equalizer() -> void:
 	equalizer_state['low_position'] = rng.randf_range(0,100)
@@ -296,3 +321,57 @@ func break_equalizer() -> void:
 	equalizer_state['low_temp_value'] = values[equalizer_state['low_temp_slider']]
 	equalizer_state['mid_temp_value'] = values[equalizer_state['mid_temp_slider']]
 	equalizer_state['high_temp_value'] = values[equalizer_state['high_temp_slider']]
+
+func break_tubes(ammount: int) -> void:
+	var tube_list := tube_states.keys()
+	while ammount > 0:
+		var selected_panel = tube_list[rng.randi_range(0,tube_list.size() - 1)]
+		var tubes = tube_states[selected_panel]
+		var okay_tubes = []
+		for i in range(tubes.size()):
+			if !tubes[i]:
+				okay_tubes.append(i)
+		if okay_tubes.size() > 0:
+			var selected_tube = okay_tubes[rng.randi_range(0,okay_tubes.size()  - 1)]
+			tube_states[selected_panel][selected_tube] = true
+			tube_list.append(selected_panel)
+			ammount -= 1
+		else:
+			tube_list = tube_list.filter(func filter_finished(panel): return panel != selected_panel)
+
+func break_pipes(ammount: int) -> void:
+	var pipe_list := pipe_states.keys()
+	while ammount > 0:
+		var selected_panel = pipe_list[rng.randi_range(0,pipe_list.size() - 1)]
+		var pipes = pipe_states[selected_panel]
+		var okay_pipes = []
+		for i in range(pipes.size()):
+			if !pipes[i]:
+				okay_pipes.append(i)
+		if okay_pipes.size() > 0:
+			var selected_pipe = okay_pipes[rng.randi_range(0,okay_pipes.size()  - 1)]
+			pipe_states[selected_panel][selected_pipe] = true
+			pipe_list.append(selected_panel)
+			ammount -= 1
+		else:
+			pipe_list = pipe_list.filter(func filter_finished(panel): return panel != selected_panel)
+
+func break_screws(ammount: int) -> void:
+	var screw_list := screw_states.keys()
+	while ammount > 0:
+		var selected_panel = screw_list[rng.randi_range(0,screw_list.size() - 1)]
+		var screws = screw_states[selected_panel]
+		var okay_screws = []
+		for i in range(screws.size()):
+			if !screws[i]:
+				okay_screws.append(i)
+		if okay_screws.size() > 0:
+			var selected_screw = okay_screws[rng.randi_range(0,okay_screws.size()  - 1)]
+			screw_states[selected_panel][selected_screw] = true
+			screw_list.append(selected_panel)
+			ammount -= 1
+		else:
+			screw_list = screw_list.filter(func filter_finished(panel): return panel != selected_panel)
+
+func unload_fuel(panel):
+	fuel_states[panel]['full'] = false

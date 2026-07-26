@@ -9,11 +9,16 @@ var stored_items: Dictionary[Node2D,Node2D]
 
 @export var pre_store: Array[PackedScene]
 
+@export var uranium: Texture2D
+
 func _ready() -> void:
 	toggle_button.toggled.connect(on_toggle)
 	for tool_model in pre_store:
 		var tool: BaseTool = tool_model.instantiate()
-		store(tool)
+		if tool.has_node("use_store"):
+			store(tool, tool.get_node("use_store").store_image)
+		else:
+			store(tool, uranium)
 	
 	
 func on_toggle(value: bool) -> void:
@@ -23,12 +28,12 @@ func on_toggle(value: bool) -> void:
 		anim_player.play_backwards("open")
 
 
-func store(item: Node) -> void:
+func store(item: Node, image: Texture2D) -> void:
 	var last_slot := 0
 	while slots.size() > last_slot and slots[last_slot].get_children().size() > 0:
 		last_slot += 1
 	if slots.size() > last_slot:
 		stored_items[slots[last_slot]] = stored_item_model.instantiate()
 		var stored_item: Node2D = stored_items[slots[last_slot]]
-		stored_item.add_item(item)
+		stored_item.add_item(item, image)
 		slots[last_slot].add_child(stored_item)

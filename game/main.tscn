@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://ditwe4thvvxyw" path="res://assets/Sprites/Background_Estacao.png" id="2_c08u8"]
 [ext_resource type="Texture2D" uid="uid://bufq0ehvknem2" path="res://assets/Sprites/Cortina.png" id="3_a5bbb"]
 [ext_resource type="Script" uid="uid://d0pk83r7k4mge" path="res://game/game_logic.gd" id="3_emt18"]
+[ext_resource type="Texture2D" uid="uid://dlpr7aejax1qn" path="res://assets/Sprites/Nave_janela.png" id="3_f1cjg"]
 [ext_resource type="Texture2D" uid="uid://cm2hr8iume2vu" path="res://assets/Sprites/Sala_control.png" id="4_4uwjs"]
+[ext_resource type="Texture2D" uid="uid://21ekkm6frmqo" path="res://assets/Sprites/Nave_Fogo_1.png" id="4_k5wni"]
 [ext_resource type="PackedScene" uid="uid://dtykqg5pafuvw" path="res://game/ship_segments/Segment 7.tscn" id="4_vop5m"]
 [ext_resource type="PackedScene" uid="uid://bic4u7fmhl5u6" path="res://game/toolbox_teste.tscn" id="5_5un7r"]
+[ext_resource type="Texture2D" uid="uid://c2va85nrqelv2" path="res://assets/Sprites/Nave_Fogo_2.png" id="5_44l5f"]
 [ext_resource type="Texture2D" uid="uid://obatikayt18x" path="res://assets/Sprites/Corda.png" id="5_px363"]
 [ext_resource type="PackedScene" uid="uid://dbi5oq1h8iiaf" path="res://ui/hud/HUD.tscn" id="5_u5r6x"]
 [ext_resource type="Script" uid="uid://bv1h4s5g74844" path="res://game/state_manager.gd" id="6_dp3pf"]
@@ -16,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cowf3u836xvt" path="res://assets/Sprites/Monitor_2.png" id="9_0etgu"]
 [ext_resource type="Texture2D" uid="uid://cjymdmecrpxdq" path="res://assets/Sprites/Nave_Dir.png" id="10_fsjy5"]
 [ext_resource type="Texture2D" uid="uid://b3df4lt3m3rxd" path="res://assets/Sprites/Nave_Esq.png" id="11_l78i6"]
-[ext_resource type="PackedScene" uid="uid://3aok55b405ua" path="res://game/ship_segments/Segment 3.tscn" id="13_77ae2"]
+[ext_resource type="PackedScene" uid="uid://cv5t8l3fyyvi5" path="res://game/ship_segments/Segment 3.tscn" id="13_77ae2"]
 [ext_resource type="Texture2D" uid="uid://tcl8epvfjjso" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_4.png" id="13_tv0fx"]
-[ext_resource type="PackedScene" uid="uid://dkxq52o405pg8" path="res://game/ship_segments/Segment 6.tscn" id="14_0etgu"]
+[ext_resource type="PackedScene" uid="uid://bywyd5hualn4q" path="res://game/ship_segments/Segment 6.tscn" id="14_0etgu"]
 [ext_resource type="Texture2D" uid="uid://kb5ihq8bdnlm" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_5.png" id="15_8ymx4"]
 [ext_resource type="PackedScene" uid="uid://dckok7rk7k40a" path="res://game/ship_segments/Segment 2.tscn" id="15_gob4j"]
 [ext_resource type="Texture2D" uid="uid://bgsh2shypa8an" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_1.png" id="16_le3en"]
@@ -38,6 +41,134 @@
 [ext_resource type="PackedScene" uid="uid://r1c28x1o1aba" path="res://game/tools/key_2.tscn" id="28_0etgu"]
 [ext_resource type="PackedScene" uid="uid://b76ystf0pfruu" path="res://game/tools/manual.tscn" id="33_fsjy5"]
 [ext_resource type="PackedScene" uid="uid://bn77ryrhpigs4" path="res://game/tools/wrench.tscn" id="33_uvurp"]
+[ext_resource type="PackedScene" uid="uid://b2os02dcadfc0" path="res://game/tools/duct_tape.tscn" id="34_f85yp"]
+[ext_resource type="Texture2D" uid="uid://rg4vx6revc5" path="res://assets/Sprites/Tasks.png" id="41_e00sq"]
+[ext_resource type="Texture2D" uid="uid://c5bg8vom51fr1" path="res://assets/Sprites/Relogio.png" id="44_44l5f"]
+[ext_resource type="Texture2D" uid="uid://bfvgun85uilyr" path="res://assets/Sprites/Relogio_textura.png" id="45_2da88"]
+
+[sub_resource type="Animation" id="Animation_k5wni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-349, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_f1cjg")]
+}
+
+[sub_resource type="Animation" id="Animation_44l5f"]
+resource_name = "arrive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26999992, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-349, 91), Vector2(89, 384), Vector2(763, 477)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.99),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_e00sq"]
+resource_name = "happy_departure"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(763, 477), Vector2(908, 549), Vector2(1726, -369)]
+}
+
+[sub_resource type="Animation" id="Animation_2da88"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(763, 477), Vector2(763, 457), Vector2(763, 477), Vector2(763, 497), Vector2(763, 477)]
+}
+
+[sub_resource type="Animation" id="Animation_w0y0c"]
+resource_name = "sad_departure"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(763, 477), Vector2(904, 338), Vector2(1226, 981)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_f1cjg"), ExtResource("4_k5wni"), ExtResource("5_44l5f"), ExtResource("3_f1cjg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w0y0c"]
+_data = {
+&"RESET": SubResource("Animation_k5wni"),
+&"arrive": SubResource("Animation_44l5f"),
+&"happy_departure": SubResource("Animation_e00sq"),
+&"idle": SubResource("Animation_2da88"),
+&"sad_departure": SubResource("Animation_w0y0c")
+}
 
 [sub_resource type="Animation" id="Animation_px363"]
 length = 0.001
@@ -209,6 +340,33 @@ _data = {
 &"turn_on_screen": SubResource("Animation_4uwjs")
 }
 
+[sub_resource type="Animation" id="Animation_f1cjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/Cortina:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG/NaveJanela:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-349, 91)]
+}
+
 [sub_resource type="Animation" id="Animation_f85yp"]
 resource_name = "open_curtains"
 tracks/0/type = "value"
@@ -239,12 +397,43 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1387, -222), Vector2(1387, -121), Vector2(1387, -20), Vector2(1387, -222)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jogo")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_run"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Cortina:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4gc7v"]
 _data = {
+&"RESET": SubResource("Animation_f1cjg"),
 &"open_curtains": SubResource("Animation_f85yp"),
 &"pull_cord": SubResource("Animation_4gc7v")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0y0c"]
+font_size = 30
+font_color = Color(0.80784315, 0.93333334, 0.7137255, 1)
 
 [node name="Main" type="MarginContainer" unique_id=972419465]
 process_mode = 3
@@ -272,6 +461,14 @@ mouse_filter = 2
 texture = ExtResource("2_c08u8")
 stretch_mode = 2
 
+[node name="NaveJanela" type="Sprite2D" parent="BG" unique_id=1598391932]
+z_index = -4
+position = Vector2(-349, 91)
+texture = ExtResource("3_f1cjg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG/NaveJanela" unique_id=398611289]
+libraries/ = SubResource("AnimationLibrary_w0y0c")
+
 [node name="Grade" type="TextureRect" parent="BG" unique_id=1019106260]
 z_index = -4
 offset_left = 449.0
@@ -290,15 +487,14 @@ mouse_filter = 2
 texture = ExtResource("4_4uwjs")
 stretch_mode = 2
 
-[node name="Cortina" type="TextureRect" parent="BG" unique_id=1999603017]
+[node name="Cortina" type="TextureButton" parent="BG" unique_id=419843804]
 z_index = -4
 offset_left = 1387.0
 offset_top = -222.0
 offset_right = 1423.0
 offset_bottom = 260.0
-mouse_filter = 2
-texture = ExtResource("5_px363")
-stretch_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("5_px363")
 
 [node name="Tela_1" type="TextureRect" parent="BG" unique_id=1072162968]
 z_index = -4
@@ -346,9 +542,10 @@ offset_bottom = 367.0
 texture = ExtResource("9_0etgu")
 stretch_mode = 2
 
-[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "animation_player_extra", "screen_2", "manual") groups=["Jogo"]]
+[node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "animation_player_extra", "animation_player_bus", "screen_2", "manual", "teste") groups=["Jogo"]]
 script = ExtResource("3_emt18")
-time_limit = 40.0
+time_limit = 10.0
+time_interval = 10.0
 panel_dict = {
 NodePath("../Ship/Cockpit1"): ExtResource("4_vop5m"),
 NodePath("../Ship/Cockpit2"): ExtResource("4_vop5m"),
@@ -364,8 +561,10 @@ NodePath("../Ship/Task8"): ExtResource("14_0etgu")
 state_manager = NodePath("State Manager")
 animation_player = NodePath("../AnimationPlayer")
 animation_player_extra = NodePath("../AnimationPlayer2")
+animation_player_bus = NodePath("../BG/NaveJanela/AnimationPlayer")
 screen_2 = NodePath("../Screen 2")
 manual = NodePath("../Workspace/Manual")
+teste = NodePath("../Relogio/Label")
 
 [node name="State Manager" type="Node" parent="Jogo" unique_id=1308149373]
 script = ExtResource("6_dp3pf")
@@ -454,27 +653,25 @@ offset_right = 587.0
 offset_bottom = 462.0
 texture_hover = ExtResource("24_0etgu")
 
-[node name="Workspace" type="Node2D" parent="." unique_id=1625623387]
-z_index = 1
+[node name="Workspace" type="Node" parent="." unique_id=620110196]
 
-[node name="ToolboxTeste" type="Node2D" parent="Workspace" unique_id=490391838]
-position = Vector2(1856, 711)
+[node name="ToolboxTeste" type="Node" parent="Workspace" unique_id=270285254]
 
 [node name="Gaveta" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=825591464]
 z_index = -2
-offset_left = -176.0
-offset_top = -286.0
-offset_right = 71.0
-offset_bottom = 369.0
+offset_left = 1673.0
+offset_top = 424.0
+offset_right = 1920.0
+offset_bottom = 1079.0
 mouse_filter = 2
 texture = ExtResource("6_rtjhp")
 stretch_mode = 2
 
 [node name="ToolboxTeste" parent="Workspace/ToolboxTeste" unique_id=499527040 instance=ExtResource("5_5un7r")]
-position = Vector2(-165, 54)
+position = Vector2(1684, 764)
 
 [node name="Box" parent="Workspace/ToolboxTeste/ToolboxTeste" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("24_rtjhp"), ExtResource("25_ibube"), ExtResource("33_uvurp")])
+pre_store = Array[PackedScene]([ExtResource("24_rtjhp"), ExtResource("33_uvurp"), ExtResource("34_f85yp")])
 
 [node name="Gavetinha_2" parent="Workspace/ToolboxTeste/ToolboxTeste/Box" index="0" unique_id=200066326]
 z_index = -1
@@ -486,19 +683,19 @@ stretch_mode = 0
 
 [node name="GavetaMeio" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=1691757581]
 z_index = -1
-offset_left = -174.0
-offset_top = 29.0
-offset_right = -24.0
-offset_bottom = 183.0
+offset_left = 1675.0
+offset_top = 739.0
+offset_right = 1825.0
+offset_bottom = 893.0
 mouse_filter = 2
 texture = ExtResource("20_le3en")
 stretch_mode = 2
 
 [node name="ToolboxTeste2" parent="Workspace/ToolboxTeste" unique_id=554775045 instance=ExtResource("5_5un7r")]
-position = Vector2(-165, -151)
+position = Vector2(1684, 559)
 
 [node name="Box" parent="Workspace/ToolboxTeste/ToolboxTeste2" index="0" unique_id=1428926048]
-pre_store = Array[PackedScene]([ExtResource("27_77ae2"), ExtResource("28_0etgu")])
+pre_store = Array[PackedScene]([ExtResource("27_77ae2"), ExtResource("28_0etgu"), ExtResource("25_ibube")])
 
 [node name="Gavetinha_2" parent="Workspace/ToolboxTeste/ToolboxTeste2/Box" index="0" unique_id=200066326]
 z_index = -1
@@ -508,22 +705,46 @@ mouse_filter = 2
 mouse_filter = 1
 
 [node name="GavetaFrente" type="TextureRect" parent="Workspace/ToolboxTeste" unique_id=2042995227]
-offset_left = -182.0
-offset_top = -288.0
-offset_right = 65.0
-offset_bottom = 367.0
+offset_left = 1667.0
+offset_top = 422.0
+offset_right = 1914.0
+offset_bottom = 1077.0
 mouse_filter = 2
 texture = ExtResource("8_a5bbb")
 stretch_mode = 2
 
 [node name="Manual" parent="Workspace" unique_id=83848390 instance=ExtResource("33_fsjy5")]
-position = Vector2(643.00006, 831.00006)
+position = Vector2(954, 841)
+
+[node name="Tasks" type="Sprite2D" parent="Workspace" unique_id=1694581718]
+position = Vector2(115, 934)
+texture = ExtResource("41_e00sq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665642088]
 libraries/ = SubResource("AnimationLibrary_px363")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=344477522]
 libraries/ = SubResource("AnimationLibrary_4gc7v")
+
+[node name="Relogio" type="Sprite2D" parent="." unique_id=1436599763]
+position = Vector2(365, 661)
+texture = ExtResource("44_44l5f")
+
+[node name="RelogioTextura" type="Sprite2D" parent="Relogio" unique_id=1814211393]
+position = Vector2(76, 6)
+texture = ExtResource("45_2da88")
+
+[node name="Label" type="Label" parent="Relogio" unique_id=1934276628]
+offset_left = -169.0
+offset_top = -31.0
+offset_right = 353.0
+offset_bottom = 39.0
+text = "5:00"
+label_settings = SubResource("LabelSettings_w0y0c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BG/Cortina" to="AnimationPlayer2" method="play" binds= [&"pull_cord"]]
 
 [editable path="Workspace/ToolboxTeste/ToolboxTeste"]
 [editable path="Workspace/ToolboxTeste/ToolboxTeste2"]

@@ -1,27 +1,25 @@
 [gd_scene format=3 uid="uid://bje2u8v6xejty"]
 
-[ext_resource type="Texture2D" uid="uid://drg3qvve118v0" path="res://assets/placeholders/uranium.webp" id="1_43uww"]
 [ext_resource type="Script" uid="uid://dfau8y36pygri" path="res://game/tools/fuel.gd" id="1_qr5xg"]
+[ext_resource type="Texture2D" uid="uid://ijo317vrljry" path="res://assets/Sprites/Tools/Uranio.png" id="2_w8wtc"]
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="3_oq7fe"]
 [ext_resource type="PackedScene" uid="uid://btoa0c2doqn8w" path="res://game/behaviours/fuel.tscn" id="4_w8wtc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr5xg"]
-size = Vector2(64, 310)
+size = Vector2(39, 265)
 
 [node name="Fuel" type="Area2D" unique_id=1511272462]
-rotation = -0.8605453
+rotation = 0.40840703
 collision_layer = 2048
 collision_mask = 32768
 script = ExtResource("1_qr5xg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916987654]
-position = Vector2(0, -1)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_qr5xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1337760699]
-position = Vector2(2.3841858e-07, -0.9999962)
-scale = Vector2(0.2758621, 0.88285714)
-texture = ExtResource("1_43uww")
+texture = ExtResource("2_w8wtc")
 
 [node name="use_draggable" parent="." unique_id=1990951435 instance=ExtResource("3_oq7fe")]
 

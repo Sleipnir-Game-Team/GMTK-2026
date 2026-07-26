@@ -1,29 +1,30 @@
 [gd_scene format=3 uid="uid://bn77ryrhpigs4"]
 
 [ext_resource type="PackedScene" uid="uid://b4sg0b8dl5soe" path="res://game/tools/components/draggable.tscn" id="1_4glyt"]
-[ext_resource type="Script" uid="uid://v1ojop4t63ov" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
+[ext_resource type="Script" uid="uid://d1hna2a0u2t2v" path="res://game/tools/scripts/wrench.gd" id="1_fatje"]
 [ext_resource type="PackedScene" uid="uid://l0n8c2mk7ytt" path="res://game/behaviours/store.tscn" id="2_hf3ms"]
-[ext_resource type="Texture2D" uid="uid://bk7125dgeyaxe" path="res://assets/placeholders/tools/wrench_full.png" id="2_qs0f7"]
+[ext_resource type="Texture2D" uid="uid://c6khj5bbarxgl" path="res://assets/Sprites/Tools/Wrench.png" id="2_u2yid"]
+[ext_resource type="Texture2D" uid="uid://b0upugtbd6omv" path="res://assets/Sprites/Tools/Drawer_Tools/Squish_Wrench.png" id="4_ht4q2"]
 [ext_resource type="PackedScene" uid="uid://c8s8jv2nmeevg" path="res://game/behaviours/plumbing.tscn" id="5_u2yid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iquho"]
-size = Vector2(20, 59)
+size = Vector2(68.58839, 205.93192)
 
 [node name="Wrench" type="Area2D" unique_id=305978293]
-scale = Vector2(3.449178, 4.031182)
 collision_layer = 2048
 collision_mask = 32768
 script = ExtResource("1_fatje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830623734]
+position = Vector2(-1.0000019, -1.5000012)
 scale = Vector2(1.1955376, 1.2868329)
 shape = SubResource("RectangleShape2D_iquho")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496410401]
-scale = Vector2(0.17795059, 0.12938994)
-texture = ExtResource("2_qs0f7")
+texture = ExtResource("2_u2yid")
 
 [node name="use_store" parent="." unique_id=126649513 instance=ExtResource("2_hf3ms")]
+store_image = ExtResource("4_ht4q2")
 group = &"use_store"
 
 [node name="use_plumbing" parent="." unique_id=1584343753 instance=ExtResource("5_u2yid")]
