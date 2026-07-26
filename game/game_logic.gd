@@ -90,6 +90,7 @@ func start_run() -> void:
 func configure_run():
 	state_manager.setup()
 
+
 func save() -> Dictionary:
 	var data:Dictionary = {}
 	data["pages"] = manual.pages
@@ -98,6 +99,7 @@ func save() -> Dictionary:
 	data["perfect_run"] = false #TODO modificar para ser uma variável do sistema
 	
 	return data
+
 
 func start_timer() -> void:
 	ship_timer = Timer.new()
@@ -121,6 +123,7 @@ func evaluate_ship() -> void:
 		fix_ship()
 	else:
 		blow_ship()
+	
 	if fixed_ships + blown_ships >= 10:
 		if blown_ships >= 7:
 			Game_Manager.game_over()
@@ -131,14 +134,17 @@ func evaluate_ship() -> void:
 		animation_player_extra.play_backwards("open_curtains")
 		interval_timer.start()
 
+
 func fix_ship() -> void:
 	fixed_ships += 1 
 	animation_player_bus.play("happy_departure")
+
 
 func blow_ship() -> void:
 	blown_ships += 1 
 	AudioManager.play_global("game.failure.scream")
 	animation_player_bus.play("sad_departure")
+
 
 func check_conditions() -> bool:
 	var passable: bool = (
@@ -160,6 +166,7 @@ func check_conditions() -> bool:
 			#break
 	return passable
 
+
 func _process(delta):
 	if ship_timer and !ship_timer.is_stopped():
 		teste.text = "%02d"% ship_timer.time_left + " until launch"
@@ -167,7 +174,8 @@ func _process(delta):
 		teste.text = "%02d" % interval_timer.time_left+ " until next"
 	else:
 		teste.text = "Waiting for start (Pull the cord)"
-	
+
+
 func _on_ship_panel_pressed(panel: Node) -> void:
 	var changing := current_panel != panel
 	

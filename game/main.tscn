@@ -20,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cjymdmecrpxdq" path="res://assets/Sprites/Nave_Dir.png" id="10_fsjy5"]
 [ext_resource type="Texture2D" uid="uid://b3df4lt3m3rxd" path="res://assets/Sprites/Nave_Esq.png" id="11_l78i6"]
 [ext_resource type="PackedScene" uid="uid://cv5t8l3fyyvi5" path="res://game/ship_segments/Segment 3.tscn" id="13_77ae2"]
+[ext_resource type="Texture2D" uid="uid://douefl6d2jckc" path="res://assets/Sprites/Launch.png" id="13_gq54d"]
 [ext_resource type="Texture2D" uid="uid://tcl8epvfjjso" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_4.png" id="13_tv0fx"]
 [ext_resource type="PackedScene" uid="uid://bywyd5hualn4q" path="res://game/ship_segments/Segment 6.tscn" id="14_0etgu"]
+[ext_resource type="Texture2D" uid="uid://b2d1y3x0q506g" path="res://assets/Sprites/Launch_pressed.png" id="14_s2dp4"]
 [ext_resource type="Texture2D" uid="uid://kb5ihq8bdnlm" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_5.png" id="15_8ymx4"]
 [ext_resource type="PackedScene" uid="uid://dckok7rk7k40a" path="res://game/ship_segments/segment 2.tscn" id="15_gob4j"]
 [ext_resource type="Texture2D" uid="uid://bgsh2shypa8an" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_1.png" id="16_le3en"]
@@ -532,6 +534,15 @@ stretch_mode = 2
 [node name="Hud" parent="." unique_id=658315518 instance=ExtResource("5_u5r6x")]
 layout_mode = 2
 
+[node name="Button" type="TextureButton" parent="Hud" unique_id=2060576505]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 602.0
+offset_right = 1004.0
+offset_bottom = 730.0
+texture_normal = ExtResource("13_gq54d")
+texture_pressed = ExtResource("14_s2dp4")
+
 [node name="Screen 2" type="Node2D" parent="." unique_id=745309780]
 position = Vector2(1000, -368)
 
@@ -715,7 +726,7 @@ texture = ExtResource("8_a5bbb")
 stretch_mode = 2
 
 [node name="Manual" parent="Workspace" unique_id=83848390 instance=ExtResource("33_fsjy5")]
-position = Vector2(954, 841)
+position = Vector2(1290, 838)
 
 [node name="Tasks" type="Sprite2D" parent="Workspace" unique_id=1694581718]
 position = Vector2(115, 934)
@@ -746,6 +757,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="BG/Cortina" to="AnimationPlayer2" method="play" binds= [&"pull_cord"]]
+[connection signal="pressed" from="Hud/Button" to="." method="_on_launch_button_pressed"]
 
 [editable path="Workspace/ToolboxTeste/ToolboxTeste"]
 [editable path="Workspace/ToolboxTeste/ToolboxTeste2"]
