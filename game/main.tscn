@@ -545,8 +545,8 @@ stretch_mode = 2
 
 [node name="Jogo" type="Node" parent="." unique_id=333981997 node_paths=PackedStringArray("panel_dict", "state_manager", "animation_player", "animation_player_extra", "animation_player_bus", "screen_2", "manual", "teste") groups=["Jogo"]]
 script = ExtResource("3_emt18")
-time_limit = 10.0
-time_interval = 10.0
+time_limit = 300.0
+time_interval = 30.0
 panel_dict = {
 NodePath("../Ship/Cockpit1"): ExtResource("4_vop5m"),
 NodePath("../Ship/Cockpit2"): ExtResource("4_vop5m"),
