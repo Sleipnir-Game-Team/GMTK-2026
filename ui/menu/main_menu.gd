@@ -1,8 +1,14 @@
 extends Control
 
+const ICARUS_POINT = preload("uid://y038335n03kj")
+const ICARUS_GRAB = preload("uid://7flyn1q0nw1e")
+
 @onready var gaveta = get_node("%gaveta")
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(ICARUS_POINT, Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(ICARUS_GRAB, Input.CURSOR_MOVE)
+
 	UI_Controller.stack.screens.append(self)
 	
 	# se for a primeira vez entrando, se pa desnecessario 

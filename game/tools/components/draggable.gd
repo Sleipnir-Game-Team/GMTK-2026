@@ -1,6 +1,9 @@
 @tool
 extends Node
 
+const ICARUS_POINT = preload("uid://y038335n03kj")
+const ICARUS_GRAB = preload("uid://7flyn1q0nw1e")
+
 signal drag_start() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
 signal drag_end() # TALVEZ ADICIONAR UNS PARAMETROS AQUI?
 signal drop_on_use_area(use: Area2D, group: StringName)
@@ -100,10 +103,16 @@ func drag() -> void:
 	_mouse_in_use_area = res != null and res.collider == _intersecting_use_area
 
 
+func _set_cursor(shape) -> void:
+	Input.set_custom_mouse_cursor(shape)
+
+
 func _connect_signals() -> void:
 	_parent_node.input_event.connect(_drag_input_handler)
 	_parent_node.area_entered.connect(_use_area_entered)
 	_parent_node.area_exited.connect(_use_area_exited)
+	_parent_node.mouse_entered.connect(_set_cursor.bind(ICARUS_GRAB))
+	_parent_node.mouse_exited.connect(_set_cursor.bind(ICARUS_POINT))
 
 
 func _disconnect_signals() -> void:
@@ -115,3 +124,9 @@ func _disconnect_signals() -> void:
 		
 	if _parent_node.area_exited.is_connected(_use_area_exited):
 		_parent_node.area_exited.disconnect(_use_area_exited)
+		
+	if _parent_node.mouse_entered.is_connected(_set_cursor):
+		_parent_node.mouse_entered.disconnect(_set_cursor)
+		
+	if _parent_node.mouse_exited.is_connected(_set_cursor):
+		_parent_node.mouse_exited.disconnect(_set_cursor)

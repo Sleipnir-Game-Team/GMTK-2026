@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://tcl8epvfjjso" path="res://assets/Sprites/Nave_Hover_Esq/Interact_Esq_Hover_4.png" id="13_tv0fx"]
 [ext_resource type="PackedScene" uid="uid://bywyd5hualn4q" path="res://game/ship_segments/Segment 6.tscn" id="14_0etgu"]
 [ext_resource type="Texture2D" uid="uid://kb5ihq8bdnlm" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_5.png" id="15_8ymx4"]
-[ext_resource type="PackedScene" uid="uid://dckok7rk7k40a" path="res://game/ship_segments/Segment 2.tscn" id="15_gob4j"]
+[ext_resource type="PackedScene" uid="uid://dckok7rk7k40a" path="res://game/ship_segments/segment 2.tscn" id="15_gob4j"]
 [ext_resource type="Texture2D" uid="uid://bgsh2shypa8an" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_1.png" id="16_le3en"]
 [ext_resource type="PackedScene" uid="uid://ba4xq56v062cq" path="res://game/ship_segments/Segment 1.tscn" id="16_uvurp"]
 [ext_resource type="Texture2D" uid="uid://di2a48lxveixy" path="res://assets/Sprites/Nave_Hover_Dir/Interact_Dir_Hover_2.png" id="17_rqwoc"]

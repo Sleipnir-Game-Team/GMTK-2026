@@ -22,17 +22,41 @@ var current_page: int = -1:
 
 @onready var use_draggable: Node = %use_draggable
 
-var pages: Array[Dictionary] = []
+@onready var closed_drag_box: CollisionShape2D = %ClosedDragBox
+@onready var open_drag_box: CollisionShape2D = %OpenDragBox
+
+var pages: Array[Dictionary] = [{
+	"left": """Welcome to Icarus Inc. My name is Manuel, and my manual will teach you everything you need to hit your quota and then some.
+In case you’ve forgotten your job (which seems like a serious problem, though it wouldn't be the first time) your task is to ensure that a good number of""",
+	"right": """Icarus's space buses depart intact and complete their journeys successfully.
+
+To ensure this, keep an eye on the vehicle's indicators and fix any problems you find as quickly as possible.""",
+	"_editable": false
+	},
+	{
+	"left": """The indicator is located at the front of the vehicle; if it’s all clear, meaning oxygen and temperature levels are within range and the engines are running, then your job is done.
+You’ll find everything you need for the job inside the locker; if one tool doesn't work, try using another.""",
+	"right": """If at least half of the vehicles don't burn up, you'll probably get hired!
+
+If you discover something I didn't (unlikely), feel free to jot down notes in the blank spaces; you might even find notes left by former employees in this manual.""",
+	"_editable": false
+	},
+	{
+	"left": "If you're ready just pull the cord",
+	"right": "",
+	"_editable": false
+	}
+]
 
 
 func _ready() -> void:
 	var page: Dictionary = {
 		"left": "",
 		"right": "",
-		"editable": false
+		"_editable": false
 	}
 	
-	for index in 10:
+	for index in 17:
 		pages.append(page.duplicate())
 
 func _on_next_page_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -61,13 +85,16 @@ func _on_open_book_input_event(_viewport: Node, event: InputEvent, _shape_idx: i
 		previous_page.process_mode = Node.PROCESS_MODE_INHERIT
 
 
-func _set_sprite_open(new: bool) -> void:
-	open.visible = new
-	closed.visible = not new
+func _set_sprite_open(_open: bool) -> void:
+	open.visible = _open
+	open_drag_box.disabled = not _open
+	
+	closed.visible = not _open
+	closed_drag_box.disabled = _open
 
 
 func _on_left_page_text_changed() -> void:
-	var max_lines: int = 9
+	var max_lines: int = 11
 	var row_count: int = 0
 	var valid_text: String = ""
 	var text_line_count: int = left_page.get_line_count()
@@ -98,7 +125,7 @@ func _on_left_page_text_changed() -> void:
 
 
 func _on_right_page_text_changed() -> void:
-	var max_lines: int = 9
+	var max_lines: int = 11
 	var row_count: int = 0
 	var valid_text: String = ""
 	var text_line_count: int = right_page.get_line_count()
@@ -129,21 +156,25 @@ func _on_right_page_text_changed() -> void:
 
 
 func _update_pages() -> void:
+	var shape := Control.CURSOR_IBEAM if pages[current_page]._editable else Control.CURSOR_MOVE 
 	left_page.text = pages[current_page].left
-	left_page.editable = pages[current_page].editable
+	left_page.editable = pages[current_page]._editable
+	left_page.mouse_default_cursor_shape = shape
 	
 	right_page.text = pages[current_page].right
-	right_page.editable = pages[current_page].editable
+	right_page.editable = pages[current_page]._editable
+	right_page.mouse_default_cursor_shape = shape
+
 
 
 func _on_edit_button_pressed() -> void:
 	use_draggable._dragging = false
-	left_page.editable = not left_page.editable
-	right_page.editable = not right_page.editable
+	pages[current_page]._editable = not pages[current_page]._editable
+	_update_pages()
 	if left_page.editable:
 		left_page.grab_focus()
 
 
 func _on_use_draggable_drag_start() -> void:
-	if left_page.editable or right_page.editable:
+	if current_page != -1 and (left_page.editable or right_page.editable):
 		use_draggable._dragging = false
