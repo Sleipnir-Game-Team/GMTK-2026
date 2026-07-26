@@ -3,8 +3,13 @@
 [ext_resource type="AudioStream" uid="uid://dexgw5cmfatkv" path="res://assets/Music/endgame.mp3" id="1_cx5uu"]
 [ext_resource type="Script" uid="uid://dogxqur5hw3mf" path="res://addons/sleipnir_audio/music/maestro_core/song_data.gd" id="1_fgowc"]
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cx5uu"]
+stream_count = 1
+stream_0/stream = ExtResource("1_cx5uu")
+stream_0/volume = 0.0
+
 [resource]
 script = ExtResource("1_fgowc")
 BPM = 96
-MainClips = ExtResource("1_cx5uu")
+MainClips = SubResource("AudioStreamSynchronized_cx5uu")
 metadata/_custom_type_script = "uid://dogxqur5hw3mf"

@@ -6,7 +6,11 @@ extends Control
 func _ready() -> void:
 	UI_Controller.stack.screens.append(self)
 	anim_player.play("fade_in")
-
+	
+	# se for a primeira vez entrando, se pa desnecessario 
+	# mas eu nao lembro se o maestro tem guard pra isso fr
+	SleipnirMaestro.load_song("mainmenu")
+	SleipnirMaestro.play()
 
 ## Função que roda quando você aperta o botão de "jogar"
 func _on_play_button_pressed() -> void:

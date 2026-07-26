@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="SongData" format=3 uid="uid://breuh8heb5ht1"]
 
+[ext_resource type="AudioStream" uid="uid://y3ovcb8pxyhd" path="res://assets/Music/level.mp3" id="1_6cli2"]
 [ext_resource type="Script" uid="uid://dogxqur5hw3mf" path="res://addons/sleipnir_audio/music/maestro_core/song_data.gd" id="1_v4usl"]
 
-[sub_resource type="AudioStream" id="AudioStream_v4usl"]
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_6cli2"]
+stream_count = 1
+stream_0/stream = ExtResource("1_6cli2")
+stream_0/volume = 0.0
 
 [resource]
 script = ExtResource("1_v4usl")
 BPM = 90
-MainClips = SubResource("AudioStream_v4usl")
+MainClips = SubResource("AudioStreamSynchronized_6cli2")
 metadata/_custom_type_script = "uid://dogxqur5hw3mf"

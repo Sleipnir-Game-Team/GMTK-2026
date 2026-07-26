@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dogxqur5hw3mf" path="res://addons/sleipnir_audio/music/maestro_core/song_data.gd" id="1_64qp3"]
 [ext_resource type="AudioStream" uid="uid://b8tu7lw11ptk2" path="res://assets/Music/mainmenu.mp3" id="1_bel7r"]
+[ext_resource type="AudioStream" uid="uid://cv8p5c1nndkfh" path="res://assets/sfx/amb/amb.mp3" id="2_anwsf"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_if5jf"]
+clip_count = 2
+clip_0/name = &"Mainmenu"
+clip_0/stream = ExtResource("1_bel7r")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Amb"
+clip_1/stream = ExtResource("2_anwsf")
+clip_1/auto_advance = 0
 
 [resource]
 script = ExtResource("1_64qp3")
 BPM = 103
-MainClips = ExtResource("1_bel7r")
+MainClips = SubResource("AudioStreamInteractive_if5jf")
+default_first_section = "ambient"
+default_track_transition = 0
+fade_mode = 0
+fade_beats = 0
 metadata/_custom_type_script = "uid://dogxqur5hw3mf"

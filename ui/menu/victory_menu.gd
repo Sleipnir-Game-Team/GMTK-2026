@@ -1,5 +1,11 @@
 extends Control
 
+func _ready() -> void:
+	if SleipnirMaestro.current_song != "none": 
+		SleipnirMaestro.load_song("endgame",true)
+	else:
+		SleipnirMaestro.load_song("endgame")
+		SleipnirMaestro.play()
 
 func _on_restart_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
