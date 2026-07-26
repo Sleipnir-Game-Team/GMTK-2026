@@ -18,7 +18,7 @@ func _on_reload_button_pressed() -> void:
 func _on_load_button_pressed() -> void:
 	print('carregando saves...')
 	AudioManager.play_global("ui.button.click")
-	UI_Controller.openScreen("res://ui/menu/save_menu.tscn", get_tree().root)
+	UI_Controller.openScreen("res://ui/menu/save_pause_menu.tscn", get_tree().root, {"path":"res://ui/menu/save_pause_menu.tscn"})
 
 ## OnClick do botão "Menu Principal"
 func _on_main_menu_button_pressed() -> void:
@@ -30,7 +30,7 @@ func _on_main_menu_button_pressed() -> void:
 ## OnClick do botão "Opções"
 func _on_options_menu_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
-	UI_Controller.openScreen("res://ui/menu/options_menu.tscn", get_tree().root)
+	UI_Controller.openScreen("res://ui/menu/options_pause_menu.tscn", get_tree().root)
 
 
 ## OnClick do botão "Sair"

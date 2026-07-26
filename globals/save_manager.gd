@@ -42,6 +42,8 @@ func load_game(data: Dictionary) -> void:
 	jogo.setup(data)
 	SLogger.info("Jogo carregado no slot "+str(current_slot))
 	GameManager.resume()
+	if UI_Controller.pause_menu_on:
+		UI_Controller.pause_menu_on = false
 
 func check_save(slot: int) -> Dictionary:
 	var file_path := "user://save_"+str(slot)+".res"

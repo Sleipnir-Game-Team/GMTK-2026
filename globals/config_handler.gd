@@ -61,6 +61,10 @@ func verify_all_settings() -> void:
 		save_audio_settings("mute", false)
 	if config.has_section_key("keybinding", "example_input"):
 		save_keybinding_settings("example_input", null)
+	if get_setting("keybinding", "reset_configs") == null:
+		var reset:InputEventKey = InputEventKey.new()
+		reset.keycode = KEY_R
+		save_keybinding_settings("reset_configs", reset)
 
 
 func run_all_settings() -> void:
@@ -171,11 +175,13 @@ func reset_volume_settings() -> void:
 ######################################### Saving Handler #########################################
 #region Saving Handler
 func save_video_settings(key: String, value: Variant) -> void:
+	print(key, value)
 	config.set_value("video", key, value)
 	config.save(SETTINGS_FILE_PATH)
 
 
 func save_audio_settings(key: String, value: Variant) -> void:
+	print(key, value)
 	config.set_value("audio", key, value)
 	config.save(SETTINGS_FILE_PATH)
 

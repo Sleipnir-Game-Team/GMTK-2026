@@ -1,42 +1,23 @@
 [gd_scene format=3 uid="uid://c5cwvqaharjej"]
 
 [ext_resource type="Script" uid="uid://dpucr8oj7t463" path="res://ui/menu/main_menu.gd" id="1_5p82l"]
+[ext_resource type="Texture2D" uid="uid://ddfnquxskh0rs" path="res://assets/UI/Mainmenu/Drawer_Background.png" id="2_or6mk"]
+[ext_resource type="Texture2D" uid="uid://xn0f0023m7qw" path="res://assets/UI/Mainmenu/Mainmenu_Background.png" id="2_u4nky"]
+[ext_resource type="Texture2D" uid="uid://0k5oytbjwpxe" path="res://assets/UI/Mainmenu/Buttons/Play_Normal.png" id="3_h2671"]
+[ext_resource type="Texture2D" uid="uid://c8487fd3ugv0h" path="res://assets/UI/Logo.png" id="3_r5t3j"]
+[ext_resource type="Texture2D" uid="uid://opltkm81fy8k" path="res://assets/UI/Mainmenu/Buttons/Play_Hover.png" id="4_umht6"]
+[ext_resource type="Texture2D" uid="uid://hfe2jtqmxxqd" path="res://assets/UI/Mainmenu/Buttons/Options_Normal.png" id="5_u4nky"]
+[ext_resource type="Texture2D" uid="uid://8aea6w25uunm" path="res://assets/UI/Mainmenu/Buttons/Options_Hover.png" id="6_r5t3j"]
+[ext_resource type="Texture2D" uid="uid://cx1oa2ednntbd" path="res://assets/UI/Mainmenu/Buttons/Credits_Normal.png" id="7_t3kfx"]
+[ext_resource type="Texture2D" uid="uid://c4hetcdl8mie4" path="res://assets/UI/Mainmenu/Buttons/Credits_Hover.png" id="8_hut73"]
+[ext_resource type="Texture2D" uid="uid://cfqutmu63j5s2" path="res://assets/UI/Mainmenu/Ad_Banner.png" id="11_hut73"]
+[ext_resource type="Texture2D" uid="uid://7ui872in8ids" path="res://assets/UI/Mainmenu/Table_Lamp.png" id="12_3pyrn"]
+[ext_resource type="Texture2D" uid="uid://cngmymrfspnld" path="res://assets/UI/Mainmenu/Light_Overlay.png" id="13_kf8oo"]
 
-[sub_resource type="Animation" id="Animation_37pjl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GridContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_or6mk"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GridContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvx18"]
-_data = {
-&"RESET": SubResource("Animation_37pjl"),
-&"fade_in": SubResource("Animation_or6mk")
-}
+[sub_resource type="LabelSettings" id="LabelSettings_t3kfx"]
+font_size = 30
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" unique_id=1866034642]
 process_mode = 3
@@ -48,81 +29,172 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5p82l")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=954114102]
-modulate = Color(1, 1, 1, 0)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=238056919]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_u4nky")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1366743595]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1965554597]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
 
-[node name="left_blank_space" type="Control" parent="GridContainer" unique_id=791921614]
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=49094748]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1317324431]
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="VBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=535694574]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/HBoxContainer/Control" unique_id=83586095]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Control3" type="VBoxContainer" parent="HBoxContainer/HBoxContainer/Control" unique_id=1060016426]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/Control/Control3" unique_id=1603370977]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_r5t3j")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer/Control/Control3" unique_id=2067122564]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sleipnir GameDev Team
+GMTK 2026"
+label_settings = SubResource("LabelSettings_t3kfx")
+
+[node name="Control4" type="Control" parent="HBoxContainer/HBoxContainer/Control/Control3" unique_id=1706591917]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="gaveta" type="Control" parent="HBoxContainer/HBoxContainer/Control" unique_id=773894281]
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_vertical = 3
 
-[node name="content_container" type="VBoxContainer" parent="GridContainer" unique_id=1391738372]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/Control/gaveta" unique_id=410776821]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -121.0
+offset_right = 606.0
+offset_bottom = 530.0
+scale = Vector2(0.82447845, 0.97419745)
+texture = ExtResource("2_or6mk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HBoxContainer/Control/gaveta" unique_id=1002115313]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 11.000015
+offset_right = 618.0
+offset_bottom = 831.0
+scale = Vector2(0.8259008, 0.6579874)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="label_container" type="VBoxContainer" parent="GridContainer/content_container" unique_id=1095203572]
+[node name="play_button" type="TextureButton" parent="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer" unique_id=1127876482]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("3_h2671")
+texture_hover = ExtResource("4_umht6")
+stretch_mode = 0
+
+[node name="options_button" type="TextureButton" parent="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer" unique_id=1134720101]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("5_u4nky")
+texture_hover = ExtResource("6_r5t3j")
+stretch_mode = 0
+
+[node name="credits_button" type="TextureButton" parent="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer" unique_id=521650722]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("7_t3kfx")
+texture_hover = ExtResource("8_hut73")
+stretch_mode = 0
+
+[node name="quit_button" type="TextureButton" parent="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer" unique_id=1720785454]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("3_h2671")
+texture_hover = ExtResource("4_umht6")
+stretch_mode = 0
+
+[node name="Control2" type="VBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=103847770]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="GridContainer/content_container" unique_id=1974963498]
+[node name="Control" type="Control" parent="HBoxContainer/HBoxContainer/Control2" unique_id=353508519]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_right = 300
 
-[node name="button_container" type="VBoxContainer" parent="GridContainer/content_container/MarginContainer" unique_id=1002115313]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HBoxContainer/Control2" unique_id=1006364839]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/HBoxContainer/Control2/VBoxContainer" unique_id=1422220962]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/HBoxContainer/Control2/VBoxContainer/Control" unique_id=1252176361]
+layout_mode = 1
+offset_right = 464.0
+offset_bottom = 531.0
+texture = ExtResource("11_hut73")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/Control2/VBoxContainer/Control" unique_id=993936665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -360.0
+offset_right = 320.5
+offset_bottom = 457.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_3pyrn")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/HBoxContainer/Control2/VBoxContainer/Control" unique_id=1456121418]
+modulate = Color(1, 1, 1, 0.1882353)
+layout_mode = 0
+offset_left = -166.0
+offset_top = 164.0
+offset_right = 529.0
+offset_bottom = 830.0
+texture = ExtResource("13_kf8oo")
+
+[node name="Control2" type="Control" parent="HBoxContainer/HBoxContainer/Control2" unique_id=1085841824]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="HBoxContainer" unique_id=1882982702]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-alignment = 1
 
-[node name="play_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=1502541560]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Jogar"
-
-[node name="options_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=833062355]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Configuração"
-
-[node name="credits_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=256361424]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Créditos"
-
-[node name="quit_button" type="Button" parent="GridContainer/content_container/MarginContainer/button_container" unique_id=397103087]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Sair"
-
-[node name="mid_down_blank_space" type="VBoxContainer" parent="GridContainer/content_container" unique_id=1036510388]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="right_blank_space" type="Control" parent="GridContainer" unique_id=98430566]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1366743595]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1627117046]
-libraries/ = SubResource("AnimationLibrary_gvx18")
-
-[connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/credits_button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="GridContainer/content_container/MarginContainer/button_container/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer/play_button" to="." method="_on_play_button_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Control/gaveta/VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

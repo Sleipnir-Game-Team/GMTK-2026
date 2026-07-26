@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func _on_window_resolution_changed(resolution: Array) -> void:
+	print('resolução escolhida: ', resolution)
 	select_item([resolution[0], resolution[1]])
 
 func select_item(resolution: Array) -> void:

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dkxq52o405pg8"]
+[gd_scene format=3 uid="uid://bywyd5hualn4q"]
 
 [ext_resource type="Script" uid="uid://c5cfsj5ovxwb6" path="res://game/ship_segments/segment.gd" id="1_bvxae"]
 [ext_resource type="PackedScene" uid="uid://b3blnhhfq5mwy" path="res://game/ship_modules/fuel.tscn" id="3_2x24h"]

@@ -8,6 +8,15 @@ extends Control
 @onready var mute_checkbox:CheckBox = %mute_checkbox
 @onready var keybinding_list: = get_node("%keybinding_list")
 
+@onready var video_label: = get_node("%video_label")
+@onready var video_tab: = get_node("%video_tab")
+
+@onready var audio_label: = get_node("%audio_label")
+@onready var audio_tab: = get_node("%audio_tab")
+
+@onready var controls_label: = get_node("%controls_label")
+@onready var controls_tab: = get_node("%controls_tab")
+
 
 func _ready() -> void:
 	Config_Handler.window_mode_changed.connect(_on_window_mode_changed)
@@ -69,11 +78,41 @@ func _on_mute_checkbox_toggled(toggled_on: bool) -> void:
 	Config_Handler.toggle_mute(toggled_on)
 	
 
-func _on_button_pressed() -> void:
-	AudioManager.play_global("ui.button.click")
-	
-
 func _on_back_button_pressed() -> void:
 	AudioManager.play_global("ui.screen.back")
 	UI_Controller.freeScreen()
 	
+
+
+func _on_video_label_gui_input(event:InputEvent) -> void:
+	if (event is InputEventMouseButton && event.pressed):
+		video_label.label_settings.font_color = Color(0.94, 0.896, 0.405, 1.0)
+		audio_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		controls_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		video_tab.visible = true
+		audio_tab.visible = false
+		controls_tab.visible = false
+
+
+func _on_audio_label_gui_input(event:InputEvent) -> void:
+	if (event is InputEventMouseButton && event.pressed):
+		video_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		audio_label.label_settings.font_color = Color(0.94, 0.896, 0.405, 1.0)
+		controls_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		video_tab.visible = false
+		audio_tab.visible = true
+		controls_tab.visible = false
+
+
+func _on_controls_label_gui_input(event:InputEvent) -> void:
+	if (event is InputEventMouseButton && event.pressed):
+		video_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		audio_label.label_settings.font_color = Color(1.0, 1.0, 1.0, 1.0)
+		controls_label.label_settings.font_color = Color(0.94, 0.896, 0.405, 1.0)
+		video_tab.visible = false
+		audio_tab.visible = false
+		controls_tab.visible = true
+
+
+func _on_texture_button_pressed() -> void:
+	UI_Controller.freeScreen()
