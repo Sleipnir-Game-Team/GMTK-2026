@@ -18,7 +18,7 @@ var limited_break_functions := [
 	unload_fuel.bind("fuel_2"),
 ]
 
-func default_values():
+func default_values() -> void:
 
 	equalizer_state = {
 		'low_position' = 0.0,
@@ -142,19 +142,21 @@ func setup() -> void:
 
 
 func break_things(number: int) -> void:
-	var limited_breaks = rng.randi_range(0, 3)
+	var limited_breaks := rng.randi_range(0, 3)
 	break_limited(limited_breaks)
 	number -= limited_breaks
-	var new_breaks = rng.randi_range(1, number-2)
+	
+	var new_breaks := rng.randi_range(1, number-2)
 	number -= new_breaks
 	break_screws(new_breaks)
+	
 	new_breaks = rng.randi_range(1, number-1)
 	number -= new_breaks
 	break_tubes(new_breaks)
 	break_pipes(number)
 	
-func break_limited(number: int):
-	var functions = limited_break_functions.duplicate()
+func break_limited(number: int) -> void:
+	var functions := limited_break_functions.duplicate()
 	while number > 0:
 		var selecionado: int = rng.randi_range(0, functions.size() -1)
 		functions[selecionado].call()
@@ -325,7 +327,7 @@ func break_equalizer() -> void:
 func break_tubes(ammount: int) -> void:
 	var tube_list := tube_states.keys()
 	while ammount > 0:
-		var selected_panel = tube_list[rng.randi_range(0,tube_list.size() - 1)]
+		var selected_panel = tube_list[rng.randi_range(0, tube_list.size() - 1)]
 		var tubes = tube_states[selected_panel]
 		var okay_tubes = []
 		for i in range(tubes.size()):
@@ -359,19 +361,21 @@ func break_pipes(ammount: int) -> void:
 func break_screws(ammount: int) -> void:
 	var screw_list := screw_states.keys()
 	while ammount > 0:
-		var selected_panel = screw_list[rng.randi_range(0,screw_list.size() - 1)]
+		var selected_panel = screw_list[rng.randi_range(0, screw_list.size() - 1)]
 		var screws = screw_states[selected_panel]
 		var okay_screws = []
+		
 		for i in range(screws.size()):
 			if !screws[i]:
 				okay_screws.append(i)
+		
 		if okay_screws.size() > 0:
-			var selected_screw = okay_screws[rng.randi_range(0,okay_screws.size()  - 1)]
+			var selected_screw = okay_screws[rng.randi_range(0,okay_screws.size() - 1)]
 			screw_states[selected_panel][selected_screw] = true
 			screw_list.append(selected_panel)
 			ammount -= 1
 		else:
 			screw_list = screw_list.filter(func filter_finished(panel): return panel != selected_panel)
 
-func unload_fuel(panel):
+func unload_fuel(panel: String) -> void:
 	fuel_states[panel]['full'] = false

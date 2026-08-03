@@ -1,9 +1,9 @@
 extends Control
 
-const ICARUS_POINT = preload("uid://y038335n03kj")
-const ICARUS_GRAB = preload("uid://7flyn1q0nw1e")
+const ICARUS_POINT := preload("uid://y038335n03kj")
+const ICARUS_GRAB := preload("uid://7flyn1q0nw1e")
 
-@onready var gaveta = get_node("%gaveta")
+@onready var gaveta: Control = %gaveta
 
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(ICARUS_POINT, Input.CURSOR_ARROW)
