@@ -89,9 +89,9 @@ func get_fade_mode(): return fade_mode
 ## Função para pegar em quantas beats ela faz esse fade
 func get_fade_beats(): return fade_beats
 
-func _get_property_list():
+func _get_property_list() -> Array[Dictionary]:
+	var properties: Array[Dictionary] = []
 	if Engine.is_editor_hint():
-		var properties : Array[Dictionary]
 		if MainClips is AudioStreamInteractive:
 			properties.append({
 				"name": &"Interactivity Control",
@@ -122,4 +122,4 @@ func _get_property_list():
 				"type": TYPE_INT,
 				"usage": PROPERTY_USAGE_DEFAULT
 			})
-		return properties
+	return properties
