@@ -87,7 +87,7 @@ func start_run() -> void:
 	animation_player_bus.play("arrive")
 	start_timer()
 
-func configure_run():
+func configure_run() -> void:
 	state_manager.setup()
 
 
@@ -167,11 +167,11 @@ func check_conditions() -> bool:
 	return passable
 
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	if ship_timer and !ship_timer.is_stopped():
-		teste.text = "%02d"% ship_timer.time_left + " until launch"
+		teste.text = "%02d until launch" % ship_timer.time_left
 	elif interval_timer and !interval_timer.is_stopped():
-		teste.text = "%02d" % interval_timer.time_left+ " until next"
+		teste.text = "%02d until next" % interval_timer.time_left
 	else:
 		teste.text = "Waiting for start (Pull the cord)"
 

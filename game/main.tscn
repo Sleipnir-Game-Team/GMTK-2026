@@ -531,17 +531,16 @@ mouse_filter = 2
 texture = ExtResource("11_l78i6")
 stretch_mode = 2
 
-[node name="Hud" parent="." unique_id=658315518 instance=ExtResource("5_u5r6x")]
-layout_mode = 2
-
-[node name="Button" type="TextureButton" parent="Hud" unique_id=2060576505]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 602.0
-offset_right = 1004.0
-offset_bottom = 730.0
+[node name="Button" type="TextureButton" parent="BG" unique_id=2060576505]
+offset_left = 854.0
+offset_top = 583.0
+offset_right = 1007.0
+offset_bottom = 711.0
 texture_normal = ExtResource("13_gq54d")
 texture_pressed = ExtResource("14_s2dp4")
+
+[node name="Hud" parent="." unique_id=658315518 instance=ExtResource("5_u5r6x")]
+layout_mode = 2
 
 [node name="Screen 2" type="Node2D" parent="." unique_id=745309780]
 position = Vector2(1000, -368)
@@ -757,7 +756,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="BG/Cortina" to="AnimationPlayer2" method="play" binds= [&"pull_cord"]]
-[connection signal="pressed" from="Hud/Button" to="." method="_on_launch_button_pressed"]
+[connection signal="pressed" from="BG/Button" to="." method="_on_launch_button_pressed"]
 
 [editable path="Workspace/ToolboxTeste/ToolboxTeste"]
 [editable path="Workspace/ToolboxTeste/ToolboxTeste2"]
